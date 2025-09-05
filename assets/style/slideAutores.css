@@ -1,0 +1,167 @@
+/* Sessão geral */
+.sessaoTres {
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
+.sessaoTres .container {
+    padding: 2%;
+}
+
+.textAutor {
+    width: 100%;
+    text-align: center;
+}
+
+.textAutor h2{
+    font-size: 2.3rem;
+    color: #008080;
+}
+
+.textAutor p{
+    color: #008080;
+    font-size: 1.2rem;
+}
+
+/* Container do slider */
+.cardAutor {
+    padding: 2%;
+    overflow: hidden;
+}
+
+.cardAutor input[type="radio"] {
+    display: none;
+}
+
+/* Slide */
+.slide {
+    display: flex;
+    width: 300%; /* 3 slides */
+    transition: margin-left 0.5s ease;
+}
+
+
+/* Cada grupo de autores */
+.autores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+    padding: 1%;
+    box-sizing: border-box;
+    
+}
+
+/* Cards de autor */
+.autor {
+    flex: 1 1 47%; /* Base width de 45%, cresce se houver espaço */
+    max-width: 47%;
+    min-width: 250px; /* Responsivo */
+    height: 400px;
+    margin: 0.5rem;
+    box-sizing: border-box;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    padding-right: 1%;
+    gap: 5px;
+}
+
+.persW{
+    flex: 1 1 32%; /* Base width de 45%, cresce se houver espaço */
+    max-width: 32%;
+    min-width: 250px; /* Responsivo */
+}
+
+.autor:hover{
+   
+    transition: 0.3s ease linear;
+}
+
+.autor h3{
+    color: white;
+    border: 1px #008080 outset;
+    background-color: #008080;
+    width: fit-content;
+    border-radius: 5px;
+    font-size: 1.9rem;
+}
+
+.autor p{
+    color: #ffffff;
+    border: 1px #005B73 outset;
+    background-color: 00695C;
+    width: fit-content;
+    border-radius: 5px;
+    background-color: #005B73;
+}
+
+.autor a button{
+    margin-top: 50px;
+    padding: 10px 15px;
+    cursor: pointer;
+    background: #008080;
+    background: linear-gradient(90deg, rgba(0, 128, 128, 1) 35%, rgba(0, 105, 92, 1) 85%);
+    border: 1px outset #f5f5f5;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: BOLD;
+}
+
+.autor a button:hover{
+    box-shadow: #005B73 0px 8px 20px;
+    border: 1px outset #005B73;
+    transition: 0.3s ease;
+}
+
+/* Navegação automática e manual */
+.nav-manual, .nav-auto {
+    position: absolute;
+    width: 91.9%;
+    margin-top: 55%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-manual .botao-manual, .nav-auto div {
+    border: 1px solid #008080;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.nav-manual .botao-manual:not(:last-child), .nav-auto div:not(:last-child) {
+    margin-right: 10px;
+}
+
+.nav-manual .botao-manual:hover {
+    background-color: #008080;
+}
+
+/* Mudar bolinhas quando selecionado */
+#radio1:checked ~ .nav-auto .botao-auto1 {
+    background-color: #008080;
+}
+#radio2:checked ~ .nav-auto .botao-auto2 {
+    background-color: #008080;
+}
+#radio3:checked ~ .nav-auto .botao-auto3 {
+    background-color: #008080;
+}
+
+/* Movimentação do slider */
+#radio1:checked ~ .slide {
+    margin-left: 0;
+}
+#radio2:checked ~ .slide {
+    margin-left: -100%;
+}
+#radio3:checked ~ .slide {
+    margin-left: -200%;
+}
