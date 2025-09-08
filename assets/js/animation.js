@@ -23,5 +23,15 @@ document.querySelectorAll('.autor').forEach(card => {
     card.style.backgroundRepeat =  'no-repeat'
 });
 
+let index = 0;
 
+const input = document.getElementById('search');
+const placeholders = ["Harry Potter", "Senhor dos Aneis", "O idiota", "A culpa é das estrelas", "Os irmãos Karamazov", "Território Lovecraft"]
+
+function mudarPlaceholder(){
+    input.placeholder = placeholders[index];
+    index = (index + 1) % placeholders.length
+}
+
+setInterval(mudarPlaceholder, 2000);
 
