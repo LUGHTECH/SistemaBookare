@@ -1,9 +1,10 @@
-<?php include("header.php");?>
+<?php include(__DIR__ . "/header.php"); ?>
+
 <header>
         <div class="container">
             <nav>
                 <div class="logo">
-                    <img src="./assets/img/BookareLogo.png" alt="">
+                    <img src="/SistemaBookare/assets/img/BookareLogo.png" alt="">
                 </div>
                 <div class="menu">
                     <ul>
@@ -15,10 +16,10 @@
                 </div>
                 <div class="login">
                     <div class="entrar">
-                        Entrar
+                        <a href="includes/createUser.php">Entrar</a>
                     </div>
                     <div class="perfil">
-                        <a href=""><img src="./assets/img/loginIcon.png" alt=""></a>
+                        <a href=""><img src="/SistemaBookare/assets/img/loginIcon.png" alt=""></a>
                     </div>
                 </div>
             </nav>

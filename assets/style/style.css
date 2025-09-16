@@ -96,6 +96,11 @@ header .container nav{
 
 }
 
+.entrar a{
+    color: white;
+    text-decoration: none;
+}
+
 .perfil{
     width: 50%;
     display: flex;
@@ -164,6 +169,10 @@ main .container{
     align-items: center;
     justify-content: center;
     height: 54%;
+}
+
+.clicado{
+    background-color: #012525;
 }
 
 form{

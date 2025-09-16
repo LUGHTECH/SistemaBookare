@@ -16,7 +16,7 @@
                 <h1>Troque de livros onde e quando quiser com o Bookare!</h1>
             </div>
             <div class="btnCadastrar">
-                <form action="./includes/catalogo.php" method="post">
+                <form action="includes/catalogo.php" method="post">
                     <input type="search" id="search" name="pesquisa" placeholder="Memorias do Subsolo">
                     <input type="submit" value="Pesquisar">
                 </form>
@@ -42,7 +42,7 @@
                 require('./includes/connect.php');
                 $generos = mysqli_query($con, "SELECT * FROM genero");
                 while ($g = mysqli_fetch_assoc($generos)) {
-                    echo "<button onclick='carregarLivros({$g['id']})'>{$g['nome']}</button>";
+                    echo "<button id='meuBotao' onclick='carregarLivros({$g['id']})'>{$g['nome']}</button>";
                 }
                 ?>
             </div>

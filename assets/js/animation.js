@@ -35,3 +35,10 @@ function mudarPlaceholder(){
 
 setInterval(mudarPlaceholder, 2000);
 
+
+ const botao = document.getElementById('meuBotao');
+
+  botao.addEventListener('click', () => {
+    botao.classList.toggle('clicado'); // adiciona ou remove a classe 'clicado'
+  });
+
