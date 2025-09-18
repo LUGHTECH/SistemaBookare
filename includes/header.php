@@ -10,5 +10,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/SistemaBookare/assets/style/swiper-bundle.min.css">
     <script type="module" src="https://unpkg.com/@lottiefiles/dotlottie-wc@latest/dist/dotlottie-wc.js"></script>
+
+    <!-- Logo Icon -->
+    <link rel="icon" type="image/svg+xml" href="../img/logo.svg">
+    <link rel="alternate icon" type="image/png" href="../img/logo.png">
+    
     <title>Document</title>
 </head>

@@ -12,7 +12,7 @@ $errors = $_SESSION['errors'] ?? [];
 unset($_SESSION['old_input'], $_SESSION['errors'], $_SESSION['success']);
 ?> <!--  -->
 
-<?php include("../includes/headerMain.php");?>
+<?php include("../includes/header.php");?>
 <link rel="stylesheet" href="../assets/style/loginUser.css">
 <body>
     <main>

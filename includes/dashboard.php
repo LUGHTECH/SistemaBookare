@@ -5,7 +5,7 @@ $username = $_SESSION['username'] ?? null;
 ?>
 
 <!-- header  -->
-<?php include("../views/header.php");?>
+<?php include("../includes/header.php");?>
 <body>
     <main>
         <!-- abre o if -->
@@ -13,6 +13,9 @@ $username = $_SESSION['username'] ?? null;
 
             <!-- Exibição de usuario -->
             <p>Olá, <?= htmlspecialchars($username, ENT_QUOTES, 'UTF-8') ?></p>
+
+
+
 
             <!-- botao de logout, vai por min cleb e necessario -->
             <form method="post" action="logout.php" style="display:inline">
