@@ -3,7 +3,7 @@ session_start();
 
 // ----- Conectar ao DB (ajuste credenciais) ----- IMPORTANTE cleb
 $host = 'localhost';
-$db   = 'bd_bookare'; // Nome do Banco
+$db   = 'bookare_db'; // Nome do Banco
 $user = 'root'; // XAMPP: usuário padrão
 $pass = '';     // XAMPP: senha padrão vazia
 $charset = 'utf8mb4';
@@ -27,8 +27,8 @@ if (empty($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'] ?? '', $
 }
 
 // coleta e saneamento básico
-$username = trim((string)($_POST['nome_usuario'] ?? ''));
-$email = trim((string)($_POST['email_usuario'] ?? ''));$password = (string)($_POST['password'] ?? '');
+$username = trim((string)($_POST['username'] ?? ''));
+$email = trim((string)($_POST['email'] ?? ''));$password = (string)($_POST['password'] ?? '');
 $password_confirm = (string)($_POST['password_confirm'] ?? '');
 
 $errors = [];
