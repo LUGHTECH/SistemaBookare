@@ -12,8 +12,8 @@
     <script type="module" src="https://unpkg.com/@lottiefiles/dotlottie-wc@latest/dist/dotlottie-wc.js"></script>
 
     <!-- Logo Icon -->
-    <link rel="icon" type="image/svg+xml" href="../img/logo.svg">
-    <link rel="alternate icon" type="image/png" href="../img/logo.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logo.svg">
+    <link rel="alternate icon" type="image/png" href="../assets/img/logo.png">
     
     <title>Document</title>
 </head>
