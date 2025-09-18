@@ -1,0 +1,54 @@
+- Estrutura da Dashboard -
+
+# Adicionar Livros
+    // Breve descrição de como funcionara a adição de livros definitivamente
+
+    # Funcionamento
+        - a adição de livros ocorrerá por meio de um formulário na aba "Adicionar Livro" dentro da lista de abas da Dashboard.
+            - primeiro será exibida a opçao da procura pelo livro desejado por meio da ISBN(International Standard Book Number)
+            onde que ao achar o livro dentro da API Google Books, levará ao formulario com as informações ja geradas pela API.
+
+            - haverá tambem a opção de adicionar manualmente que tambem levará ao formulario mas com as informações a serem digitadas
+        
+            - o formulario é composto por:
+                - foto da capa do livro sendo exibida ao lado da tela, alem do campo para inserir as fotos do livro onde sera exibida em miniaturas
+                - campos digitaveis como: titulo, genero, autor, editora, ISBN, ano de publicação, Idioma, Sinopse.
+                - Opção para declarar o estado do livro.
+                - e por fim um botão para enviar
+                
+            - ao digitar em cada campo terá um pequeno quadro abaixo com sugestões para autocompletar o campo(onde que as sugestões
+            ocorrerá por meio da API, que ao digitar sera efetuada uma busca por informações Próximas)
+
+        - ao finalizar
+            - o usuario será levado ao uma tela dentro da aba que informará conclusão, onde haverá um botão para a tela inicial ou para enviar outro livro.
+
+
+    # Informações geradas automaticamente pela API Google Books.
+        // caso livro não encontrado no banco de dados, sera inserido pelo usuario.
+
+        - capa do livro (Se livro nâo encontrado sera colocada a capa padrão)
+        - titulo (Obrigatorio)
+        - genero (Obrigatorio, Multíplas tags max: 5)
+            - A principal tag sera inserida automaticamente pela API, as demais pelo usuario.
+        - autor (Obrigatorio)
+        - editora (Obrigatorio)
+        - ISBN (Opcional)
+        - Ano de publicação (Opcional)
+        - Idioma (Obrigatorio)
+        - Sinopse (Obrigatorio)
+
+    # Informações inseridas pelo usuario
+        - Estado de conservação
+            - Novo
+            - Seminovo
+            - Com Marcas de Uso/Danos Leves
+            - Danos Severos
+        - Fotos do Livros(Obrigatorio min: 3)
+            // Não é a capa, mas sim fotos para comprovar o estado do livro.
+
+    # Informações inseridas automaticamente ao banco de dados
+        // Eu pensei na ideia para colocar status do livro, como disponivel para troca ou indisponivel, mas nao vi muita utilidade
+        // ja que ao inserir livros eles ja estarao dentro do banco de dados como disponiveis, e apos a troca, o livro sera retirado do banco
+
+# Info
+
