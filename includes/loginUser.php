@@ -22,7 +22,7 @@ unset($_SESSION['old_input'], $_SESSION['errors'], $_SESSION['success']);
         <section class="window">
             <article class="Login">
                 <div><!-- login usuario -->
-                    <img src="" alt="">
+                    <img src="../assets/img/iconBookare.png" alt="">
                     <h3>Entre na sua conta</h3>
                     <p>ou <em><a href="createUser.php">criar</a>.</em></p>
                     
@@ -34,18 +34,18 @@ unset($_SESSION['old_input'], $_SESSION['errors'], $_SESSION['success']);
                         <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
                         
                         <div class="field">
-                            <label for="identifier">E‑mail ou nome de usuário</label>
-                            <input id="identifier" name="identifier" type="text" required maxlength="255" value="<?php echo htmlspecialchars($old['identifier'] ?? ''); ?>" autofocus>
+                            <label for="identifier"></label>
+                            <input id="identifier" name="identifier" type="text" required maxlength="255" placeholder="E‑mail ou nome de usuário" value="<?php echo htmlspecialchars($old['identifier'] ?? ''); ?>" autofocus>
                         </div>
 
                         <!-- Senha do Usuario -->
                         <div class="field">
-                            <label for="password">Senha</label>
-                            <input id="password" name="password" type="password" required minlength="8">
+                            <label for="password"></label>
+                            <input id="password" name="password" type="password" required minlength="8" placeholder="Senha">
                         </div>
 
                         <!-- Botao "Seguinte" para seguir para proxima etapa do cadastro -->
-                        <button class="btn" type="submit">Entrar</button>
+                        <button class="btn" type="submit">Seguinte</button>
                     </form>
 
                 </div>

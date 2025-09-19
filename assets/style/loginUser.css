@@ -1,5 +1,7 @@
 html, body {
     margin: 0;
+    padding: 0;
+    
 }
 
 main{
@@ -26,8 +28,7 @@ main{
     align-items: center;
     width: 63%;
     height: 100%;
-
-    background-color: #fff;
+    background-image: url(../img/FundoBody.png);
 }
 
 .create {
@@ -54,4 +55,75 @@ form div {
 form label {
     width: 100%;
     text-align: start;
+}
+
+.Login {
+    border: #33333386 solid 4px;
+    display: flex;
+    padding: 1% 7% 2% 7%;
+    align-items: center;
+    font-family: sans-serif;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: white;
+}
+
+.Login div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Login img{
+    height: 120px;
+    width: 120px;
+}
+
+.Login div h3{
+    font-size: 1.6rem;
+    color: #008080;
+}
+
+
+.Login div p{
+    margin-top: -15px;
+    font-size: 1.2rem;
+    color: #008080;
+}
+
+.Login div a{
+    color: #008080;
+}
+
+
+
+.Login div form{
+    gap: 2rem;
+}
+
+
+.Login div form .field input{
+    padding: 14px 30px;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+
+
+.btn{
+    border: solid;
+    padding: 12px   ;
+    width: 100%;
+    background-color: #00b7aeb6;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    color: white;
+    font-weight: 700;
+}
+
+.errors{
+   margin: 10px;
+   color: #008080;
+    
 }
