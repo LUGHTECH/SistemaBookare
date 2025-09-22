@@ -17,7 +17,21 @@ unset($_SESSION['old_input'], $_SESSION['errors'], $_SESSION['success']);
 <body>
     <main>
 
-        <section class="banner"></section>
+        <section class="banner">
+            <div class="textBanner">
+                <h1>Bem-vindo de volta!</h1>
+                <h2>Ficamos felizes em te ver novamente</h2>
+                <p>Faça login para continuar de onde parou</p>
+            </div>
+            <div class="fraseBanner">
+                <p>"Tudo vale a pena quando a alma não é pequena"</p>
+                <p><span>-Fernando Pessoa</span></p>
+                <p><a href="../index.php">Voltar</a></p>
+            </div>
+            <div class="imgBanner">
+                <img src="../assets/img/relogioBanner.png" alt="">
+            </div>
+        </section>
 
         <section class="window">
             <article class="Login">

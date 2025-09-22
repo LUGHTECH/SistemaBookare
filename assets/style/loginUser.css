@@ -1,6 +1,7 @@
-html, body {
+ body {
     margin: 0;
     padding: 0;
+    overflow-y: hidden;
     
 }
 
@@ -11,15 +12,22 @@ main{
     height: 100dvh;
 }
 
+.banner p, h1, h2{
+    margin: 0;
+}
+
 .banner {
     display: block;
     width: 37%;
     height: 100%;
-    background-image: url('../../assets/img/bannerLogin.webp');
+    background-image: url('../../assets/img/bannerLogin.jpg');
     background-size: cover;     
     background-position: center;
     background-repeat: no-repeat;
     background-color: #333;
+    font-family: sans-serif;
+   
+   
 }
 
 .window {
@@ -60,11 +68,12 @@ form label {
 .Login {
     border: #33333386 solid 4px;
     display: flex;
-    padding: 1% 7% 2% 7%;
+    padding: 3% 7% 3% 7%;
     align-items: center;
     font-family: sans-serif;
     border-radius: 30px;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+   -webkit-box-shadow: -7px 5px 10px 5px rgba(0,0,0,0.23); 
+    box-shadow: -7px 5px 10px 5px rgba(0,0,0,0.23);
     background-color: white;
 }
 
@@ -76,8 +85,9 @@ form label {
 }
 
 .Login img{
-    height: 120px;
-    width: 120px;
+    height: auto;
+    width: 140px;
+   
 }
 
 .Login div h3{
@@ -87,7 +97,7 @@ form label {
 
 
 .Login div p{
-    margin-top: -15px;
+    margin-top: -1.2rem;
     font-size: 1.2rem;
     color: #008080;
 }
@@ -107,6 +117,7 @@ form label {
     padding: 14px 30px;
     border-radius: 20px;
     font-size: 1rem;
+    color: gray;
 }
 
 
@@ -127,3 +138,62 @@ form label {
    color: #008080;
     
 }
+
+.banner .imgBanner{
+   
+    height: 65%;
+    width: 100%;
+    
+}
+
+.imgBanner img{
+    height: 100%;
+        
+}
+
+.textBanner{
+    height: 25%;
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5%;
+    gap: 10px;
+}
+
+.textBanner h1{
+    font-size: 3.2rem;
+    color: white;
+}
+
+.textBanner h2{
+    color: rgb(255, 255, 255);
+    font-weight: 100;
+}
+
+.textBanner p{
+    font-size: 1.3rem;
+    color:  rgb(255, 255, 255);
+}
+
+.fraseBanner{
+    height: 10%;
+    text-align: end;
+    padding: 2% 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.fraseBanner p{
+    font-size: 1.4rem;
+    color: white;
+}
+
+.fraseBanner p span{
+    font-style: italic;
+    font-size: 1.7rem;
+}
+
+

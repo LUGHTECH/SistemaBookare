@@ -16,7 +16,14 @@
                 </div>
                 <div class="login">
                     <div class="entrar">
-                        <a href="includes/createUser.php">Entrar</a>
+                        <?php
+                            @session_start();
+                            if(!isset($_SESSION['user_id'])){
+                                echo "<a href='includes/createUser.php'>Entrar</a>";
+                            } else{
+                                echo "<p>Olá, $username</p>";
+                            }
+                         ?>
                     </div>
                     <div class="perfil">
                         <a href=""><img src="/SistemaBookare/assets/img/loginIcon.png" alt=""></a>

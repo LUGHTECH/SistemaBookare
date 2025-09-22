@@ -38,6 +38,8 @@ main{
     justify-content: center;
     align-items: center;
     width: 25%;
+    border: solid;
+    padding: 3% 7% 3% 7%;
 }
 
 form {
