@@ -26,7 +26,7 @@ unset($_SESSION['old_input'], $_SESSION['errors'], $_SESSION['success']);
             <div class="fraseBanner">
                 <p>"Tudo vale a pena quando a alma não é pequena"</p>
                 <p><span>-Fernando Pessoa</span></p>
-                <p><a href="../index.php">Voltar</a></p>
+                <a href="../index.php"><img src="../assets/img/voltarIcon.png" alt="Voltar"></img></a>
             </div>
             <div class="imgBanner">
                 <img src="../assets/img/relogioBanner.png" alt="">

@@ -25,8 +25,8 @@ unset($_SESSION['old_input'], $_SESSION['errors'], $_SESSION['success']);
 
         <section class="window">
             <article class="create">
-                <div><!-- login para criar usuario -->
-                    <img src="" alt="">
+                <div class="userCreate"><!-- login para criar usuario -->
+                    <img src="../assets/img/iconBookare.png" alt="">
                     <h3>Crie sua conta</h3>
                     <p>ou <em><a href="loginUser.php">entrar</a>.</em></p>
                     
@@ -43,27 +43,27 @@ unset($_SESSION['old_input'], $_SESSION['errors'], $_SESSION['success']);
                         
                         <!-- Nome de Usuario -->
                         <div class="field">
-                            <label for="username">Nome de usuário</label>
-                            <input id="username" name="username" type="text" required maxlength="50" value="<?php echo htmlspecialchars($old['username'] ?? ''); ?>">
+                            <label for="username"></label>
+                            <input id="username" name="username" type="text" placeholder="Nome de Usuário" required maxlength="50" value="<?php echo htmlspecialchars($old['username'] ?? ''); ?>">
                         </div>
 
                         <!-- E-mail do Usuario -->
                         <div class="field">
-                            <label for="email">E‑mail</label>
-                            <input id="email" name="email" type="email" required maxlength="255" value="<?php echo htmlspecialchars($old['email'] ?? ''); ?>">
+                            <label for="email"></label>
+                            <input id="email" name="email" type="email" placeholder="E-mail" required maxlength="255" value="<?php echo htmlspecialchars($old['email'] ?? ''); ?>">
                         </div>
 
                         <!-- Senha do Usuario -->
                         <div class="field">
-                            <label for="password">Senha</label>
-                            <input id="password" name="password" type="password" required minlength="8" autocomplete="new-password">
+                            <label for="password"></label>
+                            <input id="password" name="password" type="password" placeholder="Senha" required minlength="8" autocomplete="new-password">
                             <small class="hint">Mínimo 8 caracteres.</small>
                         </div>
 
                         <!-- Verificação de Senha do Usuario -->
                         <div class="field">
-                            <label for="password_confirm">Confirmar senha</label>
-                            <input id="password_confirm" name="password_confirm" type="password" required minlength="8" autocomplete="new-password">
+                            <label for="password_confirm"></label>
+                            <input id="password_confirm" name="password_confirm" type="password" placeholder="Confirmar Senha" required minlength="8" autocomplete="new-password">
                         </div>
 
                         <!-- Botao "Seguinte" para seguir para proxima etapa do cadastro -->
@@ -72,8 +72,14 @@ unset($_SESSION['old_input'], $_SESSION['errors'], $_SESSION['success']);
 
                 </div>
 
-                <div><!-- banner do login( etapas do cadastro) -->
-
+                <div class="infoCreate"><!-- banner do login( etapas do cadastro) -->
+                    <div class="iconCreate">
+                        <img src="../assets/img/iconCreate.png" alt="">
+                    </div>
+                    <div class="textCreate">
+                        <h2>Criação da Conta</h2>
+                        <p>Suas informações pessoais e a segurança da sua conta são fundamentais para que o Bookare funcione com confiança: elas nos ajudam a proteger seu acesso, garantir comunicações seguras e permitir que você use todos os recursos da plataforma sem preocupações.</p>
+                    </div>        
                 </div>
             </article>
         </section>

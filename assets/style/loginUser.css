@@ -196,4 +196,12 @@ form label {
     font-size: 1.7rem;
 }
 
+.fraseBanner a{
+    margin-top: 10px;
+}
+
+.fraseBanner a img{
+    height: 45px;
+}
+
 

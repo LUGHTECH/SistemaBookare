@@ -1,6 +1,8 @@
 html, body {
     margin: 0;
+    font-family: sans-serif;
 }
+
 
 main{
     display: flex;
@@ -39,7 +41,8 @@ main{
     align-items: center;
     width: 25%;
     border: solid;
-    padding: 3% 7% 3% 7%;
+    padding: 3% 5% 3% 5%;
+    width: 80%;
 }
 
 form {
@@ -48,7 +51,59 @@ form {
     align-items: center;
     justify-content: space-between;
     gap: 20%;
+
 }
+
+.userCreate{
+    border: solid blueviolet;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
+
+   
+}
+
+.userCreate h3{
+    font-size: 1.4rem;
+    color: #008080;
+    margin-bottom: 5px;
+}
+
+.userCreate p a{
+    color: #008080;
+}
+
+.userCreate form .field{
+  
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.userCreate form .field input{
+     padding: 14px 30px;
+     border-radius: 20px;
+     font-size: 1rem;
+     color: gray;
+}
+
+.userCreate p{
+   margin-top: 0;
+   font-size: 1.2rem;
+   color: #008080;
+}
+
+.userCreate img{
+    height: 60px;
+    width: 90px;
+    border: solid;
+}
+
 
 form div {
     display: flex;
@@ -59,4 +114,38 @@ form div {
 form label {
     width: 100%;
     text-align: start;
+}
+
+
+.infoCreate{
+    border: solid red;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.textCreate{
+    text-align: center;
+}
+
+.textCreate h2{
+    font-size: 1.8rem;
+    color: #00B7AD;
+}
+
+.textCreate p{
+    font-size: 1.2rem;
+}
+
+.iconCreate{
+    height: 80px;
+    width: 80px;
+    
+}
+
+.iconCreate img{
+    width: 100%;
 }
