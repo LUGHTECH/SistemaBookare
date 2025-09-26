@@ -19,6 +19,10 @@ $username = $_SESSION['username'] ?? null;
 
             <section class="abas"> 
                 <div class="abas-menu">
+                <!-- "ativo" é a principal padrao, e todda aba-link é uma opção, para adicionar mais paginas é so adicionar 
+                 mais botao quele ele busca pela data-aba, so quero deixar meu depoimento que foi dor de cabeça 
+                 tentar a arrumar o listar pra depois decobrir que o problema era o connnect.php, slk -->
+
                     <button class="aba-link ativo" data-aba="info">Info</button>
                     <button class="aba-link" data-aba="addLivro">Adicionar livros</button>
                     <button class="aba-link" data-aba="listarLivro">Meus Livros</button>
