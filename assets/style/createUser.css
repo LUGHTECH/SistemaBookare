@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     font-family: sans-serif;
+    overflow-y: hidden;
 }
 
 
@@ -13,13 +14,14 @@ main{
 
 .banner {
     display: block;
-    width: 37%;
+    width: 38%;
     height: 100%;
-    background-image: url('../../assets/img/bannerCreate2.png');
+    background-image: url('../../assets/img/bannerLogin.jpg');
     background-size: cover;     
     background-position: center;
     background-repeat: no-repeat;
     background-color: #333;
+    padding: 2% 5% 0 4%;
 }
 
 .window {
@@ -33,16 +35,21 @@ main{
     background-position: center;
     background-repeat: repeat;
     background-color: #fff;
+    padding: 0 5%;
 }
 
 .create {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25%;
-    border: solid;
-    padding: 3% 5% 3% 5%;
-    width: 80%;
+    padding: 3% 4% 3% 4%;
+    width: 82%;
+    gap: 10px;
+    border-radius: 30px;
+    background-color: white;
+    border: #33333386 solid 4px;
+      -webkit-box-shadow: -7px 5px 10px 5px rgba(0,0,0,0.23); 
+    box-shadow: -7px 5px 10px 5px rgba(0,0,0,0.23);
 }
 
 form {
@@ -50,19 +57,18 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 20%;
+    gap: 0.7rem;
 
 }
 
 .userCreate{
-    border: solid blueviolet;
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center ;
-
-   
+    border-right: 3px solid gray; 
+    padding: 2% 4%;
 }
 
 .userCreate h3{
@@ -76,7 +82,6 @@ form {
 }
 
 .userCreate form .field{
-  
     gap: 1rem;
     display: flex;
     flex-direction: column;
@@ -86,10 +91,24 @@ form {
 
 
 .userCreate form .field input{
-     padding: 14px 30px;
+     padding: 14px 50px;
      border-radius: 20px;
      font-size: 1rem;
      color: gray;
+     border: solid gray;
+}
+
+form .btn{
+    border: none;
+    padding: 12px   ;
+    width: 80%;
+    background-color: #00b7aeb6;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: white;
+    font-weight: 700;
+    margin-top: 30px;
 }
 
 .userCreate p{
@@ -100,8 +119,7 @@ form {
 
 .userCreate img{
     height: 60px;
-    width: 90px;
-    border: solid;
+    width: 150px;
 }
 
 
@@ -118,12 +136,12 @@ form label {
 
 
 .infoCreate{
-    border: solid red;
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 2% 4%;
 
 }
 
@@ -138,6 +156,7 @@ form label {
 
 .textCreate p{
     font-size: 1.2rem;
+    text-align: justify;
 }
 
 .iconCreate{
@@ -149,3 +168,63 @@ form label {
 .iconCreate img{
     width: 100%;
 }
+
+.errors{
+   margin: 10px;
+   color: #008080;
+   height: 80px;
+   padding: 0 5px;
+   text-align: center;
+}  
+
+
+.poeira{
+    color: white;
+}
+
+.poeira h1{
+    font-size: 2.5rem;
+    height: 20%;
+}
+
+.poeira p{
+    font-size: 1.4rem;
+}
+
+.citacao{
+    color: white;
+    height: 10%;
+
+}
+
+.citacao p{
+    margin: 0;
+    margin: 5px;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.voltar{
+    height: 45px;
+    display: flex;
+    justify-content: end;
+}
+
+.voltar a img{
+    height: 100%;
+}
+
+.plateleira{
+    display: flex;
+    justify-content: end;
+    height: 53%;
+}
+
+.plateleira img{
+    height: 100%;
+}
+
+.success a{
+    color: #008080
+}
+

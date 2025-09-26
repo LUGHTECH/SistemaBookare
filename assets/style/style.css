@@ -97,6 +97,7 @@ header .container nav{
     padding-right: 3%;
     font-weight: 600;
     color: white;
+    text-transform: capitalize;
 
 }
 
@@ -159,7 +160,7 @@ header .container nav{
 }
 
 .forms a{
-    border-bottom: 1px outset #008080;
+    border-bottom: 1px outset #ffffff;
     font-size: 1rem;
     text-align: center;
     margin: 5px;

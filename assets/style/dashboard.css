@@ -13,7 +13,7 @@
   
     display: flex;
     gap: 5px;
-    padding: 0 6.2% 0 5%;
+    padding: 0 7% 0 5%;
     text-align: center;
     width: 100%;
     margin: 5px 0;
@@ -30,7 +30,6 @@
 
 
 .seusLivros{
-    
     border-bottom: 2px solid;
     border-left: 2px solid;
     border-right: 2px solid;
@@ -39,9 +38,9 @@
     grid-template-columns: 1fr; /* 3 colunas: fixa, fixa, flexível */
     grid-auto-rows: 80px;
     gap: 10px;
-    padding: 2% 4%;
+    padding: 2% 5%;
     overflow-y: auto;
-    height: 600px;
+    height: 430px;
     border-radius: 0px 8px 8px 8px;
     background-color: white;
     margin-top: 5px;
@@ -98,4 +97,45 @@
 .contB{
     display: flex;
   
+}
+
+
+.abas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.abas-menu{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.abas-menu .aba-link{
+    padding: 8px 20px;
+    border-radius: 10px 10px 0 0px;
+    font-size: 0.8rem;
+    border-top: 2px solid gray;
+    border-left: 2px solid gray;
+    border-right: 2px solid gray;
+    border-bottom: none;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.container2{
+   padding: 0 2%;
+   width: 85%;
+}
+
+.tabGroup{
+    border: 2px solid gray;
+    width: 100%;
+    border-radius: 0 10px 10px 10px ;
+    background-color: white;
+    -webkit-box-shadow: -7px 5px 10px 5px rgba(0,0,0,0.23); 
+    box-shadow: -7px 5px 10px 5px rgba(0,0,0,0.23);
 }

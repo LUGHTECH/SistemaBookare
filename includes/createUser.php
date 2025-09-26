@@ -21,7 +21,22 @@ unset($_SESSION['old_input'], $_SESSION['errors'], $_SESSION['success']);
 <body>
     <main>
 
-        <section class="banner"></section>
+        <section class="banner">
+            <div class="poeira">
+                <h1>Pare de Deixar Livros Empoeirados.</h1>
+                <p>Troque, doe, descubra - junte-se a <strong>comunidades</strong> e dê às suas leituras o destino que merecem.</p>
+            </div>
+            <div class="citacao">
+                <p>"Sempre imaginei que o paraiso fosse uma especie de biblioteca"</p>
+                <p>-Jorge Luis Borges</p>
+            </div>
+            <div class="voltar">
+                <a href="../index.php"><img src="../assets/img/voltarIcon.png" alt=""></a>
+            </div>
+            <div class="plateleira">
+                <img src="../assets/img/plateleiraIcon.png" alt="">
+            </div>
+        </section>
 
         <section class="window">
             <article class="create">
@@ -30,13 +45,7 @@ unset($_SESSION['old_input'], $_SESSION['errors'], $_SESSION['success']);
                     <h3>Crie sua conta</h3>
                     <p>ou <em><a href="loginUser.php">entrar</a>.</em></p>
                     
-                    <div class="errors">
-                        <?php foreach ($errors as $e) echo "• " . htmlspecialchars($e) . "<br>"; ?>
-                    </div>
-
-                    <?php if ($success): ?>
-                    <div class="success">Cadastro realizado com sucesso. Você pode <a href="loginUser.php">entrar</a>.</div>
-                    <?php endif; ?>
+                    
                     
                     <form action="createUser.act.php" method="post" autocomplete="off" novalidate>
                         <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
@@ -56,8 +65,8 @@ unset($_SESSION['old_input'], $_SESSION['errors'], $_SESSION['success']);
                         <!-- Senha do Usuario -->
                         <div class="field">
                             <label for="password"></label>
-                            <input id="password" name="password" type="password" placeholder="Senha" required minlength="8" autocomplete="new-password">
-                            <small class="hint">Mínimo 8 caracteres.</small>
+                            <input id="password" name="password" type="password" placeholder="Senha (Mín 8 caracteres)" required minlength="8" autocomplete="new-password">
+                            
                         </div>
 
                         <!-- Verificação de Senha do Usuario -->
@@ -67,12 +76,22 @@ unset($_SESSION['old_input'], $_SESSION['errors'], $_SESSION['success']);
                         </div>
 
                         <!-- Botao "Seguinte" para seguir para proxima etapa do cadastro -->
-                        <button class="btn" type="submit">Criar conta</button>
+                        <button class="btn" type="submit">Seguinte</button>
                     </form>
 
                 </div>
 
                 <div class="infoCreate"><!-- banner do login( etapas do cadastro) -->
+                    <div class="errors">
+                    <?php if ($success){
+                        echo"<div class='success'>Cadastro realizado com sucesso. Você pode <a href='loginUser.php'>entrar</a>.</div>";
+                    }else{
+                         foreach ($errors as $e) echo "• " . htmlspecialchars($e) . "<br>"; 
+                    }
+                      
+                    ?>
+                        
+                    </div>
                     <div class="iconCreate">
                         <img src="../assets/img/iconCreate.png" alt="">
                     </div>

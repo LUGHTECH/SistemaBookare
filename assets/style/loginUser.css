@@ -162,17 +162,18 @@ form label {
 }
 
 .textBanner h1{
-    font-size: 3.2rem;
+    font-size: 2.5rem;
     color: white;
 }
 
 .textBanner h2{
     color: rgb(255, 255, 255);
     font-weight: 100;
+    font-size: 1.4rem;
 }
 
 .textBanner p{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color:  rgb(255, 255, 255);
 }
 
@@ -187,13 +188,14 @@ form label {
 }
 
 .fraseBanner p{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: white;
+    font-style: italic;
 }
 
 .fraseBanner p span{
     font-style: italic;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
 }
 
 .fraseBanner a{

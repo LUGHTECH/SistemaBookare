@@ -18,6 +18,7 @@ $username = $_SESSION['username'] ?? null;
             </section>
 
             <section class="abas"> 
+                <div class="container2">
                 <div class="abas-menu">
                 <!-- "ativo" é a principal padrao, e todda aba-link é uma opção, para adicionar mais paginas é so adicionar 
                  mais botao quele ele busca pela data-aba, so quero deixar meu depoimento que foi dor de cabeça 
@@ -33,14 +34,9 @@ $username = $_SESSION['username'] ?? null;
 
                     <?php include("../includes/dashboard/tabViews/info.php");?>
                 </div>
-            
+             </div>
             </section>
-
-            <!-- botao de logout, vai por min cleb e necessario -->
-            <form method="post" action="logout.php" style="display:inline">
-                <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
-                <button type="submit">Sair</button>
-            </form>
+     
         
         <!-- fecha o if com else -->
         <?php else: ?>
