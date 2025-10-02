@@ -55,7 +55,7 @@ $username = $_SESSION['username'] ?? null;
                                 echo "<img src='../bd/imgBd/{$livros['foto']}' alt='Capa do livro'>";
                             echo "</div>";
                             echo "<div class='botao'><a href='alterarLivro.php'><img src='../assets/img/editIcon.png'></img></a></div>";
-                            echo "<div class='botao'><a href=javascript:excluir($livros[id_livro],\"livro\")><img src='../assets/img/lixeiraIcon.png'></img></a></div>";
+                            echo "<div class='botao'><a href='#' onclick='abrirModal($livros[id_livro]," . json_encode($livros['titulo']) . ", \"livro\"); return false'><img src='../assets/img/lixeiraIcon.png'></img></a></div>";
                             
                         echo "</div>";
                     }

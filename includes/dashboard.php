@@ -2,14 +2,14 @@
 <?php
 session_start();
 $username = $_SESSION['username'] ?? null;
-$idUsuario = $_SESSION['id_usuario'] ?? null;
 ?>
 
+<head><title>Bookare-Dashboard</title></head>
 <!-- header  -->
 <?php include("header.php");?>
 <?php include("topo.php");?>
 
-<body class="as">
+<body>
     <main>
         <!-- abre o if -->
         <?php if ($username): ?>
@@ -21,7 +21,7 @@ $idUsuario = $_SESSION['id_usuario'] ?? null;
             <section class="abas"> 
                 <div class="container2">
                 <div class="abas-menu">
-                <!-- "ativo" é a principal padrao, e todda aba-link é uma opção, para adicionar mais paginas é so adicionar 
+                <!-- "ativo" é a principal padrao, e toda aba-link é uma opção, para adicionar mais paginas é so adicionar 
                  mais botao quele ele busca pela data-aba, so quero deixar meu depoimento que foi dor de cabeça 
                  tentar a arrumar o listar pra depois decobrir que o problema era o connnect.php, slk -->
 
@@ -46,11 +46,21 @@ $idUsuario = $_SESSION['id_usuario'] ?? null;
         <?php endif; ?>
     </main>
 
+    <div class="modal" id="confirmarModal">
+            <div class="modal-content">
+                <div class="close"><h3>Excluir</h3><img onclick="fecharModal()" src="../assets/img/close.png" alt=""></div>
+                <p id="mensagemModal"></p>
+                <div class="modal-botoes">
+                    <button class="yes" onclick="confirmarExclusao()">Sim</button>
+                    <button class="no" onclick="fecharModal()">Cancelar</button>
+                </div>
+            </div>
+    </div>
+
 <!-- Script -->
 <script src="../assets/js/jquery-3.7.1.min.js"></script>
 <script src="../assets/js/tab.js"></script>
 <script src="../assets/js/app.js"></script>
-<script src="../assets/js/buscaLivro.js"></script>
 
 </body>
 </html>
