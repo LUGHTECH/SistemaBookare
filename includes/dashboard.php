@@ -2,13 +2,14 @@
 <?php
 session_start();
 $username = $_SESSION['username'] ?? null;
+$idUsuario = $_SESSION['id_usuario'] ?? null;
 ?>
 
 <!-- header  -->
 <?php include("header.php");?>
 <?php include("topo.php");?>
 
-<body>
+<body class="as">
     <main>
         <!-- abre o if -->
         <?php if ($username): ?>
@@ -49,6 +50,7 @@ $username = $_SESSION['username'] ?? null;
 <script src="../assets/js/jquery-3.7.1.min.js"></script>
 <script src="../assets/js/tab.js"></script>
 <script src="../assets/js/app.js"></script>
+<script src="../assets/js/buscaLivro.js"></script>
 
 </body>
 </html>
