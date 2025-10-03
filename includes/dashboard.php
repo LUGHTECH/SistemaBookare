@@ -61,6 +61,9 @@ $username = $_SESSION['username'] ?? null;
 <script src="../assets/js/jquery-3.7.1.min.js"></script>
 <script src="../assets/js/tab.js"></script>
 <script src="../assets/js/app.js"></script>
+<script src="../assets/js/buscaLivro.js"></script>
+
+
 
 </body>
 </html>
