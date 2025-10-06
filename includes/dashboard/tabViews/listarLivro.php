@@ -27,7 +27,7 @@ $username = $_SESSION['username'] ?? null;
              <div class="seusLivros">
 
                  <?php
-                $id_usuario = $_SESSION['user_id'];
+                $id_usuario = $_SESSION['id_usuario'];
                 require('../../connect.php');
                 $livro = mysqli_query($con2, "SELECT 
                                                     l.id_livro,

@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Sep 18, 2025 at 10:11 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Host: 127.0.0.1
+-- Tempo de geração: 06/10/2025 às 23:59
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bd_bookare`
+-- Banco de dados: `bd_bookare`
 --
 CREATE DATABASE IF NOT EXISTS `bd_bookare` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 USE `bd_bookare`;
@@ -26,7 +26,7 @@ USE `bd_bookare`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_autor`
+-- Estrutura para tabela `tb_autor`
 --
 
 CREATE TABLE `tb_autor` (
@@ -34,10 +34,17 @@ CREATE TABLE `tb_autor` (
   `autor` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Despejando dados para a tabela `tb_autor`
+--
+
+INSERT INTO `tb_autor` (`id_autor`, `autor`) VALUES
+(1, 'Arthur Conan Doyle');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_avaliacao`
+-- Estrutura para tabela `tb_avaliacao`
 --
 
 CREATE TABLE `tb_avaliacao` (
@@ -51,7 +58,7 @@ CREATE TABLE `tb_avaliacao` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_contato`
+-- Estrutura para tabela `tb_contato`
 --
 
 CREATE TABLE `tb_contato` (
@@ -65,7 +72,7 @@ CREATE TABLE `tb_contato` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_editora`
+-- Estrutura para tabela `tb_editora`
 --
 
 CREATE TABLE `tb_editora` (
@@ -73,10 +80,17 @@ CREATE TABLE `tb_editora` (
   `editora` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Despejando dados para a tabela `tb_editora`
+--
+
+INSERT INTO `tb_editora` (`id_editora`, `editora`) VALUES
+(1, 'Principis');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_endereco`
+-- Estrutura para tabela `tb_endereco`
 --
 
 CREATE TABLE `tb_endereco` (
@@ -94,7 +108,7 @@ CREATE TABLE `tb_endereco` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_estado`
+-- Estrutura para tabela `tb_estado`
 --
 
 CREATE TABLE `tb_estado` (
@@ -105,7 +119,7 @@ CREATE TABLE `tb_estado` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_genero`
+-- Estrutura para tabela `tb_genero`
 --
 
 CREATE TABLE `tb_genero` (
@@ -113,10 +127,17 @@ CREATE TABLE `tb_genero` (
   `genero` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Despejando dados para a tabela `tb_genero`
+--
+
+INSERT INTO `tb_genero` (`id_genero`, `genero`) VALUES
+(1, 'Fiction');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_idioma`
+-- Estrutura para tabela `tb_idioma`
 --
 
 CREATE TABLE `tb_idioma` (
@@ -125,10 +146,17 @@ CREATE TABLE `tb_idioma` (
   `nome` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Despejando dados para a tabela `tb_idioma`
+--
+
+INSERT INTO `tb_idioma` (`id_idioma`, `codigo_idioma`, `nome`) VALUES
+(1, 'pt', '');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_livro`
+-- Estrutura para tabela `tb_livro`
 --
 
 CREATE TABLE `tb_livro` (
@@ -147,10 +175,17 @@ CREATE TABLE `tb_livro` (
   `estado_conservacao_livro` enum('Novo','Seminovo','Com Marcas de Uso','Danos Leves','Danos Severos') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Despejando dados para a tabela `tb_livro`
+--
+
+INSERT INTO `tb_livro` (`id_livro`, `id_usuario`, `isbn`, `nome_livro`, `id_livro_imagem`, `id_genero`, `id_autor`, `id_editora`, `id_idioma`, `ano_pub_livro`, `sinopse_livro`, `data_add_livro`, `estado_conservacao_livro`) VALUES
+(1, 1, '', 'Sherlock Holmes - O cão dos Baskerville', NULL, 1, 1, 1, 1, 2019, 'Holmes investiga a morte do milionário Sir Charles Baskerville que foi encontrado em um pântano próximo a sua casa. Uma lenda local dizia que ele foi assassinado por um cão que assombrava a região. Será isso mesmo?', '2025-10-06 21:58:11', 'Novo');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_livrogenero`
+-- Estrutura para tabela `tb_livrogenero`
 --
 
 CREATE TABLE `tb_livrogenero` (
@@ -161,7 +196,7 @@ CREATE TABLE `tb_livrogenero` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_livro_imagem`
+-- Estrutura para tabela `tb_livro_imagem`
 --
 
 CREATE TABLE `tb_livro_imagem` (
@@ -176,7 +211,7 @@ CREATE TABLE `tb_livro_imagem` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_troca`
+-- Estrutura para tabela `tb_troca`
 --
 
 CREATE TABLE `tb_troca` (
@@ -190,49 +225,57 @@ CREATE TABLE `tb_troca` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_usuario`
+-- Estrutura para tabela `tb_usuario`
 --
 
 CREATE TABLE `tb_usuario` (
   `id_usuario` int(11) NOT NULL,
   `nome_usuario` varchar(50) NOT NULL,
   `email_usuario` varchar(30) NOT NULL,
-  `senha_usuario` varchar(20) NOT NULL,
+  `senha_usuario` varchar(60) NOT NULL,
   `status_usuario` tinyint(1) NOT NULL,
-  `foto` varchar(150) NOT NULL
+  `foto` varchar(150) NOT NULL,
+  `criado_em` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Indexes for dumped tables
+-- Despejando dados para a tabela `tb_usuario`
+--
+
+INSERT INTO `tb_usuario` (`id_usuario`, `nome_usuario`, `email_usuario`, `senha_usuario`, `status_usuario`, `foto`, `criado_em`) VALUES
+(1, 'Cleberson', 'cleber4557@gmail.com', '$2y$10$YXMBc1extbO2Flh3iZ5MxOpP/o2Kk8UZ9oUWeSTgoOn2IXN.R5/Om', 0, '', '2025-10-06 21:57:30');
+
+--
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `tb_autor`
+-- Índices de tabela `tb_autor`
 --
 ALTER TABLE `tb_autor`
   ADD PRIMARY KEY (`id_autor`);
 
 --
--- Indexes for table `tb_avaliacao`
+-- Índices de tabela `tb_avaliacao`
 --
 ALTER TABLE `tb_avaliacao`
   ADD PRIMARY KEY (`id_avaliacao`);
 
 --
--- Indexes for table `tb_contato`
+-- Índices de tabela `tb_contato`
 --
 ALTER TABLE `tb_contato`
   ADD PRIMARY KEY (`id_contato`),
   ADD KEY `fk_contato_usuario` (`id_usuario`);
 
 --
--- Indexes for table `tb_editora`
+-- Índices de tabela `tb_editora`
 --
 ALTER TABLE `tb_editora`
   ADD PRIMARY KEY (`id_editora`);
 
 --
--- Indexes for table `tb_endereco`
+-- Índices de tabela `tb_endereco`
 --
 ALTER TABLE `tb_endereco`
   ADD PRIMARY KEY (`id_endereco`),
@@ -240,26 +283,26 @@ ALTER TABLE `tb_endereco`
   ADD KEY `fk_endereco_estado` (`id_estado`);
 
 --
--- Indexes for table `tb_estado`
+-- Índices de tabela `tb_estado`
 --
 ALTER TABLE `tb_estado`
   ADD PRIMARY KEY (`id_estado`);
 
 --
--- Indexes for table `tb_genero`
+-- Índices de tabela `tb_genero`
 --
 ALTER TABLE `tb_genero`
   ADD PRIMARY KEY (`id_genero`);
 
 --
--- Indexes for table `tb_idioma`
+-- Índices de tabela `tb_idioma`
 --
 ALTER TABLE `tb_idioma`
   ADD PRIMARY KEY (`id_idioma`),
   ADD UNIQUE KEY `uc_codigo` (`codigo_idioma`);
 
 --
--- Indexes for table `tb_livro`
+-- Índices de tabela `tb_livro`
 --
 ALTER TABLE `tb_livro`
   ADD PRIMARY KEY (`id_livro`),
@@ -271,21 +314,21 @@ ALTER TABLE `tb_livro`
   ADD KEY `fk_livro_imagem_principal` (`id_livro_imagem`);
 
 --
--- Indexes for table `tb_livrogenero`
+-- Índices de tabela `tb_livrogenero`
 --
 ALTER TABLE `tb_livrogenero`
   ADD KEY `id_livro` (`id_livro`,`id_genero`),
   ADD KEY `fk_livrogenero_genero` (`id_genero`);
 
 --
--- Indexes for table `tb_livro_imagem`
+-- Índices de tabela `tb_livro_imagem`
 --
 ALTER TABLE `tb_livro_imagem`
   ADD PRIMARY KEY (`id_livro_imagem`),
   ADD KEY `id_livro` (`id_livro`);
 
 --
--- Indexes for table `tb_troca`
+-- Índices de tabela `tb_troca`
 --
 ALTER TABLE `tb_troca`
   ADD PRIMARY KEY (`id_troca`),
@@ -295,106 +338,106 @@ ALTER TABLE `tb_troca`
   ADD KEY `fk_troca_avaliacao` (`id_avaliacao`);
 
 --
--- Indexes for table `tb_usuario`
+-- Índices de tabela `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `tb_autor`
+-- AUTO_INCREMENT de tabela `tb_autor`
 --
 ALTER TABLE `tb_autor`
-  MODIFY `id_autor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_autor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tb_avaliacao`
+-- AUTO_INCREMENT de tabela `tb_avaliacao`
 --
 ALTER TABLE `tb_avaliacao`
   MODIFY `id_avaliacao` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_contato`
+-- AUTO_INCREMENT de tabela `tb_contato`
 --
 ALTER TABLE `tb_contato`
   MODIFY `id_contato` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_editora`
+-- AUTO_INCREMENT de tabela `tb_editora`
 --
 ALTER TABLE `tb_editora`
-  MODIFY `id_editora` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_editora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tb_endereco`
+-- AUTO_INCREMENT de tabela `tb_endereco`
 --
 ALTER TABLE `tb_endereco`
   MODIFY `id_endereco` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_estado`
+-- AUTO_INCREMENT de tabela `tb_estado`
 --
 ALTER TABLE `tb_estado`
   MODIFY `id_estado` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_genero`
+-- AUTO_INCREMENT de tabela `tb_genero`
 --
 ALTER TABLE `tb_genero`
-  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tb_idioma`
+-- AUTO_INCREMENT de tabela `tb_idioma`
 --
 ALTER TABLE `tb_idioma`
-  MODIFY `id_idioma` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_idioma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tb_livro`
+-- AUTO_INCREMENT de tabela `tb_livro`
 --
 ALTER TABLE `tb_livro`
-  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tb_livro_imagem`
+-- AUTO_INCREMENT de tabela `tb_livro_imagem`
 --
 ALTER TABLE `tb_livro_imagem`
   MODIFY `id_livro_imagem` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_troca`
+-- AUTO_INCREMENT de tabela `tb_troca`
 --
 ALTER TABLE `tb_troca`
   MODIFY `id_troca` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_usuario`
+-- AUTO_INCREMENT de tabela `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Constraints for dumped tables
+-- Restrições para tabelas despejadas
 --
 
 --
--- Constraints for table `tb_contato`
+-- Restrições para tabelas `tb_contato`
 --
 ALTER TABLE `tb_contato`
   ADD CONSTRAINT `fk_contato_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `tb_usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `tb_endereco`
+-- Restrições para tabelas `tb_endereco`
 --
 ALTER TABLE `tb_endereco`
   ADD CONSTRAINT `fk_endereco_estado` FOREIGN KEY (`id_estado`) REFERENCES `tb_estado` (`id_estado`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_endereco_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `tb_usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `tb_livro`
+-- Restrições para tabelas `tb_livro`
 --
 ALTER TABLE `tb_livro`
   ADD CONSTRAINT `fk_livro_autor` FOREIGN KEY (`id_autor`) REFERENCES `tb_autor` (`id_autor`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -405,20 +448,20 @@ ALTER TABLE `tb_livro`
   ADD CONSTRAINT `fk_tb_livro_id_idioma` FOREIGN KEY (`id_idioma`) REFERENCES `tb_idioma` (`id_idioma`);
 
 --
--- Constraints for table `tb_livrogenero`
+-- Restrições para tabelas `tb_livrogenero`
 --
 ALTER TABLE `tb_livrogenero`
   ADD CONSTRAINT `fk_livrogenero_genero` FOREIGN KEY (`id_genero`) REFERENCES `tb_genero` (`id_genero`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_livrogenero_livro` FOREIGN KEY (`id_livro`) REFERENCES `tb_livro` (`id_livro`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `tb_livro_imagem`
+-- Restrições para tabelas `tb_livro_imagem`
 --
 ALTER TABLE `tb_livro_imagem`
   ADD CONSTRAINT `tb_livro_imagem_ibfk_1` FOREIGN KEY (`id_livro`) REFERENCES `tb_livro` (`id_livro`);
 
 --
--- Constraints for table `tb_troca`
+-- Restrições para tabelas `tb_troca`
 --
 ALTER TABLE `tb_troca`
   ADD CONSTRAINT `fk_troca_avaliacao` FOREIGN KEY (`id_avaliacao`) REFERENCES `tb_avaliacao` (`id_avaliacao`) ON DELETE CASCADE ON UPDATE CASCADE,
