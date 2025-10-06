@@ -18,7 +18,7 @@ if (empty($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'] ?? '', $
 }
 
 $identifier = trim((string)($_POST['identifier'] ?? ''));
-$password = (string)($_POST['password'] ?? '');
+$password = (string)($_POST['senha_usuario'] ?? '');
 
 $errors = [];
 $old_input = ['identifier' => $identifier];
@@ -51,7 +51,7 @@ if ($errors) {
 
 // Conexão ao DB (XAMPP padrão). Ajuste se necessário.
 $host = 'localhost';
-$db   = 'bookare_db';
+$db   = 'bd_bookare';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';
@@ -72,8 +72,8 @@ try {
 
 // busca pelo e-mail ou nome de usuário (corrigido)
 $stmt = $pdo->prepare(
-    'SELECT id, username, password FROM user 
-     WHERE email = :identifier OR username = :identifier2 
+    'SELECT id_usuario, nome_usuario, senha_usuario FROM tb_usuario 
+     WHERE email_usuario = :identifier OR nome_usuario = :identifier2 
      LIMIT 1'
 );
 $stmt->execute([
@@ -83,7 +83,7 @@ $stmt->execute([
 $userRow = $stmt->fetch();
 
 
-if (!$userRow || !password_verify($password, $userRow['password'])) {
+if (!$userRow || !password_verify($password, $userRow['senha_usuario'])) {
     // mensagem genérica (não expõe se o email/usuário existe)
     $_SESSION['errors'] = ['E-mail/nome de usuário ou senha inválidos.'];
     $_SESSION['old_input'] = $old_input;
@@ -93,8 +93,8 @@ if (!$userRow || !password_verify($password, $userRow['password'])) {
 
 // Login bem-sucedido: configura sessão segura
 session_regenerate_id(true);
-$_SESSION['user_id'] = $userRow['id'];
-$_SESSION['username'] = $userRow['username'];
+$_SESSION['id_usuario'] = $userRow['id_usuario'];
+$_SESSION['username'] = $userRow['nome_usuario'];
 
 // Redireciona para área restrita (crie dashboard.php ou altere conforme necessário)
 header('Location: dashboard.php');

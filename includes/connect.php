@@ -5,7 +5,7 @@ if(!$con = mysqli_connect('localhost','root','','testeGenero')){
 mysqli_query($con,"SET NAMES utf8");
 
 
-if(!$con2 = mysqli_connect('localhost','root','','bookare_db')){
+if(!$con2 = mysqli_connect('localhost','root','','bd_bookare')){
     echo "Erro ao se conectar com a base de dados";
 }
 mysqli_query($con,"SET NAMES utf8");

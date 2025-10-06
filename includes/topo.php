@@ -20,7 +20,7 @@ $username = $_SESSION['username'] ?? null;?>
                     <div class="entrar">
                         <?php
                             @session_start();
-                            if(!isset($_SESSION['user_id'])){
+                            if(!isset($_SESSION['id_usuario'])){
                                 echo "<a href='includes/createUser.php'>Entrar</a>";
 
                             } else{

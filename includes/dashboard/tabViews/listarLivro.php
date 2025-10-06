@@ -31,31 +31,38 @@ $username = $_SESSION['username'] ?? null;
                 require('../../connect.php');
                 $livro = mysqli_query($con2, "SELECT 
                                                     l.id_livro,
-                                                    l.titulo,
-                                                    l.autor,
-                                                    l.ano_publicacao,
-                                                    l.genero,
-                                                    l.foto, 
-                                                    u.username,
-                                                    u.email
-                                                FROM livros l
-                                                INNER JOIN user u
-                                                    ON l.id_usuario = u.id
+                                                    l.nome_livro,
+                                                    a.autor AS nome_autor,
+                                                    g.genero AS nome_genero,
+                                                    e.editora AS nome_editora,
+                                                    i.codigo_idioma AS idioma,
+                                                    l.ano_pub_livro,
+                                                    l.estado_conservacao_livro,
+                                                    img.caminho_imagem AS capa,
+                                                    u.nome_usuario,
+                                                    u.email_usuario
+                                                FROM tb_livro l
+                                                INNER JOIN tb_usuario u      ON l.id_usuario = u.id_usuario
+                                                LEFT JOIN tb_autor a         ON l.id_autor = a.id_autor
+                                                LEFT JOIN tb_genero g        ON l.id_genero = g.id_genero
+                                                LEFT JOIN tb_editora e       ON l.id_editora = e.id_editora
+                                                LEFT JOIN tb_idioma i        ON l.id_idioma = i.id_idioma
+                                                LEFT JOIN tb_livro_imagem img ON l.id_livro_imagem = img.id_livro_imagem
                                                 WHERE l.id_usuario = $id_usuario
-                                                ORDER BY l.titulo ASC"); //mudar esse con2 mais tarde
+                                                ORDER BY l.nome_livro ASC"); //mudar esse con2 mais tarde
                                                 
                 while($livros = mysqli_fetch_assoc($livro)) {
                         echo "<div class='conteudo'>";
                             
-                            echo "<p>{$livros['titulo']}</p>";
-                            echo "<p>{$livros['autor']}</p>";
-                            echo "<p class= 'genero'>{$livros['genero']}</p>";
-                            echo "<p class='ano'>{$livros['ano_publicacao']}</p>";
-                            echo "<div class='bookImg'>";
+                            echo "<p>{$livros['nome_livro']}</p>";
+                            echo "<p>{$livros['nome_autor']}</p>";
+                            echo "<p class= 'genero'>{$livros['nome_genero']}</p>";
+                            echo "<p class='ano'>{$livros['ano_pub_livro']}</p>";
+                            /*echo "<div class='bookImg'>";
                                 echo "<img src='../bd/imgBd/{$livros['foto']}' alt='Capa do livro'>";
-                            echo "</div>";
+                            echo "</div>";*/ // ATÉ O WENZIO ARRUMAR O INSERT DE CAPA
                             echo "<div class='botao'><a href='alterarLivro.php'><img src='../assets/img/editIcon.png'></img></a></div>";
-                            echo "<div class='botao'><a href='#' onclick='abrirModal($livros[id_livro]," . json_encode($livros['titulo']) . ", \"livro\"); return false'><img src='../assets/img/lixeiraIcon.png'></img></a></div>";
+                            echo "<div class='botao'><a href='#' onclick='abrirModal($livros[id_livro]," . json_encode($livros['nome_livro']) . ", \"livro\"); return false'><img src='../assets/img/lixeiraIcon.png'></img></a></div>";
                             
                         echo "</div>";
                     }

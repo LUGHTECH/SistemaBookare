@@ -1,7 +1,7 @@
 <!-- abre a sessão -->
 <?php
 session_start();
-$username = $_SESSION['username'] ?? null;
+$username = $_SESSION['nome_usuario'] ?? null;
 ?>
 
 <head><title>Bookare-Dashboard</title></head>
@@ -62,6 +62,8 @@ $username = $_SESSION['username'] ?? null;
 <script src="../assets/js/tab.js"></script>
 <script src="../assets/js/app.js"></script>
 <script src="../assets/js/buscaLivro.js"></script>
+<script src="../assets/js/previewCapa.js"></script>
+
 
 
 

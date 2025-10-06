@@ -3,7 +3,7 @@ session_start();
 
 // ----- Conectar ao DB (ajuste credenciais) ----- IMPORTANTE cleb
 $host = 'localhost';
-$db   = 'bookare_db'; // Nome do Banco
+$db   = 'bd_bookare'; // Nome do Banco
 $user = 'root'; // XAMPP: usuário padrão
 $pass = '';     // XAMPP: senha padrão vazia
 $charset = 'utf8mb4';
@@ -27,12 +27,12 @@ if (empty($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'] ?? '', $
 }
 
 // coleta e saneamento básico
-$username = trim((string)($_POST['username'] ?? ''));
-$email = trim((string)($_POST['email'] ?? ''));$password = (string)($_POST['password'] ?? '');
+$username = trim((string)($_POST['nome_usuario'] ?? ''));
+$email = trim((string)($_POST['email_usuario'] ?? ''));$password = (string)($_POST['senha_usuario'] ?? '');
 $password_confirm = (string)($_POST['password_confirm'] ?? '');
 
 $errors = [];
-$old_input = ['username' => $username, 'email' => $email];
+$old_input = ['nome_usuario' => $username, 'email_usuario' => $email];
 
 // validações server-side
 if ($username === '' || strlen($username) < 3) {
@@ -70,8 +70,8 @@ try {
 }
 
 // verificar se já existe usuário ou e-mail
-$stmt = $pdo->prepare('SELECT id FROM user WHERE email = :email OR username = :username LIMIT 1');
-$stmt->execute(['email' => $email, 'username' => $username]);
+$stmt = $pdo->prepare('SELECT id_usuario FROM tb_usuario WHERE email_usuario = :email_usuario OR nome_usuario = :nome_usuario LIMIT 1');
+$stmt->execute(['email_usuario' => $email, 'nome_usuario' => $username]);
 $existing = $stmt->fetch();
 if ($existing) {
     $_SESSION['errors'] = ['E‑mail ou nome de usuário já cadastrado.'];
@@ -82,9 +82,9 @@ if ($existing) {
 
 // inserir novo usuário
 $hash = password_hash($password, PASSWORD_DEFAULT);
-$insert = $pdo->prepare('INSERT INTO user (username, email, password) VALUES (:username, :email, :password)');
+$insert = $pdo->prepare('INSERT INTO tb_usuario (nome_usuario, email_usuario, senha_usuario) VALUES (:username, :email, :password)');
 try {
-    $insert->execute(['username' => $username, 'email' => $email, 'password' => $hash]);
+    $insert->execute([':username' => $username, ':email' => $email, ':password' => $hash]);
 } catch (PDOException $e) {
     // log error internamente e retornar mensagem genérica
     $_SESSION['errors'] = ['Não foi possível criar a conta no momento.'];

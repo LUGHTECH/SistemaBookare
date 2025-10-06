@@ -55,7 +55,7 @@ unset($_SESSION['old_input'], $_SESSION['errors'], $_SESSION['success']);
                         <!-- Senha do Usuario -->
                         <div class="field">
                             <label for="password"></label>
-                            <input id="password" name="password" type="password" required minlength="8" placeholder="Senha">
+                            <input id="password" name="senha_usuario" type="password" required minlength="8" placeholder="Senha">
                         </div>
 
                         <!-- Botao "Seguinte" para seguir para proxima etapa do cadastro -->

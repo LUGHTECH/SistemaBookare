@@ -23,7 +23,8 @@ function getOrCreateEntity($pdo, $tabela, $campo, $valor, $idField = null) {
     }
     
     if (!$idField) {
-        $idField = 'id_' . $tabela;
+        $tabelaSemPrefixo = preg_replace('/^tb_/', '', $tabela);
+        $idField = 'id_' . $tabelaSemPrefixo;
     }
     
     // Buscar existente
@@ -115,7 +116,8 @@ try {
     $sinopse = $_POST['sinopse'] ?? '';
     $estadoConservacao = $_POST['estadoConservacao'] ?? '';
     $isbn = $_POST['isbn'] ?? '';
-    $idUsuario = $_POST['id_usuario'] ?? null;
+    $idUsuario = $_SESSION['id_usuario'] ?? null;
+
 
     // Validar usuário
     if (!$idUsuario) {
@@ -145,6 +147,8 @@ try {
     if (!$idIdioma) {
         throw new Exception('Erro ao processar idioma');
     }
+
+    
     
     // Inserir livro
     $stmtLivro = $pdo->prepare("

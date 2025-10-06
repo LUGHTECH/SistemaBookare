@@ -53,19 +53,19 @@ unset($_SESSION['old_input'], $_SESSION['errors'], $_SESSION['success']);
                         <!-- Nome de Usuario -->
                         <div class="field">
                             <label for="username"></label>
-                            <input id="username" name="username" type="text" placeholder="Nome de Usuário" required maxlength="50" value="<?php echo htmlspecialchars($old['username'] ?? ''); ?>">
+                            <input id="username" name="nome_usuario" type="text" placeholder="Nome de Usuário" required maxlength="50" value="<?php echo htmlspecialchars($old['nome_usuario'] ?? ''); ?>">
                         </div>
 
                         <!-- E-mail do Usuario -->
                         <div class="field">
                             <label for="email"></label>
-                            <input id="email" name="email" type="email" placeholder="E-mail" required maxlength="255" value="<?php echo htmlspecialchars($old['email'] ?? ''); ?>">
+                            <input id="email" name="email_usuario" type="email" placeholder="E-mail" required maxlength="255" value="<?php echo htmlspecialchars($old['email_usuario'] ?? ''); ?>">
                         </div>
 
                         <!-- Senha do Usuario -->
                         <div class="field">
                             <label for="password"></label>
-                            <input id="password" name="password" type="password" placeholder="Senha (Mín 8 caracteres)" required minlength="8" autocomplete="new-password">
+                            <input id="password" name="senha_usuario" type="password" placeholder="Senha (Mín 8 caracteres)" required minlength="8" autocomplete="new-password">
                             
                         </div>
 
