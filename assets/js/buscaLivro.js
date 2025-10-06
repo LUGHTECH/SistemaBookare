@@ -135,6 +135,15 @@ function preencherFormularioComDadosDaAPI(livro) {
         livro.categories[0] : '';
     document.getElementById('editora').value = livro.publisher || '';
     document.getElementById('sinopse').value = livro.description || '';
+
+    const campos = ['nomeLivro', 'anoPublicacao', 'autor', 'genero', 'editora', 'sinopse', 'idioma'];
+    campos.forEach(id =>{
+        const campo = document.getElementById(id);
+        if (campo && campo.value.trim() !== ''){
+            campo.readOnly = true;
+            campo.style.backgroundColor = '#f3f3f3'; // deixa visualmente "travado"
+        }
+    })
     
     // Idioma - mapear para os códigos do seu banco
     if (livro.language) {
