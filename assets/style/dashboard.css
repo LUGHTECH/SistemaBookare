@@ -38,7 +38,7 @@
     grid-template-columns: 1fr; /* 3 colunas: fixa, fixa, flexível */
     grid-auto-rows: 80px;
     gap: 10px;
-    padding: 2% 5%;
+    padding: 2% 6.3%;
     overflow-y: auto;
     height: 430px;
     border-radius: 0px 8px 8px 8px;
@@ -83,6 +83,7 @@
 
 .conteudo p{
     width: 30%;
+    color: #005b73;
     
 }
 

@@ -157,6 +157,8 @@ try {
             id_editora, id_idioma, ano_pub_livro, sinopse_livro, estado_conservacao_livro
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ");
+    //$idGerado = $pdo->lastInsertId(); // ou mysqli_insert_id($con2)
+    //echo json_encode(['success' => true, 'idGerado' => $idGerado]);
     
     $stmtLivro->execute([
         $idUsuario, $isbn, $nomeLivro, $idGenero, $idAutor,

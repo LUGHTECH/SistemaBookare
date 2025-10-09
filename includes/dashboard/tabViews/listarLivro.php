@@ -58,9 +58,9 @@ $username = $_SESSION['username'] ?? null;
                             echo "<p>{$livros['nome_autor']}</p>";
                             echo "<p class= 'genero'>{$livros['nome_genero']}</p>";
                             echo "<p class='ano'>{$livros['ano_pub_livro']}</p>";
-                            /*echo "<div class='bookImg'>";
-                                echo "<img src='../bd/imgBd/{$livros['foto']}' alt='Capa do livro'>";
-                            echo "</div>";*/ // ATÉ O WENZIO ARRUMAR O INSERT DE CAPA
+                            echo "<div class='bookImg'>";
+                                echo "<img src='/SistemaBookare/includes/dashboard/tabViews/{$livros['capa']}' alt='Capa do livro'>";
+                            echo "</div>"; // ATÉ O WENZIO ARRUMAR O INSERT DE CAPA
                             echo "<div class='botao'><a href='alterarLivro.php'><img src='../assets/img/editIcon.png'></img></a></div>";
                             echo "<div class='botao'><a href='#' onclick='abrirModal($livros[id_livro]," . json_encode($livros['nome_livro']) . ", \"livro\"); return false'><img src='../assets/img/lixeiraIcon.png'></img></a></div>";
                             

@@ -357,8 +357,13 @@ async function handleFormSubmit() {
         });
         
         const resultado = await response.json();
+
+      
+
         
         if (resultado.success) {
+            alert("ID inserido: " + resultado.idGerado);
+
             mostrarAlerta('Livro cadastrado com sucesso!', 'success');
             limparFormulario();
         } else {

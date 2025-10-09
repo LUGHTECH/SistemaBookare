@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/10/2025 às 23:59
+-- Tempo de geração: 09/10/2025 às 02:52
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -443,7 +443,7 @@ ALTER TABLE `tb_livro`
   ADD CONSTRAINT `fk_livro_autor` FOREIGN KEY (`id_autor`) REFERENCES `tb_autor` (`id_autor`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_livro_editora` FOREIGN KEY (`id_editora`) REFERENCES `tb_editora` (`id_editora`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_livro_genero` FOREIGN KEY (`id_genero`) REFERENCES `tb_genero` (`id_genero`),
-  ADD CONSTRAINT `fk_livro_imagem_principal` FOREIGN KEY (`id_livro_imagem`) REFERENCES `tb_livro_imagem` (`id_livro_imagem`),
+  ADD CONSTRAINT `fk_livro_imagem_principal` FOREIGN KEY (`id_livro_imagem`) REFERENCES `tb_livro_imagem` (`id_livro_imagem`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_livro_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `tb_usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_tb_livro_id_idioma` FOREIGN KEY (`id_idioma`) REFERENCES `tb_idioma` (`id_idioma`);
 
@@ -458,7 +458,7 @@ ALTER TABLE `tb_livrogenero`
 -- Restrições para tabelas `tb_livro_imagem`
 --
 ALTER TABLE `tb_livro_imagem`
-  ADD CONSTRAINT `tb_livro_imagem_ibfk_1` FOREIGN KEY (`id_livro`) REFERENCES `tb_livro` (`id_livro`);
+  ADD CONSTRAINT `fk_livro_imagem` FOREIGN KEY (`id_livro`) REFERENCES `tb_livro` (`id_livro`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Restrições para tabelas `tb_troca`
