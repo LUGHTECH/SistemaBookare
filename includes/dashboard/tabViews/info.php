@@ -39,6 +39,7 @@
             }
 
             echo "<img src='/SistemaBookare/includes/dashboard/tabViews/{$infos['foto_usuario']}'";
+            $_SESSION['fotoUser'] = $infos['foto_usuario'];
             ?>
 
             
