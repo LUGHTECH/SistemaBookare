@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09/10/2025 às 02:52
+-- Tempo de geração: 11/10/2025 às 03:36
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -39,7 +39,8 @@ CREATE TABLE `tb_autor` (
 --
 
 INSERT INTO `tb_autor` (`id_autor`, `autor`) VALUES
-(1, 'Arthur Conan Doyle');
+(1, 'Arthur Conan Doyle'),
+(2, 'Agatha Christie');
 
 -- --------------------------------------------------------
 
@@ -85,7 +86,8 @@ CREATE TABLE `tb_editora` (
 --
 
 INSERT INTO `tb_editora` (`id_editora`, `editora`) VALUES
-(1, 'Principis');
+(1, 'Principis'),
+(2, 'Globo Livros');
 
 -- --------------------------------------------------------
 
@@ -180,7 +182,7 @@ CREATE TABLE `tb_livro` (
 --
 
 INSERT INTO `tb_livro` (`id_livro`, `id_usuario`, `isbn`, `nome_livro`, `id_livro_imagem`, `id_genero`, `id_autor`, `id_editora`, `id_idioma`, `ano_pub_livro`, `sinopse_livro`, `data_add_livro`, `estado_conservacao_livro`) VALUES
-(1, 1, '', 'Sherlock Holmes - O cão dos Baskerville', NULL, 1, 1, 1, 1, 2019, 'Holmes investiga a morte do milionário Sir Charles Baskerville que foi encontrado em um pântano próximo a sua casa. Uma lenda local dizia que ele foi assassinado por um cão que assombrava a região. Será isso mesmo?', '2025-10-06 21:58:11', 'Novo');
+(2, 1, '', 'E não sobrou nenhum', 1, 1, 2, 2, 1, 2014, 'Uma ilha misteriosa, um poema infantil, dez soldadinhos de porcelana e muito suspense são os ingredientes com que Agatha Christie constrói seu romance mais importante. Na ilha do Soldado, antiga propriedade de um milionário norte-americano, dez pessoas sem nenhuma ligação aparente são confrontadas por uma voz misteriosa com fatos marcantes de seus passados. Convidados pelo misterioso mr. Owen, nenhum dos presentes tem muita certeza de por que estão ali, a despeito de conjecturas pouco convincentes que os leva a crer que passariam um agradável período de descanso em mordomia. Entretanto, já na primeira noite, o mistério e o suspense se abatem sobre eles e, num instante, todos são suspeitos, todos são vítimas e todos são culpados. É neste clima de tensão e desconforto que as mortes inexplicáveis começam e, sem comunicação com o continente devido a uma forte tempestade, a estadia transforma-se em um pesadelo. Todos se perguntam: quem é o misterioso anfitrião, mr. Owen? Existe mais alguém na ilha? O assassino pode ser um dos convidados? Que mente ardilosa teria preparado um crime tão complexo? E, sobretudo, por quê? São essas e outras perguntas que o leitor será desafiado a resolver neste fabuloso romance de Agatha Christie, que envolve os espíritos mais perspicazes num complexo emaranhado de situações, lembranças e acusações na busca deste sagaz assassino. Medo, confinamento e angústia: que o leitor descubra por si mesmo porque E não sobrou nenhum foi eleito o melhor romance policial de todos os tempos.', '2025-10-10 23:09:00', 'Novo');
 
 -- --------------------------------------------------------
 
@@ -208,6 +210,13 @@ CREATE TABLE `tb_livro_imagem` (
   `dataAdd_imagem` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Despejando dados para a tabela `tb_livro_imagem`
+--
+
+INSERT INTO `tb_livro_imagem` (`id_livro_imagem`, `id_livro`, `tipo_imagem`, `caminho_imagem`, `ordem_imagem`, `dataAdd_imagem`) VALUES
+(1, 2, 'capa', 'uploads/livros/2/capa_1760137740_68e9920cda072.jpg', 0, '2025-10-10 23:09:00');
+
 -- --------------------------------------------------------
 
 --
@@ -234,7 +243,7 @@ CREATE TABLE `tb_usuario` (
   `email_usuario` varchar(30) NOT NULL,
   `senha_usuario` varchar(60) NOT NULL,
   `status_usuario` tinyint(1) NOT NULL,
-  `foto` varchar(150) NOT NULL,
+  `foto_usuario` varchar(150) NOT NULL,
   `criado_em` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -242,8 +251,8 @@ CREATE TABLE `tb_usuario` (
 -- Despejando dados para a tabela `tb_usuario`
 --
 
-INSERT INTO `tb_usuario` (`id_usuario`, `nome_usuario`, `email_usuario`, `senha_usuario`, `status_usuario`, `foto`, `criado_em`) VALUES
-(1, 'Cleberson', 'cleber4557@gmail.com', '$2y$10$YXMBc1extbO2Flh3iZ5MxOpP/o2Kk8UZ9oUWeSTgoOn2IXN.R5/Om', 0, '', '2025-10-06 21:57:30');
+INSERT INTO `tb_usuario` (`id_usuario`, `nome_usuario`, `email_usuario`, `senha_usuario`, `status_usuario`, `foto_usuario`, `criado_em`) VALUES
+(1, 'Cleberson', 'cleber4557@gmail.com', '$2y$10$YXMBc1extbO2Flh3iZ5MxOpP/o2Kk8UZ9oUWeSTgoOn2IXN.R5/Om', 0, 'uploads/usuarios/1/d16c3a6197db66722a8ef27a768cec26.jpg', '2025-10-06 21:57:30');
 
 --
 -- Índices para tabelas despejadas
@@ -351,7 +360,7 @@ ALTER TABLE `tb_usuario`
 -- AUTO_INCREMENT de tabela `tb_autor`
 --
 ALTER TABLE `tb_autor`
-  MODIFY `id_autor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_autor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tb_avaliacao`
@@ -369,7 +378,7 @@ ALTER TABLE `tb_contato`
 -- AUTO_INCREMENT de tabela `tb_editora`
 --
 ALTER TABLE `tb_editora`
-  MODIFY `id_editora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_editora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tb_endereco`
@@ -399,13 +408,13 @@ ALTER TABLE `tb_idioma`
 -- AUTO_INCREMENT de tabela `tb_livro`
 --
 ALTER TABLE `tb_livro`
-  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tb_livro_imagem`
 --
 ALTER TABLE `tb_livro_imagem`
-  MODIFY `id_livro_imagem` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_livro_imagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `tb_troca`
@@ -417,7 +426,7 @@ ALTER TABLE `tb_troca`
 -- AUTO_INCREMENT de tabela `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para tabelas despejadas
