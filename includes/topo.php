@@ -21,7 +21,7 @@ $username = $_SESSION['username'] ?? null; ?>
             <div class="login">
                 <div class="entrar">
                     <?php
-                 
+
                     if (!isset($_SESSION['id_usuario'])) {
                         echo "<a href='includes/createUser.php'>Entrar</a>";
                     } else {
@@ -41,16 +41,25 @@ $username = $_SESSION['username'] ?? null; ?>
                 </div>
                 <div class="perfil">
                     <?php
-                     
-                     if(!isset($_SESSION['id_usuario'])) {
+
+                    if (!isset($_SESSION['id_usuario'])) {
                         echo "<a href='includes/createUser.php'><img src='/SistemaBookare/assets/img/loginIcon.png'></a>";
-                    }else{
-                        $fotoUser = $_SESSION['fotoUser'];
-                        echo "<img src='/SistemaBookare/includes/dashboard/tabViews/{$fotoUser}'/>";
+                    } else {
+                        $fotoUser = $_SESSION['fotoUser'] ?? '';
+
+                        if (!empty($fotoUser)) {
+                            // Se tiver foto na sessão, usa ela
+                            $caminhoFoto = "/SistemaBookare/includes/dashboard/tabViews/{$fotoUser}";
+                        } else {
+                            // Caso contrário, usa a padrão
+                            $caminhoFoto = "/SistemaBookare/assets/img/loginIcon.png";
+                        }
+
+                        echo "<img src='{$caminhoFoto}' alt='Foto do usuário'>";
                     }
 
-                        ?>
-                       
+                    ?>
+
                 </div>
             </div>
         </nav>

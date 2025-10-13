@@ -4,25 +4,37 @@
     <?php require_once __DIR__ . "/../../connect.php";
     @session_start();
     $id_usuario = $_SESSION['id_usuario'];
-    $info = mysqli_query($con2, "SELECT nome_usuario, email_usuario, foto_usuario, DATE_FORMAT(criado_em, '%d/%m/%Y %H:%i:%s') AS criado_em FROM tb_usuario WHERE id_usuario = $id_usuario;
-");
+    $info = mysqli_query($con2, "SELECT 
+                                    u.nome_usuario,
+                                    u.email_usuario,
+                                    u.foto_usuario,
+                                    DATE_FORMAT(u.criado_em, '%d/%m/%Y %H:%i:%s') AS criado_em,
+                                    c.ddd,
+                                    c.celular,
+                                    c.fixo,
+                                    e.logradouro,
+                                    e.numero,
+                                    e.complemento,
+                                    e.bairro,
+                                    e.cidade,
+                                    es.estado AS nome_estado,
+                                    e.cep
+                                FROM tb_usuario AS u
+                                LEFT JOIN tb_contato AS c ON c.id_usuario = u.id_usuario
+                                LEFT JOIN tb_endereco AS e ON e.id_usuario = u.id_usuario
+                                LEFT JOIN tb_estado AS es ON es.id_estado = e.id_estado
+                                WHERE u.id_usuario = $id_usuario
+                        ");
     $infos = mysqli_fetch_assoc($info);
     ?>
     <div class="infoUser">
-        <h2>Informações Pessoais</h2>
-        <?php echo "<p>Nome de usuário: {$infos['nome_usuario']}";
-        echo "<p>Email cadastrado: {$infos['email_usuario']}";
-        echo "<p>Conta criada em: {$infos['criado_em']}";
-
-        ?>
         <div class="imgUser">
-
             <form action="dashboard/tabViews/info.act.php" method="post" id="formFotoUser" enctype="multipart/form-data">
                 <fieldset>
-                    <legend>Inserir Foto de Usuario</legend>
-                    <input type="file" name="fotoUser" id="fileFotoUser">
+                    <p style="color: #153b15;">Alterar Foto de Usuário</p>
+                    <input type="file" name="fotoUser" id="fileFotoUser" style="color: #153b15;">
                 </fieldset>
-                <input type="submit" value="Confirmar">
+                <button type="submit" value="Confirmar">Confirmar</button>
             </form>
             <?php
             @session_start();
@@ -37,13 +49,35 @@
                         }, 2000);
                       </script>";
             }
-
-            echo "<img src='/SistemaBookare/includes/dashboard/tabViews/{$infos['foto_usuario']}'";
-            $_SESSION['fotoUser'] = $infos['foto_usuario'];
+            echo "<div class='fotoUser'>";
+            echo "<img src='/SistemaBookare/includes/dashboard/tabViews/{$infos['foto_usuario']}'/>";
+            echo "</div>";
             ?>
-
+        </div>
+        <div class="textInfo">
+            <div class="infoP">
+                <h2>Informações Pessoais</h2>
+                <p>Nome de usuário: <?=$infos['nome_usuario']?></p> <p>E-mail: <?=$infos['email_usuario']?></p>
+                <p>Conta criada em: <?=$infos['criado_em']?></p>
+                <hr/>
+                <h2>Endereço</h2>
+                <p>Logradouro: <?= $infos['logradouro']?></p> <p>Numero: <?= $infos['numero']?></p>
+                <p>Complemento: <?= $infos['complemento']?></p> <p>Bairro: <?=$infos['bairro']?></p>
+                <p>Cidade: <?= $infos['cidade']?></p> <p>Estado: <?= $infos['nome_estado']?></p>
+                <hr/>
+                <h2>Contato</h2>
+                <p>Celular: (<?=$infos['ddd']?>) <?=$infos['celular']?></p> 
+                <p>Fixo: <?= $infos['fixo']?></p>
+                <hr/>
+            </div>
+            <div class="mostrarContato">
+                <div><input type="checkbox" name="viewEmail" id="mostraEmail"> Mostrar E-mail</div>
+                <div><input type="checkbox" name="viewContato" id="mostraContato"> Mostrar Telefone</div>
+            </div>
+            <div class="alterar">
+                <a href="atualizarInfo.php"><button class="altInfo">Atualizar Cadastro</button></a>
+            </div>
             
-
         </div>
     </div>
 

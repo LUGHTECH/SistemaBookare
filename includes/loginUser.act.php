@@ -72,7 +72,7 @@ try {
 
 // busca pelo e-mail ou nome de usuário (corrigido)
 $stmt = $pdo->prepare(
-    'SELECT id_usuario, nome_usuario, senha_usuario FROM tb_usuario 
+    'SELECT id_usuario, nome_usuario, foto_usuario, senha_usuario FROM tb_usuario 
      WHERE email_usuario = :identifier OR nome_usuario = :identifier2 
      LIMIT 1'
 );
@@ -95,6 +95,7 @@ if (!$userRow || !password_verify($password, $userRow['senha_usuario'])) {
 session_regenerate_id(true);
 $_SESSION['id_usuario'] = $userRow['id_usuario'];
 $_SESSION['username'] = $userRow['nome_usuario'];
+$_SESSION['fotoUser'] = $userRow['foto_usuario'];
 
 // Redireciona para área restrita (crie dashboard.php ou altere conforme necessário)
 header('Location: dashboard.php');

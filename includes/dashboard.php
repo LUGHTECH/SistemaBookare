@@ -10,7 +10,7 @@ $username = $_SESSION['nome_usuario'] ?? null;
 <?php include("topo.php");?>
 
 <body>
-    <main>
+    <main style="margin-top: 1%;">
         <!-- abre o if -->
         <?php if ($username): ?>
 
@@ -55,6 +55,33 @@ $username = $_SESSION['nome_usuario'] ?? null;
                     <button class="no" onclick="fecharModal()">Cancelar</button>
                 </div>
             </div>
+    </div>
+
+    <div class="modal2" id="formModalContainer">
+        <div class="modal-conteudo">
+            <div class="fechar">
+                <h3>Atualizar Cadastro</h3>
+                <img onclick="fecharModal()" src="../assets/img/close.png" alt="">
+            </div>
+            <form action="" id="formModal" onsubmit="enviarFormulario(event)">
+                <div class="form-group">
+                    <label for="logradrouro">Logradouro</label>
+                    <input type="text" name="logradouro" id="id_logradouro">
+                </div>
+                <div class="form-group">
+                    <label for="numero">Logradouro</label>
+                    <input type="number" name="numero" id="id_numero">
+                </div>
+                <div class="form-group">
+                    <label for="complemento">Logradouro</label>
+                    <input type="text" name="complemento" id="id_complemento">
+                </div>
+                <div class="form-group">
+                    <label for="complemento">Logradouro</label>
+                    <input type="text" name="complemento" id="id_complemento">
+                </div>
+            </form>
+        </div>
     </div>
 
 <!-- Script -->
