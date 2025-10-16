@@ -28,7 +28,8 @@ if (empty($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'] ?? '', $
 
 // coleta e saneamento básico
 $username = trim((string)($_POST['nome_usuario'] ?? ''));
-$email = trim((string)($_POST['email_usuario'] ?? ''));$password = (string)($_POST['senha_usuario'] ?? '');
+$email = trim((string)($_POST['email_usuario'] ?? ''));
+$password = (string)($_POST['senha_usuario'] ?? '');
 $password_confirm = (string)($_POST['password_confirm'] ?? '');
 
 $errors = [];
@@ -82,21 +83,41 @@ if ($existing) {
 
 // inserir novo usuário
 $hash = password_hash($password, PASSWORD_DEFAULT);
-$insert = $pdo->prepare('INSERT INTO tb_usuario (nome_usuario, email_usuario, senha_usuario) VALUES (:username, :email, :password)');
+
 try {
-    $insert->execute([':username' => $username, ':email' => $email, ':password' => $hash]);
-} catch (PDOException $e) {
-    // log error internamente e retornar mensagem genérica
-    $_SESSION['errors'] = ['Não foi possível criar a conta no momento.'];
-    $_SESSION['old_input'] = $old_input;
+    $pdo->beginTransaction(); // inicia transação
+
+    // 1️⃣ insere o usuário
+    $insert = $pdo->prepare('INSERT INTO tb_usuario (nome_usuario, email_usuario, senha_usuario)
+                              VALUES (:username, :email, :password)');
+    $insert->execute([
+        ':username' => $username,
+        ':email' => $email,
+        ':password' => $hash
+    ]);
+
+    // pega o ID do usuário criado
+    $id_usuario = $pdo->lastInsertId();
+
+    // 2️⃣ cria as linhas correspondentes em contato e endereço
+    $pdo->prepare('INSERT INTO tb_contato (id_usuario) VALUES (:id_usuario)')
+        ->execute([':id_usuario' => $id_usuario]);
+
+    $pdo->prepare('INSERT INTO tb_endereco (id_usuario) VALUES (:id_usuario)')
+        ->execute([':id_usuario' => $id_usuario]);
+
+    // tudo certo, confirma
+    $pdo->commit();
+
+    $_SESSION['success'] = true;
     header('Location: createUser.php');
     exit;
+} catch (PDOException $e) {
+    // se algo falhar, reverte tudo
+    $pdo->rollBack();
+
+    if ($pdo->inTransaction()) {
+        $pdo->rollBack();
+    }
+    die('Erro PDO: ' . $e->getMessage());
 }
-
-// sucesso
-$_SESSION['success'] = true;
-
-// opcional: redirecionar para login
-header('Location: createUser.php');
-exit;
-?>

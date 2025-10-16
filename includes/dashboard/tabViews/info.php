@@ -26,6 +26,7 @@
                                 WHERE u.id_usuario = $id_usuario
                         ");
     $infos = mysqli_fetch_assoc($info);
+    $_SESSION['infoUser'] = $infos;
     ?>
     <div class="infoUser">
         <div class="imgUser">
@@ -75,7 +76,7 @@
                 <div><input type="checkbox" name="viewContato" id="mostraContato"> Mostrar Telefone</div>
             </div>
             <div class="alterar">
-                <a href="atualizarInfo.php"><button class="altInfo">Atualizar Cadastro</button></a>
+                <button onclick ="abrirFormModal()" class="altInfo">Atualizar Cadastro</button>
             </div>
             
         </div>
