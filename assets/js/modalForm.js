@@ -6,6 +6,7 @@ function abrirFormModal(dados = null) {
     document.getElementById("logradouro").value = dados.logradouro || "";
     document.getElementById("numero").value = dados.numero || "";
     document.getElementById("complemento").value = dados.complemento || "";
+    document.getElementById("cidade").value = dados.cidade || "";
     document.getElementById("bairro").value = dados.bairro || "";
     document.getElementById("id_estado").value = dados.nome_estado || "";
     document.getElementById("cep").value = dados.cep || "";
@@ -38,6 +39,7 @@ function enviarFormulario(event) {
     logradouro: form.querySelector("#logradouro").value,
     numero: form.querySelector("#numero").value,
     complemento: form.querySelector("#complemento").value,
+    cidade: form.querySelector("#cidade").value,
     bairro: form.querySelector("#bairro").value,
     nome_estado: form.querySelector("#id_estado").value,
     cep: form.querySelector("#cep").value,
