@@ -22,7 +22,7 @@ $celular     = trim($_POST['celular'] ?? '');
 $fixo        = trim($_POST['fixo'] ?? '');
 
 // id_estado pode vir como 'id_estado' (select) ou 'estado'/'nome_estado' (texto)
-$id_estado_raw = $_POST['id_estado'] ?? $_POST['estado'] ?? $_POST['nome_estado'] ?? null;
+$id_estado_raw = $_POST['id_estado'] ?? $_POST['estado'] ?? $_POST['nome_estado'] ?? $_POST['uf'] ?? null;
 $id_estado = null;
 
 if ($id_estado_raw !== null && $id_estado_raw !== '') {
@@ -101,7 +101,7 @@ if ($id_estado === null) {
         exit;
     }
     $stmtEndereco->bind_param(
-        "ssssissi",
+        "sssssssi",
         $logradouro,
         $numero,
         $complemento,
@@ -138,3 +138,4 @@ if (!$stmtContato->execute()) {
 }
 
 echo "sucesso";
+
