@@ -45,7 +45,7 @@
         <div class="imgUser">
             <form action="dashboard/tabViews/info.act.php" method="post" id="formFotoUser" enctype="multipart/form-data">
                 <fieldset>
-                    <p style="color: #ffffffff;">Alterar Foto de Usuário</p>
+                    <p style="color: #008080;">Alterar Foto de Usuário</p>
                     <input type="file" name="fotoUser" id="fileFotoUser" style="color: #153b15;">
                 </fieldset>
                 <button type="submit" value="Confirmar">Confirmar</button>

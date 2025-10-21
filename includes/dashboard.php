@@ -77,6 +77,8 @@ require_once __DIR__ . "/connect.php";
     <script src="../assets/js/buscaLivro.js"></script>
     <script src="../assets/js/modalForm.js"></script>
     <script src="../assets/js/refresh.js"></script>
+    <script src="../assets/js/modalLivro.js"></script>
+    
 
 
 
