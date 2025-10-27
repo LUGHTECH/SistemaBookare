@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/SistemaBookare/assets/style/style.css">
     <link rel="stylesheet" href="/SistemaBookare/assets/style/slideAutores.css">
     <link rel="stylesheet" href="/SistemaBookare/assets/style/dashboard.css">
+     <link rel="stylesheet" href="/SistemaBookare/assets/style/catalogo.css">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/SistemaBookare/assets/style/swiper-bundle.min.css">

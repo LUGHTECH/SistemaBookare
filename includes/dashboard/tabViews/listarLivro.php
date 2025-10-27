@@ -38,7 +38,7 @@ $username = $_SESSION['username'] ?? null;
                                                     i.codigo_idioma AS idioma,
                                                     l.ano_pub_livro,
                                                     l.sinopse_livro,
-                                                    l.estado_conservacao_livro,
+                                                    l.estado_conservacao_livro AS condicao_livro,
                                                     img.caminho_imagem AS capa,
                                                     u.nome_usuario,
                                                     u.email_usuario
@@ -94,12 +94,22 @@ $username = $_SESSION['username'] ?? null;
                         <img id="capaLivro" src="" alt="Capa do Livro">
                     </div>
                     <div class="idiomaLivro">
-                        <p>Ano de Publicação:</p>
-                        <p id="anoLivro"></p>
-                        <p>Idioma:</p>
-                        <p id="idiomaLivro"></p>
-                        <p>Gênero:</p>
-                        <p id="generoLivro"></p>
+                        <div>
+                            <p>Ano de Publicação:</p>
+                            <p id="anoLivro"></p>
+                        </div>
+                        <div>
+                            <p>Idioma:</p>
+                            <p id="idiomaLivro"></p>
+                        </div>
+                        <div>
+                            <p>Gênero:</p>
+                            <p id="generoLivro"></p>
+                        </div>
+                        <div>
+                            <p>Condição do Livro:</p>
+                            <p id="condicaoLivro"></p>
+                        </div>
                     </div>
                 </section>
 

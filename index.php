@@ -16,8 +16,8 @@
                 <h1>Troque de livros onde e quando quiser com o Bookare!</h1>
             </div>
             <div class="btnCadastrar">
-                <form action="includes/catalogo.php" method="post">
-                    <input type="search" id="search" name="pesquisa" placeholder="Memorias do Subsolo">
+                <form action="includes/pesquisa.php" method="get">
+                    <input type="search" id="search" name="search" placeholder="Memorias do Subsolo">
                     <input type="submit" value="Pesquisar">
                 </form>
 
@@ -52,7 +52,7 @@
 
             <!-- Botão Ver Mais -->
             <div class="verMais">
-                <button onclick="verMais()">Ver Mais</button>
+                <button  onclick="window.location.href='includes/pesquisa.php'">Ver Mais</button>
             </div>
         </div>
     </section>
