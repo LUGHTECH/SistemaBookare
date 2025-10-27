@@ -9,6 +9,7 @@ function abrirModalLivro(livro) {
         document.getElementById("anoLivro").textContent = livro.ano_pub_livro || "—";
         document.getElementById("editoraLivro").textContent = livro.nome_editora || "—";
         document.getElementById("sinopseLivro").textContent = livro.sinopse_livro || "Sem sinopse disponível";
+        document.getElementById("condicaoLivro").textContent = livro.condicao_livro || "Desconhecido";
 
 
 

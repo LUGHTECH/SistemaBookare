@@ -370,22 +370,21 @@
     align-items: center;
     top: 0;
     left: 0;
-    transition: 0.3s ease-in-out;
+    transition: 0.2s;
 }
 
 .modal-content{
-    background-color: #005b73;
+    background-color: #ffffff;
     padding: 20px;
     text-align: center;
     width: 500px;
     height: 300px;
-    border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: space-between;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-   
+    border: 2px gray solid;
 
 }
 
@@ -400,8 +399,9 @@
 .modal-content p{
     font-size: 1.3rem;
     text-align: start;
-    color: white;
+    color: #04afa7;
     padding: 0 5px;
+    border-bottom: solid 1px #04afa7;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 }
@@ -426,14 +426,14 @@
 
 
 .yes{
-    background-color: #8cccd2;
+    background-color: #04afa7;
     border: none;
-    color: #008080;
+    color: #ffffff;
     
 }
 
 .no{
-     background-color: #005b73;
+     background-color: #04afa6a3;
      border: 1px solid white; 
      color: white;
 }
@@ -444,8 +444,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 5px 5px;
-    border: 1px solid #8cccd2;
     border-radius: 5px;
+    background-color: #04afa7;
     
 }
 
@@ -458,8 +458,7 @@
 .modal2{
     opacity: 0;
     visibility: hidden;
-    border: 2px outset #005b73;
-    border-radius: 5px;
+    border: 2px gray solid;
     position: absolute;
     background-color: #ffffff;
     width: 60%;
@@ -817,17 +816,18 @@ button[type="submit"]:hover {
     /*MODAL 3 INFORMAÇÕES COMPLETAS DE CADA LIVRO */
 
 .modal3{
-    border: #008080 solid;
+    border: 2px gray solid;
     height: auto;
     width: 60%;
     position: absolute;
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
     top: 55%;
     left: 50%;
     right: 50%;
     transform: translate(-50%, -50%);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.2s;
 
 }
 
@@ -842,10 +842,11 @@ button[type="submit"]:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px 10px 5px 10px;
+    padding: 10px 10px 5px 10px;
     background-image: url(../img/fundoHeader.png);
     background-position: center;
     gap: 1rem;
+    justify-content: space-evenly;
 }
 
 .bookInfoImg{
@@ -861,11 +862,21 @@ button[type="submit"]:hover {
 
 .idiomaLivro{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     font-size: 1.2rem;
-    gap: 5px;
+    gap: 10px; 
+    font-weight: 100;
+    color: white;
+    justify-content: start;
+    align-items: self-start;
+}
+
+.idiomaLivro div p{
+     text-shadow: 
+    -1px -1px 0 #00796B,  
+     1px -1px 0 #00796B,
+    -1px  1px 0 #00796B,
+     1px  1px 0 #00796B;
 }
 
 
@@ -914,6 +925,13 @@ button[type="submit"]:hover {
 .titleLivro p{
     font-size: 1.1rem;
     color: #008080; 
+}
+
+
+.idiomaLivro div{
+    display: flex;
+    gap: 10px;
+    text-transform: capitalize;
 }
 
 .sinopse{
