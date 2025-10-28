@@ -204,7 +204,7 @@ main{
     height: auto;
 }
 
-main .container{
+.mainBanner-index .container{
     /*background-color: rgb(16, 50, 80);*/
     background-image: linear-gradient(to bottom, rgba(5, 36, 36, 0.6), rgba(255, 255, 255, 0.2)), url('../img/mainBanner.jpg');
     background-position:center;

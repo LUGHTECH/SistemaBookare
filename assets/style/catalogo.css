@@ -1,17 +1,149 @@
-.userCatalogo {
-    margin-top: 10px;
+.main-catalog{
+    width: 100%;
     height: auto;
     display: flex;
-    flex-wrap: wrap;
-    width: 80%;
-    padding: 0;
-    justify-content: center;
+    padding: 2%;
+    gap: 0.7rem;
+    
+}
+
+.filter{
+    width: 30%;
+    padding: 1% 2%;
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+    background-color: rgba(121, 125, 128, 0.207);
+    border-radius: 5px;
+    
+}
+
+
+.filtrosAtivos{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 40%;
+    padding: 10px 0;
+}
+
+.filtrosAtivos p{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #008080;
+}
+
+.filtro-tag{    
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding: 5px 5px;
+    width: 100%;
+    background-color: #04afa7;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.8rem;
+  
+}
+
+.remove-filtro{
+    padding: 5px 10px;
+    background: transparent;
+    border: none;
+    color: #008080;
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+.form-filter{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.form-filter fieldset{
+    border-radius: 5px;
+    background-color: white;
+    border: none;
+    padding: 5px;
+    font-size: 1.1rem;
+    gap: 10px;
+    position: relative;
+}
+
+
+
+.form-filter fieldset legend{
+    display: block;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px;
+    width: 100%;
+    border: 1px solid gray;
+}
+
+.ano-pub{
+    display: flex;
+    flex-direction: column; 
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.condicoes{
+    display: flex;
     flex-direction: column;
 }
 
+.autor-filter{
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.uf-filter{
+    display: flex;
+    max-height: 200px;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+
+
+
+.catalog{
+    width: 70%;
+    
+}
+
+
+.userCatalogo {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 5px;
+    gap: 10px;
+}
+
+.text-pesquisa{
+    width: 100%;
+    
+}
+
+.text-pesquisa p{
+    text-align: start;
+    border: solid;
+    width: 100%;
+    background-color: #6cc1c1a4;
+}
+
 .userCatalogo .container {
-   
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -21,7 +153,7 @@
     padding: 10px;
     display: flex;
     gap: 1rem;
-    border: solid rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
     flex: 1 1 180px;
     /* flex-grow 1, flex-shrink 1, base 180px */
     max-width: 600px;
@@ -71,11 +203,11 @@
     padding: 5px;
 }
 
-.container-img p{
-   
-}
+
 
 .nome-img{
     display: flex;
     gap: 5px;
 }
+
+
