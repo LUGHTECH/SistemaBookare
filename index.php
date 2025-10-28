@@ -10,7 +10,7 @@
 
 <body>
     <?php include("includes/topo.php"); ?>
-    <main>
+    <main class="mainBanner-index">
         <div class="container">
             <div class="chamada">
                 <h1>Troque de livros onde e quando quiser com o Bookare!</h1>
