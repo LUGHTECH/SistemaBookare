@@ -8,6 +8,8 @@
                                     u.nome_usuario,
                                     u.email_usuario,
                                     u.foto_usuario,
+                                    u.view_email,
+                                    u.view_contato,
                                     DATE_FORMAT(u.criado_em, '%d/%m/%Y %H:%i:%s') AS criado_em,
                                     c.ddd,
                                     c.celular,
@@ -114,9 +116,18 @@
             </div>
             <div class="actionInfo">
                 <div class="mostrarContato">
-                   <img class="refresh" src="/SistemaBookare/assets/img/refresh.png" alt="" onclick="refresh()" title="Atualizar Página">
-                    <div><input type="checkbox" name="viewEmail" id="mostraEmail"> Mostrar E-mail</div>
-                    <div><input type="checkbox" name="viewContato" id="mostraContato"> Mostrar Telefone</div>
+                    <img class="refresh" src="/SistemaBookare/assets/img/refresh.png" alt="" onclick="refresh()" title="Atualizar Página">
+                    <form action="/SistemaBookare/includes/dashboard/tabViews/userConfigs.php" method="post">
+                        <div>
+                            <input type="checkbox" name="viewEmail" id="mostraEmail" value="1"
+                                <?= !empty($infos['view_email']) ? 'checked' : '' ?> onchange="this.form.submit()">
+                            <label for="mostraEmail">Mostrar E-mail</label>
+                        </div>
+                        <div><input type="checkbox" name="viewContato" id="mostraContato" value="1"
+                                <?= !empty($infos['view_contato']) ? 'checked' : '' ?> onchange="this.form.submit()">
+                         <label for="mostraContato">Mostrar Telefone</label>
+                        </div>
+                    </form>
                     <div class="disclaimer">
                         <img src="/SistemaBookare/assets/img/information.png" alt="">
                         <p>Selecione se desejar que essas informações

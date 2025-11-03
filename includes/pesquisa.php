@@ -11,7 +11,7 @@ try {
    // --- Parâmetros recebidos ---
    $pesquisa = $_GET['search'] ?? '';
    $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
-   $limite = 6;
+   $limite = 10;
    $offset = ($pagina - 1) * $limite;
 
    $autores = isset($_GET['autor']) ? (array)$_GET['autor'] : [];
@@ -24,6 +24,8 @@ try {
                 u.nome_usuario,
                 u.email_usuario,
                 u.foto_usuario,
+                u.id_usuario,
+                l.id_livro,
                 l.nome_livro,
                 c.ddd,
                 c.celular,

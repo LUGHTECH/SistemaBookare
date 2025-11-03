@@ -32,7 +32,7 @@
 
                  <fieldset class="condicoes">
                      <legend>Condições do Livro</legend>
-                    <?php foreach ($conservacao as $eConservacao): ?>
+                     <?php foreach ($conservacao as $eConservacao): ?>
                          <label>
                              <input type="checkbox" name="conservacao[]" value="<?= $eConservacao['livro_conservacao'] ?>"
                                  <?= (is_array($conservacaoSelecionados) && in_array($eConservacao['livro_conservacao'], $conservacaoSelecionados)) ? 'checked' : '' ?>
@@ -88,7 +88,7 @@
                  </div>
                  <div class="container">
                      <?php if (empty($usuarios)): ?>
-                         <p>Nenhum livro encontrado emoji emoji</p>
+                         <p>Nenhum livro encontrado 😢😢</p>
                      <?php else: ?>
                          <?php foreach ($usuarios as $usuario): ?>
                              <div class="usuariosCard">
@@ -103,8 +103,14 @@
                                              <p><?= htmlspecialchars($usuario['nome_estado']) ?>, <?= htmlspecialchars($usuario['uf']) ?></p>
                                          </div>
                                      </div>
-                                     <p>E-mail: <?= htmlspecialchars($usuario['email_usuario']) ?></p>
-                                     <p>Telefone:(<?= htmlspecialchars($usuario['ddd']) ?>)<?= htmlspecialchars($usuario['celular']) ?></p>
+                                     <div class="cardContato">
+
+                                     </div>
+                                     <div class="buttonFoto">
+                                         <a href="detalhesTroca.php?id_usuario=<?= $usuario['id_usuario'] ?>&id_livro=<?= $usuario['id_livro'] ?>">
+                                             <button type="button">DETALHES</button>
+                                         </a>
+                                     </div>
                                  </div>
 
                                  <div class="titulo-capa">

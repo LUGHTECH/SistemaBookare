@@ -19,7 +19,7 @@ require_once __DIR__ . "/connect.php";
 ?>
 
 <body>
-    <main style="margin-top: 1%;">
+    <main style="margin-top: 120px; margin-bottom: 120px" >
         <!-- abre o if -->
         <?php if ($username): ?>
 
