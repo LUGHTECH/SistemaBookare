@@ -1,40 +1,70 @@
-.main-catalog{
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
+
+
+
+.main-catalog {
     width: 100%;
     height: auto;
     display: flex;
     padding: 2%;
     gap: 0.7rem;
-    
+    margin-top: 120px;
+
 }
 
-.filter{
+.filter {
     width: 30%;
     padding: 1% 2%;
     display: flex;
     justify-content: end;
     gap: 15px;
-    background-color: rgba(121, 125, 128, 0.207);
+    background-color: rgba(252, 254, 255, 0.207);
     border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    accent-color: #04afa7;
+    /* muda a cor da marcação (suporte moderno) */
+    cursor: pointer;
+    color: white;
+
+}
+
+.filter fieldset label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: gray;
     
 }
 
 
-.filtrosAtivos{
+.filtrosAtivos {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 40%;
-    padding: 10px 0;
+    padding: 10px 0px;
+    
 }
 
-.filtrosAtivos p{
+.filtrosAtivos p {
     text-align: center;
     text-transform: uppercase;
     font-weight: 800;
     color: #008080;
+    font-family: 'Poppins', sans-serif;
 }
 
-.filtro-tag{    
+.filtro-tag {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,25 +74,39 @@
     color: white;
     border-radius: 5px;
     font-size: 0.8rem;
-  
+    gap: 5px;
+
 }
 
-.remove-filtro{
-    padding: 5px 10px;
-    background: transparent;
+.remove-filtro {
+    border-radius: 5px;
+    padding: 0 2px;
     border: none;
     color: #008080;
-    font-weight: 900;
-    font-size: 1rem;
+
 }
 
-.form-filter{
+.limpar-filtros {
+    background-color: transparent;
+    width: fit-content;
+    font-size: 1rem;
+    color: #008080;
+    border: none;
+    border-bottom: solid 1px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-filter {
     display: flex;
     flex-direction: column;
     width: 60%;
+    
 }
 
-.form-filter fieldset{
+.form-filter fieldset {
     border-radius: 5px;
     background-color: white;
     border: none;
@@ -70,40 +114,45 @@
     font-size: 1.1rem;
     gap: 10px;
     position: relative;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    overflow-y: auto;
+   
+
 }
 
 
 
-.form-filter fieldset legend{
+.form-filter fieldset legend {
     display: block;
     margin: 5px;
     border-radius: 5px;
     background-color: white;
     padding: 5px;
     width: 100%;
-    border: 1px solid gray;
+    background-color: #008080;
+    color: white;
+    font-family: 'Poppins', sans-serif;
 }
 
-.ano-pub{
+.ano-pub {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     max-height: 200px;
-    overflow-y: auto;
+
 }
 
-.condicoes{
+.condicoes {
     display: flex;
     flex-direction: column;
 }
 
-.autor-filter{
+.autor-filter {
     display: flex;
     flex-direction: column;
     max-height: 200px;
-    overflow-y: auto;
 }
 
-.uf-filter{
+.uf-filter {
     display: flex;
     max-height: 200px;
     flex-direction: column;
@@ -113,9 +162,9 @@
 
 
 
-.catalog{
+.catalog {
     width: 70%;
-    
+
 }
 
 
@@ -131,16 +180,27 @@
     gap: 10px;
 }
 
-.text-pesquisa{
+.text-pesquisa {
     width: 100%;
-    
+    border: solid;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    border-bottom: 1px #008080 solid;
+    margin: 10px;
+    padding: 10px;
+
 }
 
-.text-pesquisa p{
+.text-pesquisa h2{
+    width: 75%;
+    color: gray;
+}
+
+.text-pesquisa p {
     text-align: start;
-    border: solid;
-    width: 100%;
-    background-color: #6cc1c1a4;
+    width: 25%;
+     color: gray;
 }
 
 .userCatalogo .container {
@@ -153,17 +213,15 @@
     padding: 10px;
     display: flex;
     gap: 1rem;
-    border: 1px solid rgb(0, 0, 0);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     flex: 1 1 180px;
     /* flex-grow 1, flex-shrink 1, base 180px */
     max-width: 600px;
-    margin: 5px;
+    margin: 10px;
     justify-content: space-between;
-    
-}
+    background-color: #ffffff;
+    border-radius: 5px;
 
-.cardUser{
-    border: solid;
 }
 
 .cardLivroCapa {
@@ -177,7 +235,7 @@
     height: 100%;
 }
 
-.titulo-capa{
+.titulo-capa {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -185,29 +243,65 @@
     width: 50%;
 }
 
-.titulo-capa p{
-
+.titulo-capa p {
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    
+
 }
 
-.container-img{
+.container-img {
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    gap: 1rem;
     padding: 5px;
+    border-radius: 5px;
+    justify-content: space-between;
 }
 
 
 
-.nome-img{
+.nome-img {
     display: flex;
     gap: 5px;
+    width: 100%;
+}
+
+.cardUser {
+    border: solid;
+    width: 20%;
+}
+
+.cardInfos {
+    width: 80%;
+
+}
+
+.cardContato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    
 }
 
 
+.buttonFoto{
+    display: flex;
+    justify-content: center;
+}
+
+
+.buttonFoto button{
+    padding: 8px 20px;
+    color: #008080;
+    border-radius: 5px;
+    border: 2px solid #04afa7;
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+}

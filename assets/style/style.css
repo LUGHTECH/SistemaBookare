@@ -17,8 +17,16 @@ body{
 
 /*CABEÇALHO*/
 
+:root {
+  --header-altura: 100px;
+}
+
 header{
+    height: var(--header-altura);
     width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
     
 }
 
@@ -28,6 +36,41 @@ header .container{
     background-repeat: no-repeat;
     background-size: cover;
     padding: 1%;
+    width: 100%;
+
+}
+
+.top{
+    background-color: white;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    position: relative;
+    padding: 3px 5px 3px 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+
+
+#search2{
+    width: 90%;
+    height: 30px;
+    border-radius: 0;
+    border: none;
+    width: 90%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    font-size: 0.9rem;
+    text-align: start;
+    padding-right: 30px;
+}
+
+#pesq{
+    border-radius: 5px;
+    border: solid white;
+    
 }
 
 header .container nav{
@@ -38,11 +81,11 @@ header .container nav{
 
 .logo{
     height: 65px;
-    width: 20%;
+    width: 30%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding-right: 1%;
+    justify-content: center;
+    padding-left: 2%;
 }
 
 .logo a{
@@ -55,11 +98,11 @@ header .container nav{
 
 .menu{
     display: flex;
-    width: 45%;
+    width: 50%;
     height: 60px;
     align-items: center;
     padding-top: 5px;
-    
+    margin-right: 10px;
 }
 
 .menu ul{
@@ -83,15 +126,15 @@ header .container nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3px 3px 3px 10%;
+    padding: 3px 3px 3px 3px;
 }
 
 .entrar{
     border-right: 4px solid white;
-    width: 50%;
+    width: 40%;
     height: 65px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     font-size: 1.4rem;
     padding-right: 3%;
@@ -107,7 +150,7 @@ header .container nav{
 }
 
 .perfil{
-    width: 50%;
+    width: 30%;
     display: flex;
     align-items: center;
     padding-left: 2%;
@@ -202,6 +245,11 @@ header .container nav{
 main{
     width: 100%;
     height: auto;
+
+}
+
+.mainBanner-index{
+    margin-top: var(--header-altura);
 }
 
 .mainBanner-index .container{
@@ -251,6 +299,7 @@ main{
     align-items: center;
     justify-content: center;
     height: 54%;
+    
 }
 
 .clicado{
@@ -270,6 +319,7 @@ form{
     background-color: #00796B;
     color: white;
     font-weight: 500;
+
 }
 
 .btnCadastrar form input[type= "search"]{
@@ -281,11 +331,13 @@ form{
     font-size: 1.2rem;
     width: 86%;
     outline: none;
+    
 }
 
 .btnCadastrar form input[type= "search"]:focus{
     border-color: #00796B;
     transition: 0.4s;
+    cursor: pointer;
 }
 
 .btnCadastrar button:hover{

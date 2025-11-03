@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
+.container3 {
+    display: flex;
+    gap: 20px;
+    padding: 1% 2%;
+}
+
+
+
+.usuario img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: solid 1px #008080;
+    background-color: #008080;
+    padding: 3px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.livro img {
+    height: 500px;
+    max-width: 500px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.text-main-info p {
+    font-size: 1.1em;
+    color: gray;
+
+}
+
+.livro {
+    width: 65%;
+    display: flex;
+    gap: 2rem;
+    position: relative;
+}
+
+.livro strong {
+    color: #008080;
+}
+
+.img-ilustrativa {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.usuario {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.infoD-livros {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 5px;
+
+}
+
+.infoD-usuario {
+    margin-top: 15px;
+    width: 100%;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+
+
+}
+
+.back {
+    display: inline-block;
+    margin-top: 25px;
+    background: #04afa7;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.h1 {
+    font-family: 'Poppins', sans-serif;
+    color: gray;
+}
+
+.text-sinopse {
+    max-height: 200px;
+    /* altura inicial */
+    overflow: hidden;
+    position: relative;
+    text-align: justify;
+    transition: max-height 0.4s ease;
+    color: gray;
+
+}
+
+/* efeito visual do fade */
+.overflow {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to top, white, transparent);
+}
+
+.overflow[data-state="visible"] {
+    display: block;
+}
+
+.toggle {
+    border: none;
+    background: none;
+    color: #04afa7;
+    cursor: pointer;
+    margin-top: 6px;
+    font-weight: bold;
+}
+
+
+.contato-area {
+    border: solid;
+    text-align: center;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.contato-area #abrirForm {
+    width: 50%;
+    padding: 10px;
+}
+
+
+.contato-area form {
+    display: flex;
+    flex-direction: column;
+}
+
+#formContato {
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    overflow: hidden;
+}
+
+#formContato textarea{
+    height: 30px;
+    border: solid;
+     width: 100%;       /* ocupar toda largura do form */
+    min-height: 120px; /* altura mínima */
+    padding: 8px;
+    font-size: 14px;
+    resize: vertical;  /* pe */
+}
