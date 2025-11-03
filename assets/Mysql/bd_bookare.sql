@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28/10/2025 às 01:32
+-- Tempo de geração: 03/11/2025 às 18:27
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -54,7 +54,8 @@ INSERT INTO `tb_autor` (`id_autor`, `autor`) VALUES
 (13, 'H. P. Lovecraft'),
 (14, 'Dan Brown'),
 (15, 'Matt Haig'),
-(16, 'Emily Brontë');
+(16, 'Emily Brontë'),
+(17, 'Dante Alighieri, José Pedro Xavier Pinheiro');
 
 -- --------------------------------------------------------
 
@@ -94,7 +95,8 @@ INSERT INTO `tb_contato` (`id_contato`, `id_usuario`, `ddd`, `celular`, `fixo`) 
 (8, 11, '11', '96929997', ''),
 (9, 12, '12', '859295557', ''),
 (10, 13, '96', '858885554', ''),
-(11, 14, '23', '978585557', '');
+(11, 14, '23', '978585557', ''),
+(12, 15, '11', '969295557', '');
 
 -- --------------------------------------------------------
 
@@ -155,7 +157,8 @@ INSERT INTO `tb_endereco` (`id_endereco`, `id_usuario`, `logradouro`, `numero`, 
 (8, 11, 'Estrada Fidelis', '900', 'Nenhum', 'Terceira Divisão', 'São Paulo', 25, '08483100'),
 (9, 12, 'Rua dos oitos', '22', 'Nenhum', 'Recanto Verde do Sol', 'Rio de janeiro', 19, '8282100'),
 (10, 13, 'Rua dos louros', '62', 'sumiu', 'ter', 'salvador', 5, '6385100'),
-(11, 14, 'Rua casa do car', '22', 'fundos', 'Itaquera', 'salvador', 20, '9699100');
+(11, 14, 'Rua casa do car', '22', 'fundos', 'Itaquera', 'salvador', 20, '9699100'),
+(12, 15, 'Rua Gonçalves De Lima', '22', 'Fundos', 'Recanto Verde do Sol', 'São Paulo', 25, '08382100');
 
 -- --------------------------------------------------------
 
@@ -270,7 +273,6 @@ CREATE TABLE `tb_livro` (
 --
 
 INSERT INTO `tb_livro` (`id_livro`, `id_usuario`, `isbn`, `nome_livro`, `id_livro_imagem`, `id_genero`, `id_autor`, `id_editora`, `id_idioma`, `ano_pub_livro`, `sinopse_livro`, `data_add_livro`, `estado_conservacao_livro`) VALUES
-(2, 1, '', 'E não sobrou nenhum', 1, 1, 2, 2, 1, 2014, 'Uma ilha misteriosa, um poema infantil, dez soldadinhos de porcelana e muito suspense são os ingredientes com que Agatha Christie constrói seu romance mais importante. Na ilha do Soldado, antiga propriedade de um milionário norte-americano, dez pessoas sem nenhuma ligação aparente são confrontadas por uma voz misteriosa com fatos marcantes de seus passados. Convidados pelo misterioso mr. Owen, nenhum dos presentes tem muita certeza de por que estão ali, a despeito de conjecturas pouco convincentes que os leva a crer que passariam um agradável período de descanso em mordomia. Entretanto, já na primeira noite, o mistério e o suspense se abatem sobre eles e, num instante, todos são suspeitos, todos são vítimas e todos são culpados. É neste clima de tensão e desconforto que as mortes inexplicáveis começam e, sem comunicação com o continente devido a uma forte tempestade, a estadia transforma-se em um pesadelo. Todos se perguntam: quem é o misterioso anfitrião, mr. Owen? Existe mais alguém na ilha? O assassino pode ser um dos convidados? Que mente ardilosa teria preparado um crime tão complexo? E, sobretudo, por quê? São essas e outras perguntas que o leitor será desafiado a resolver neste fabuloso romance de Agatha Christie, que envolve os espíritos mais perspicazes num complexo emaranhado de situações, lembranças e acusações na busca deste sagaz assassino. Medo, confinamento e angústia: que o leitor descubra por si mesmo porque E não sobrou nenhum foi eleito o melhor romance policial de todos os tempos.', '2025-10-10 23:09:00', 'Novo'),
 (4, 9, '', 'O POÇO E O PÊNDULO', 3, 1, 3, 3, 1, 2022, 'Edgar Allan Poe (1809-1849) foi um poeta, escritor, crítico literário e editor norte-americano. Poe foi um extraordinário contista e escreveu memoráveis contos de mistério, terror e policiais, sempre com seu estilo único e pioneiro. Nesta edição o leitor terá o privilégio de conhecer três contos que, sem dúvida, figuram entre os melhores e mais conhecidos de Edgar Allan Poe; Prepare-se para mergulhar numa sucessão de três histórias de tirar o fôlego e que por um bom tempo restarão em sua memória. São elas: O Poço e o Pêndulo; Morella e O Coração Delator.', '2025-10-13 18:42:32', 'Novo'),
 (7, 10, '', 'Frankenstein', 5, 1, 4, 4, 1, 2021, 'Nascido e criado na Suíça, Victor Frankenstein sempre foi ávido de conhecimento. Na universidade, embarca em uma complexa e profunda pesquisa sobre a definição da vida. Uma noite, como por milagre, chega a um processo que lhe permite fazer reviver a matéria morta. Trabalhando dia e noite, ele descobre como animar um corpo feito de pedaços de cadáveres humanos e consegue criar uma criatura sobre-humana. Quando vê sua criatura, horrorizado com a figura monstruosa, grotesca, horrenda, Frankenstein foge, deixando sozinho o ser a quem dera vida. Começa então uma série de acontecimentos dramáticos, numa narrativa que leva às últimas consequências os sentimentos humanos de amor e ódio, desejo, carência, abandono, vingança. O desfecho é comovente e nos faz refletir sobre a natureza humana, sua ambição desmedida, seu egoísmo. Publicado pela primeira vez em 1818, este é um belíssimo livro, tenso, rico, uma das obras mais admiradas da literatura mundial.', '2025-10-20 13:03:05', 'Novo'),
 (8, 10, '', 'Território Lovecraft', 6, 1, 5, 5, 1, 2020, 'Uma jornada fantástica e assustadora, adaptada para virar série na HBO com produção do diretor de Corra!, Jordan Peele, e J.J. Abrams Nos Estados Unidos segregados da década de 1950, Atticus é um rapaz negro, veterano da Guerra da Coreia, fã de H. P. Lovecraft e outros escritores de pulp fiction. Ao descobrir que o pai desapareceu, ele volta à cidade natal para, com o tio e a amiga, partir em uma missão de resgate. Na viagem até a mansão do herdeiro da propriedade que mantinha um dos ancestrais de Atticus escravizado, o grupo enfrentará sociedades secretas, rituais sanguinolentos e o preconceito de todos os dias. Ao chegar, Atticus encontra seu pai acorrentado, mantido prisioneiro por uma confraria secreta, que orquestra um ritual cujo personagem principal é o próprio Atticus. A única esperança de salvação do jovem, no entanto, pode ser a semente de sua destruição — e de toda a sua família. E esta é apenas a primeira parada de uma jornada impressionante. Estruturado ao mesmo tempo como uma coletânea de contos e um romance, Território Lovecraft apresenta, além de personagens memoráveis, elementos sobrenaturais, como casas assombradas e portais para outras realidades, objetos enfeitiçados e livros mágicos. Um retrato caleidoscópico do racismo — o fantasma que até hoje assombra o mundo —, a obra de Matt Ruff une ficção histórica e pulp noir ao horror e à fantasia de Lovecraft para explorar os terrores da época de segregação racial nos Estados Unidos.', '2025-10-20 22:08:31', 'Novo'),
@@ -291,7 +293,8 @@ INSERT INTO `tb_livro` (`id_livro`, `id_usuario`, `isbn`, `nome_livro`, `id_livr
 (23, 13, '', 'O Código Da Vinci', 21, 1, 14, 12, 1, 2012, 'Um dos maiores fenômenos editoriais de todos os tempos. “Dan Brown é uma de minhas leituras obrigatórias. O código Da Vinci é fascinante, perfeito para fãs de História, loucos por teorias da conspiração, amantes de enigmas ou qualquer pessoa que aprecie uma narrativa incrível.” – Harlan Coben, autor de Não conte a ninguém e Não fale com estranhos Um assassinato no Museu do Louvre traz à tona uma sinistra conspiração para revelar um segredo que foi protegido por uma sociedade secreta desde os tempos de Jesus Cristo. A vítima é o curador do museu, Jacques Saunière, um dos líderes dessa fraternidade, o Priorado de Sião, que já teve como membros Leonardo da Vinci, Victor Hugo e Isaac Newton. Pouco antes de morrer, ele consegue deixar uma mensagem cifrada na cena do crime. Apenas sua neta, a criptógrafa Sophie Neveu, e Robert Langdon, um famoso simbologista de Harvard, podem desvendá-la. Os dois se transformam em suspeitos e em detetives enquanto percorrem as ruas de Paris e de Londres tentando montar um intricado quebra-cabeça que pode lhes revelar um segredo milenar que envolve a Igreja Católica. Poucos passos à frente das autoridades e do assassino, Sophie e Robert buscam pistas nas obras de Da Vinci e se debruçam sobre alguns dos maiores mistérios da cultura ocidental – da natureza do sorriso da Mona Lisa ao significado do Santo Graal. Mesclando com perfeição suspense, informações sobre obras de arte, documentos e rituais secretos, Dan Brown consagrou-se como um dos autores mais brilhantes da atualidade.', '2025-10-27 21:34:22', 'Novo'),
 (24, 14, '', 'Inferno', 22, 1, 14, 12, 1, 2013, '850.000 exemplares vendidos no Brasil. Uma leitura eletrizante e um convite a pensarmos no papel da ciência para o futuro da humanidade. Dan Brown nos leva por uma viagem pela cultura, pela arte e pela literatura italianas – passando por lugares como a Galleria degli Uffizi, o Duomo de Florença e a Basílica de São Marcos. “Dan Brown é o mestre do suspense intelectual.” – The Wall Street Journal No meio da noite, o renomado simbologista Robert Langdon acorda de um pesadelo, num hospital. Desorientado e com um ferimento à bala na cabeça, ele não tem a menor ideia de como foi parar lá. Ao olhar pela janela e reconhecer a silhueta do Palazzo Vecchio, em Florença, Langdon tem um choque. Ele nem se lembra de ter saído dos Estados Unidos. Na verdade, não tem nenhuma recordação das últimas 36 horas. Quando um novo atentado contra a sua vida acontece dentro do hospital, Langdon é obrigado a fugir e, para isso, conta apenas com a ajuda da jovem médica Sienna Brooks. De posse de um macabro objeto que Sienna encontrou no paletó de Langdon, os dois têm que seguir uma série inquietante de códigos criada por uma mente brilhante, obcecada tanto pelo fim do mundo quanto por uma das maiores obras-primas literárias de todos os tempos: A Divina Comédia, de Dante Alighieri.', '2025-10-27 21:37:52', 'Danos Severos'),
 (25, 14, '', 'A Biblioteca da Meia-Noite', 23, 1, 15, 13, 1, 2021, 'A Biblioteca da Meia-Noite é um romance incrível que fala dos infinitos rumos que a vida pode tomar e da busca incessante pelo rumo certo. Aos 35 anos, Nora Seed é uma mulher cheia de talentos e poucas conquistas. Arrependida das escolhas que fez no passado, ela vive se perguntando o que poderia ter acontecido caso tivesse vivido de maneira diferente. Após ser demitida e seu gato ser atropelado, Nora vê pouco sentido em sua existência e decide colocar um ponto final em tudo. Porém, quando se vê na Biblioteca da Meia-Noite, Nora ganha uma oportunidade única de viver todas as vidas que poderia ter vivido. Neste lugar entre a vida e a morte, e graças à ajuda de uma velha amiga, Nora pode, finalmente, se mudar para a Austrália, reatar relacionamentos antigos – ou começar outros –, ser uma estrela do rock, uma glaciologista, uma nadadora olímpica... enfim, as opções são infinitas. Mas será que alguma dessas outras vidas é realmente melhor do que a que ela já tem? Em A Biblioteca da Meia-Noite, Nora Seed se vê exatamente na situação pela qual todos gostaríamos de poder passar: voltar no tempo e desfazer algo de que nos arrependemos. Diante dessa possibilidade, Nora faz um mergulho interior viajando pelos livros da Biblioteca da Meia-Noite até entender o que é verdadeiramente importante na vida e o que faz, de fato, com que ela valha a pena ser vivida. \"Uma celebração entusiástica do poder que os livros têm de mudar vidas.\" – Sunday Times \"Um cenário de possibilidades ilimitadas, de novos caminhos trilhados, de novas vidas vividas, de um mundo totalmente diferente disponível para nós de alguma forma, em algum lugar, pode ser exatamente do que precisamos nesses tempos difíceis e turbulentos.\" – The New York Times \"Um romance extremamente original e instigante sobre a importância de valorizar a vida que você tem.\" – Independent \"Instigante e inspirador. Explora a nossa relação com o arrependimento e com o que realmente faz uma vida ser perfeita.\" – Harper\'s Bazaar \"Uma história sobre segundas chances e viver com arrependimentos. Muito envolvente.\" – Stylist \"Eu amei A Biblioteca da Meia-Noite. Ele condensa coisas importantes e tristes – morte, saúde mental, filosofia existencial – em um livro excepcional, prazeroso e de aquecer o coração.\" – Pandora Sykes', '2025-10-27 21:38:51', 'Novo'),
-(26, 14, '', 'O morro dos ventos uivantes: edição comentada', 24, 1, 16, 14, 1, 2016, 'Obra-prima da literatura inglesa, uma narrativa poderosa e tragicamente bela de um amor proibido Caro leitor, você está prestes a adentrar o inferno. Mas não hesite: a viagem valerá cada segundo. Essa é uma história de amor e obsessão. E de purgação, crueza, devastação. No centro dos acontecimentos estão a voluntariosa e irascível Catherine Earnshaw e seu irmão adotivo Heathcliff. Rude nos modos e afetos, humilhado e rejeitado, ele aprende a odiar; mas com Catherine desenvolve uma relação de simbiose, paixão e também perversidade. Nada destruirá a essência desse laço – mas quando ela se casa com outro homem, por convenções sociais, as consequências são irreparáveis para todos em volta. Acompanhando a excelente tradução de Adriana Lisboa, essa bela edição de O morro dos ventos uivantes traz 90 notas, apresentação de Rodrigo Lacerda, cronologia de vida e obra de Emily Brontë e ainda dois textos de Charlotte Brontë para a reedição do livro que ela organizou após a morte da irmã. A versão impressa apresenta ainda capa dura e acabamento de luxo.', '2025-10-27 21:39:53', 'Novo');
+(26, 14, '', 'O morro dos ventos uivantes: edição comentada', 24, 1, 16, 14, 1, 2016, 'Obra-prima da literatura inglesa, uma narrativa poderosa e tragicamente bela de um amor proibido Caro leitor, você está prestes a adentrar o inferno. Mas não hesite: a viagem valerá cada segundo. Essa é uma história de amor e obsessão. E de purgação, crueza, devastação. No centro dos acontecimentos estão a voluntariosa e irascível Catherine Earnshaw e seu irmão adotivo Heathcliff. Rude nos modos e afetos, humilhado e rejeitado, ele aprende a odiar; mas com Catherine desenvolve uma relação de simbiose, paixão e também perversidade. Nada destruirá a essência desse laço – mas quando ela se casa com outro homem, por convenções sociais, as consequências são irreparáveis para todos em volta. Acompanhando a excelente tradução de Adriana Lisboa, essa bela edição de O morro dos ventos uivantes traz 90 notas, apresentação de Rodrigo Lacerda, cronologia de vida e obra de Emily Brontë e ainda dois textos de Charlotte Brontë para a reedição do livro que ela organizou após a morte da irmã. A versão impressa apresenta ainda capa dura e acabamento de luxo.', '2025-10-27 21:39:53', 'Novo'),
+(28, 15, '', 'A Divina Comédia - Inferno', 26, 1, 17, 1, 1, 2020, 'A Divina Comédia é um poema clássico da literatura italiana e mundial com características épica e teológica, escrito por Dante Alighieri no século XIV período renascentista e dividido em três partes: o Inferno, o Purgatório e o Paraíso. São cem cantos protagonizados pelo próprio Dante em companhia do poeta romano Virgílio , que percorreu uma jornada espiritual pelos três reinos além-túmulo. O Inferno é descrito em 34 cantos com cerca de 140 versos cada um. Virgílio, o grande poeta romano, autor de Eneida, surge para guiar Dante pelo inferno e o purgatório em direção ao paraíso. Antes de encontrar Virgílio, ele estava numa selva escura.', '2025-11-03 16:21:34', 'Novo');
 
 -- --------------------------------------------------------
 
@@ -324,7 +327,6 @@ CREATE TABLE `tb_livro_imagem` (
 --
 
 INSERT INTO `tb_livro_imagem` (`id_livro_imagem`, `id_livro`, `tipo_imagem`, `caminho_imagem`, `ordem_imagem`, `dataAdd_imagem`) VALUES
-(1, 2, 'capa', 'uploads/livros/2/capa_1760137740_68e9920cda072.jpg', 0, '2025-10-10 23:09:00'),
 (3, 4, 'capa', 'uploads/livros/4/capa_1760380952_68ed48183792b.jpg', 0, '2025-10-13 18:42:33'),
 (5, 7, 'capa', 'uploads/livros/7/capa_1760965385_68f63309a2a7a.jpg', 0, '2025-10-20 13:03:07'),
 (6, 8, 'capa', 'uploads/livros/8/capa_1760998111_68f6b2df92a16.jpg', 0, '2025-10-20 22:08:31'),
@@ -345,7 +347,8 @@ INSERT INTO `tb_livro_imagem` (`id_livro_imagem`, `id_livro`, `tipo_imagem`, `ca
 (21, 23, 'capa', 'uploads/livros/23/capa_1761600862_68ffe55e3d4df.jpg', 0, '2025-10-27 21:34:23'),
 (22, 24, 'capa', 'uploads/livros/24/capa_1761601072_68ffe630c17d9.jpg', 0, '2025-10-27 21:37:54'),
 (23, 25, 'capa', 'uploads/livros/25/capa_1761601131_68ffe66b3d4c9.jpg', 0, '2025-10-27 21:38:52'),
-(24, 26, 'capa', 'uploads/livros/26/capa_1761601193_68ffe6a9d1b7d.jpg', 0, '2025-10-27 21:39:55');
+(24, 26, 'capa', 'uploads/livros/26/capa_1761601193_68ffe6a9d1b7d.jpg', 0, '2025-10-27 21:39:55'),
+(26, 28, 'capa', 'uploads/livros/28/capa_1762186894_6908d68ebea7e.jpg', 0, '2025-11-03 16:21:36');
 
 -- --------------------------------------------------------
 
@@ -374,22 +377,24 @@ CREATE TABLE `tb_usuario` (
   `senha_usuario` varchar(60) NOT NULL,
   `status_usuario` tinyint(1) NOT NULL,
   `foto_usuario` varchar(150) NOT NULL,
-  `criado_em` timestamp NOT NULL DEFAULT current_timestamp()
+  `criado_em` timestamp NOT NULL DEFAULT current_timestamp(),
+  `view_email` tinyint(1) DEFAULT 0,
+  `view_contato` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Despejando dados para a tabela `tb_usuario`
 --
 
-INSERT INTO `tb_usuario` (`id_usuario`, `nome_usuario`, `email_usuario`, `senha_usuario`, `status_usuario`, `foto_usuario`, `criado_em`) VALUES
-(1, 'Cleberson', 'cleber4557@gmail.com', '$2y$10$YXMBc1extbO2Flh3iZ5MxOpP/o2Kk8UZ9oUWeSTgoOn2IXN.R5/Om', 0, 'uploads/usuarios/1/3a0417695478a52ad15b1bc93d8a0e5d.jpg', '2025-10-06 21:57:30'),
-(3, 'jordan', 'jo@gmail.com', '$2y$10$u/NaTL/xQLEik83S4cpEG.AR289Aef2Vx3.Ls2l5k04.I1hWs7Q5W', 0, '', '2025-10-13 13:46:49'),
-(9, 'pedro', 'per@gmail.com', '$2y$10$Nwf2YiyXH4QJTXovunn7C.mSRFmcjqWkVf7KiZze4fYArPFfd6sVO', 0, 'uploads/usuarios/9/1496c4afdb5d923168794a7c201ec20b.jpg', '2025-10-13 18:24:24'),
-(10, 'Cleiton', 'cleiton@gmail.com', '$2y$10$eCQ8WSzie399Cyc/ChRk3eqXQzXQfx2DaCIpvJy/Uf9KtPePpD2UK', 0, 'uploads/usuarios/10/c219237665969ca9519dada4c907708c.jpg', '2025-10-15 21:14:16'),
-(11, 'Jorgina', 'jor@gmail.com', '$2y$10$fBdhGv7wbd04LxEeKByuyOQOtITXWs6Q.lFAJu7pc.FQiBQDmsq4a', 0, 'uploads/usuarios/11/9a291a52d3427d4064b2456b3545eb0c.jpg', '2025-10-26 23:02:08'),
-(12, 'Negot', 'negot@gmail.com', '$2y$10$jrGSmDTMvtWiBztdyqoOMeaRgxD7kPNbIAv7c/OBCV7hv/lnol806', 0, 'uploads/usuarios/12/db57067df81d50fbe1646a4f22796f7c.jpg', '2025-10-26 23:23:06'),
-(13, 'wenzio', 'wentape@gmail.com', '$2y$10$clgXlKvznwZI3B5aP8SiYuExltFrPzGixLhu/j8.reDv9paMU5u8W', 0, 'uploads/usuarios/13/87d025611609e80c35412e6d79e78bce.jpg', '2025-10-27 21:18:11'),
-(14, 'Rhyan', 'r@gmail.com', '$2y$10$YZ2k8BS7ZgNJOBRiK73hOuknZxx5pcxdU/lUl.SS5a0i9iPZ3V1Ma', 0, 'uploads/usuarios/14/df56f09a787d2b0a89659b62165a64f8.jpg', '2025-10-27 21:35:03');
+INSERT INTO `tb_usuario` (`id_usuario`, `nome_usuario`, `email_usuario`, `senha_usuario`, `status_usuario`, `foto_usuario`, `criado_em`, `view_email`, `view_contato`) VALUES
+(3, 'jordan', 'jo@gmail.com', '$2y$10$u/NaTL/xQLEik83S4cpEG.AR289Aef2Vx3.Ls2l5k04.I1hWs7Q5W', 0, '', '2025-10-13 13:46:49', 0, 0),
+(9, 'pedro', 'per@gmail.com', '$2y$10$Nwf2YiyXH4QJTXovunn7C.mSRFmcjqWkVf7KiZze4fYArPFfd6sVO', 0, 'uploads/usuarios/9/1496c4afdb5d923168794a7c201ec20b.jpg', '2025-10-13 18:24:24', 0, 0),
+(10, 'Cleiton', 'cleiton@gmail.com', '$2y$10$eCQ8WSzie399Cyc/ChRk3eqXQzXQfx2DaCIpvJy/Uf9KtPePpD2UK', 0, 'uploads/usuarios/10/c219237665969ca9519dada4c907708c.jpg', '2025-10-15 21:14:16', 0, 0),
+(11, 'Jorgina', 'jor@gmail.com', '$2y$10$fBdhGv7wbd04LxEeKByuyOQOtITXWs6Q.lFAJu7pc.FQiBQDmsq4a', 0, 'uploads/usuarios/11/9a291a52d3427d4064b2456b3545eb0c.jpg', '2025-10-26 23:02:08', 0, 0),
+(12, 'Negot', 'negot@gmail.com', '$2y$10$jrGSmDTMvtWiBztdyqoOMeaRgxD7kPNbIAv7c/OBCV7hv/lnol806', 0, 'uploads/usuarios/12/db57067df81d50fbe1646a4f22796f7c.jpg', '2025-10-26 23:23:06', 0, 0),
+(13, 'wenzio', 'wentape@gmail.com', '$2y$10$clgXlKvznwZI3B5aP8SiYuExltFrPzGixLhu/j8.reDv9paMU5u8W', 0, 'uploads/usuarios/13/87d025611609e80c35412e6d79e78bce.jpg', '2025-10-27 21:18:11', 0, 0),
+(14, 'Rhyan', 'r@gmail.com', '$2y$10$YZ2k8BS7ZgNJOBRiK73hOuknZxx5pcxdU/lUl.SS5a0i9iPZ3V1Ma', 0, 'uploads/usuarios/14/df56f09a787d2b0a89659b62165a64f8.jpg', '2025-10-27 21:35:03', 0, 0),
+(15, 'Clebinho', 'cleber4557@gmail.com', '$2y$10$cSbGV7oH7z9wi8nBZWMXr.Kky.IzPK6jflYVcAJSnNp5rce0X0p.i', 0, 'uploads/usuarios/15/4ca3e89b4cd6753ab26ce7c01aabe598.jpg', '2025-11-03 16:19:43', 0, 0);
 
 --
 -- Índices para tabelas despejadas
@@ -497,7 +502,7 @@ ALTER TABLE `tb_usuario`
 -- AUTO_INCREMENT de tabela `tb_autor`
 --
 ALTER TABLE `tb_autor`
-  MODIFY `id_autor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_autor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de tabela `tb_avaliacao`
@@ -509,7 +514,7 @@ ALTER TABLE `tb_avaliacao`
 -- AUTO_INCREMENT de tabela `tb_contato`
 --
 ALTER TABLE `tb_contato`
-  MODIFY `id_contato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_contato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `tb_editora`
@@ -521,7 +526,7 @@ ALTER TABLE `tb_editora`
 -- AUTO_INCREMENT de tabela `tb_endereco`
 --
 ALTER TABLE `tb_endereco`
-  MODIFY `id_endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `tb_estado`
@@ -545,13 +550,13 @@ ALTER TABLE `tb_idioma`
 -- AUTO_INCREMENT de tabela `tb_livro`
 --
 ALTER TABLE `tb_livro`
-  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de tabela `tb_livro_imagem`
 --
 ALTER TABLE `tb_livro_imagem`
-  MODIFY `id_livro_imagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_livro_imagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `tb_troca`
@@ -563,7 +568,7 @@ ALTER TABLE `tb_troca`
 -- AUTO_INCREMENT de tabela `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Restrições para tabelas despejadas
