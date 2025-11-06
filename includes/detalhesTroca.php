@@ -38,6 +38,7 @@ try {
                 l.ano_pub_livro,
                 l.estado_conservacao_livro,
                 l.sinopse_livro,
+                ed.editora AS nome_editora,
                 fl.caminho_imagem AS foto_livro,
                 a.autor
             FROM tb_usuario u
@@ -46,6 +47,7 @@ try {
             INNER JOIN tb_estado es ON es.id_estado = e.id_estado
             INNER JOIN tb_livro l ON l.id_usuario = u.id_usuario
             LEFT JOIN tb_autor a ON a.id_autor = l.id_autor
+            LEFT JOIN tb_editora ed ON l.id_editora = ed.id_editora
             LEFT JOIN tb_livro_imagem fl ON fl.id_livro_imagem = l.id_livro_imagem
             WHERE u.id_usuario = ? AND l.id_livro = ?";
 
@@ -84,6 +86,7 @@ try {
                 <div class="text-main-info">
                     <p><strong>Autor(a):</strong> <?= htmlspecialchars($dados['autor']) ?></p>
                     <p><strong>Ano de publicação:</strong> <?= htmlspecialchars($dados['ano_pub_livro']) ?></p>
+                    <p><strong>Editora:</strong> <?= htmlspecialchars($dados['nome_editora']) ?></p>
                     <p><strong>Conservação:</strong> <?= htmlspecialchars($dados['estado_conservacao_livro']) ?></p>
                 </div>
                 <div class="texto-sinopse">
@@ -98,20 +101,20 @@ try {
         <div class="usuario">
             <img src="./dashboard/tabViews/<?= htmlspecialchars($dados['foto_usuario']) ?>" alt="Foto do usuário">
             <div class="infoD-usuario">
-                <p><strong>Dono:</strong> <?= htmlspecialchars($dados['nome_usuario']) ?></p>
-                <p><strong>Cidade:</strong> <?= htmlspecialchars($dados['cidade']) ?> - <?= htmlspecialchars($dados['uf']) ?></p>
+                <p class="subInfo"><strong>Dono:</strong> <?= htmlspecialchars($dados['nome_usuario']) ?></p>
+                <p class="subInfo"><strong>Cidade:</strong> <?= htmlspecialchars($dados['cidade']) ?> - <?= htmlspecialchars($dados['uf']) ?></p>
                 <div class="contato-area">
                     <?php if ($dados['view_email'] == 1 || $dados['view_contato'] == 1): ?> <!--ABRE SE O USUÁRIO QUISER MOSTRAR ALGUMA FORMA DE CONTATO-->
-
+                         <p class="warning-user">Entre em contato com este usuário utilizando:</p>
                         <?php if ($dados['view_email'] == 1): ?> <!--ver a tabela view email: mostra se for 1, esconde com 0 -->
-                            <p><strong>Email:</strong> <?= htmlspecialchars($dados['email_usuario']) ?></p>
+                            <p class="view"><strong>Email:</strong> <?= htmlspecialchars($dados['email_usuario']) ?></p>
                         <?php endif; ?>
                         <?php if ($dados['view_contato'] == 1): ?>
-                            <p><strong>Telefone:</strong> (<?= htmlspecialchars($dados['ddd']) ?>) <?= htmlspecialchars($dados['celular']) ?></p>
+                            <p class="view"><strong>Telefone:</strong> (<?= htmlspecialchars($dados['ddd']) ?>) <?= htmlspecialchars($dados['celular']) ?></p>
                         <?php endif; ?>
 
                     <?php else: ?> <!--CASO NENHUMA FORMA DE CONTATO SEJA MOSTRADA-->
-                        <p>O usuário optou por não compartilhar informações de contato.</p>
+                        <p class="warning-user">O usuário optou por não compartilhar informações de contato.</p>
                         <button id="abrirForm">Entrar em contato</button>
                         <form id="formContato" action="enviarMensagem.php" method="POST">
                             <input type="hidden" name="id_dono" value="<?= $dados['id_usuario'] ?>">
@@ -126,8 +129,9 @@ try {
                             <textarea name="mensagem" value="Ola" rows="4" cols="50" required>
                                 Olá, estou interessado no seu livro!
                             </textarea>
-
-                            <button type="submit">Enviar</button>
+                            <div class="email-submit">
+                                <button type="submit">Enviar</button>
+                            </div>
                         </form>
                     <?php endif; ?>
                 </div>

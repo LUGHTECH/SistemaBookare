@@ -12,9 +12,9 @@ $username = $_SESSION['username'] ?? null; ?>
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="#">Contato</a></li>
-                    <li><a href="#">Como Funciona?</a></li>
-                    <li><a href="">Segurança</a></li>
+                    <li><a href="/SistemaBookare/includes/quemSomos.php">Quem Somos</a></li>
+                    <li><a href="/SistemaBookare/includes/quemSomos.php#comoFunciona">Como Funciona?</a></li>
+                    <li><a href="/SistemaBookare/includes/quemSomos.php#seguranca">Segurança</a></li>
                 </ul>
             </div>
             <div class="btnCadastrar top">

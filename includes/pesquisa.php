@@ -19,61 +19,66 @@ try {
    $estados = isset($_GET['estado']) ? (array)$_GET['estado'] : [];
    $conservacao = isset($_GET['conservacao']) ? (array)$_GET['conservacao'] : [];
 
-   // --- SELECT principal ---
-   $sql = "SELECT 
-                u.nome_usuario,
-                u.email_usuario,
-                u.foto_usuario,
-                u.id_usuario,
-                l.id_livro,
-                l.nome_livro,
-                c.ddd,
-                c.celular,
-                fl.caminho_imagem AS foto_livro,
-                e.id_estado,
-                es.estado AS nome_estado,
-                es.uf
-            FROM tb_livro AS l
-            INNER JOIN tb_usuario AS u ON l.id_usuario = u.id_usuario
-            INNER JOIN tb_endereco AS e ON u.id_usuario = e.id_usuario
-            INNER JOIN tb_estado AS es ON es.id_estado = e.id_estado
-            INNER JOIN tb_contato AS c ON c.id_usuario = u.id_usuario
-            LEFT JOIN tb_livro_imagem AS fl ON fl.id_livro_imagem = l.id_livro_imagem
-            LEFT JOIN tb_autor AS a ON l.id_autor = a.id_autor
-            WHERE l.nome_livro LIKE ?";
+   // --- SQL base ---   //Usado para fazer a contagem das paginações
+   $sqlBase = "FROM tb_livro AS l
+               INNER JOIN tb_usuario AS u ON l.id_usuario = u.id_usuario
+               INNER JOIN tb_endereco AS e ON u.id_usuario = e.id_usuario
+               INNER JOIN tb_estado AS es ON es.id_estado = e.id_estado
+               INNER JOIN tb_contato AS c ON c.id_usuario = u.id_usuario
+               LEFT JOIN tb_livro_imagem AS fl ON fl.id_livro_imagem = l.id_livro_imagem   
+               LEFT JOIN tb_autor AS a ON l.id_autor = a.id_autor
+               WHERE l.nome_livro LIKE ?";
 
    $params = ["%{$pesquisa}%"];
 
-   // --- Filtros múltiplos, que vem do catalogo ---
+   // --- Filtros ---
    if (!empty($autores)) {
       $placeholders = implode(',', array_fill(0, count($autores), '?'));
-      $sql .= " AND a.id_autor IN ($placeholders)";
+      $sqlBase .= " AND a.id_autor IN ($placeholders)";
       $params = array_merge($params, $autores);
    }
 
    if (!empty($anos)) {
       $placeholders = implode(',', array_fill(0, count($anos), '?'));
-      $sql .= " AND l.ano_pub_livro IN ($placeholders)";
+      $sqlBase .= " AND l.ano_pub_livro IN ($placeholders)";
       $params = array_merge($params, $anos);
    }
 
    if (!empty($estados)) {
       $placeholders = implode(',', array_fill(0, count($estados), '?'));
-      $sql .= " AND e.id_estado IN ($placeholders)";
+      $sqlBase .= " AND e.id_estado IN ($placeholders)";
       $params = array_merge($params, $estados);
    }
 
    if (!empty($conservacao)) {
       $placeholders = implode(',', array_fill(0, count($conservacao), '?'));
-      $sql .= " AND l.estado_conservacao_livro IN ($placeholders)";
+      $sqlBase .= " AND l.estado_conservacao_livro IN ($placeholders)";
       $params = array_merge($params, $conservacao);
    }
 
-   // --- ORDER, LIMIT e OFFSET ---
-   $limite = (int)$limite;
-   $offset = (int)$offset;
-   $sql .= " ORDER BY l.nome_livro ASC LIMIT $limite OFFSET $offset";
+   // --- Contagem total ---
+   $sqlCount = "SELECT COUNT(DISTINCT l.id_livro) AS total " . $sqlBase;
+   $stmtCount = $pdo->prepare($sqlCount);
+   $stmtCount->execute($params);
+   $totalLivros = $stmtCount->fetchColumn();
 
+   // --- Consulta principal com paginação ---
+   $sql = "SELECT 
+              u.nome_usuario,
+              u.email_usuario,
+              u.foto_usuario,
+              u.id_usuario,
+              l.id_livro,
+              l.nome_livro,
+              c.ddd,
+              c.celular,
+              fl.caminho_imagem AS foto_livro,
+              e.id_estado,
+              es.estado AS nome_estado,
+              es.uf
+           " . $sqlBase . "
+           ORDER BY l.nome_livro ASC
+           LIMIT $limite OFFSET $offset";
 
    $stmt = $pdo->prepare($sql);
    $stmt->execute($params);
@@ -104,6 +109,11 @@ try {
                              GROUP BY l.estado_conservacao_livro
                              ORDER BY l.estado_conservacao_livro DESC")->fetchAll(PDO::FETCH_ASSOC);
 
+   // --- Intervalo da página ---
+   $inicio = ($totalLivros > 0) ? $offset + 1 : 0;
+   $fim = min($offset + $limite, $totalLivros);
+
+   // --- Sessões ---
    @session_start();
    $_SESSION['usuarios'] = $usuarios;
    $_SESSION['pesquisa'] = $pesquisa;
@@ -112,11 +122,14 @@ try {
    $_SESSION['autores'] = $autoresList;
    $_SESSION['estados'] = $estadosList;
    $_SESSION['conservacao'] = $conservacaoList;
+   $_SESSION['totalLivros'] = $totalLivros;
+   $_SESSION['inicio'] = $inicio;
+   $_SESSION['fim'] = $fim;
 
-   // --- Manter filtros na URL ---
+   // --- Redirecionamento mantendo filtros ---
    $query = http_build_query([
       'search' => $pesquisa,
-      'conservacao' =>$conservacao,
+      'conservacao' => $conservacao,
       'autor' => $autores,
       'ano_publicacao' => $anos,
       'estado' => $estados,
@@ -125,6 +138,7 @@ try {
 
    header("Location: catalogo.php?$query");
    exit;
+
 } catch (PDOException $e) {
    echo "Erro de Conexão: " . $e->getMessage();
 }

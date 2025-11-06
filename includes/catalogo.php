@@ -7,6 +7,10 @@
     $estados = $_SESSION['estados'];
     $conservacao = $_SESSION['conservacao'];
 
+    $total = $_SESSION['totalLivros'] ?? 0;
+    $inicio = $_SESSION['inicio'] ?? 0;  //contagem de livros
+    $fim = $_SESSION['fim'] ?? 0;
+
     $autorSelecionados = isset($_GET['autor']) ? (array)$_GET['autor'] : [];
     $anoSelecionados = isset($_GET['ano_publicacao']) ? (array)$_GET['ano_publicacao'] : [];
     $estadoSelecionados = isset($_GET['estado']) ? (array)$_GET['estado'] : [];
@@ -84,7 +88,11 @@
              <div class="userCatalogo">
                  <div class="text-pesquisa">
                      <h2>Você pesquisou por: "<?= htmlspecialchars($pesquisa) ?>"</h2>
-                     <p>Apresentando.... (0) resultados</p>
+                     <p><?php if ($total > 0): ?>
+                             Apresentando <?= $inicio ?>–<?= $fim ?> de <?= $total ?> resultado<?= $total > 1 ? 's' : '' ?>
+                         <?php else: ?>
+                             Nenhum resultado encontrado 😢
+                         <?php endif; ?></p>
                  </div>
                  <div class="container">
                      <?php if (empty($usuarios)): ?>
@@ -96,7 +104,7 @@
                                  <div class="container-img">
                                      <div class="nome-img">
                                          <div class="cardUser" style="width: 100px; height:100px">
-                                             <img style="width: 100%; height:100%" src="./dashboard/tabViews/<?= $usuario['foto_usuario'] ?>" alt="">
+                                             <img style="width: 100%;" src="./dashboard/tabViews/<?= $usuario['foto_usuario'] ?>" alt="">
                                          </div>
                                          <div class="cardInfos">
                                              <h3><?= htmlspecialchars($usuario['nome_usuario']) ?></h3>
