@@ -1,0 +1,394 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* NAV 
+.nav-detalhes {
+    background-image: url(img/fundo-nav.png);
+    background-size: cover;
+    height: 150px;
+    display: flex;
+    gap: 50px;
+}
+
+.nav-detalhes .imglogo img {
+    width: 250px;
+    height: 180px;
+    margin-top: 10px;
+}
+
+.nav-detalhes .atalhos-detalhes ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.nav-detalhes .atalhos-detalhes ul a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+.nav-detalhes .botao-detalhes button {
+    margin-top: 40px;
+    margin-left: 150px;
+    background-color: white;
+    width: 150px;
+    height: 40px;
+    border-radius: 25px;
+    border: #008080;
+    cursor: pointer;
+    color: #008080;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 17px;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav-detalhes .botao-detalhes button:hover {
+    transform: translateY(-3px);
+    transition: 0.7s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    background-color: #008080;
+    color: white;
+} */
+
+/* SECTION 1 */
+
+.quemsomos-detalhes {
+    height: 800px;
+    background-color: #007878;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    gap: 50px;
+    border-end-end-radius: 8% 25%;
+    border-bottom-right-radius: 50% 10%;
+    border-bottom-left-radius: 50% 10%;
+    width: 100%;
+     background:
+        linear-gradient(rgba(49, 161, 126, 0.6), rgba(0, 0, 0, 0.6)),
+        url('../img/mainBanner.jpg') center/cover no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.quemsomos-detalhes .titulo-detalhes {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 28px;
+}
+
+.quemsomos-detalhes .texto-detalhes {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: white;
+    border: solid;
+    padding: 15px;
+    background-color: #94ffeb;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: #008080;
+    margin-top: 120px;
+}
+
+.quemsomos-detalhes .imgsec1{
+      margin-top: 120px;
+}
+
+.quemsomos-detalhes .imgsec1 img {
+    height: 200px;
+    width: 250px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 50%;
+    
+   
+}
+
+/* SECTION 2 */
+.container-deatalhes {
+    margin: 0 auto;
+    height: 780px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 60px;
+    margin-top: 250px;
+
+}
+
+.container-deatalhes .texto p {
+    color: #007878;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+   
+}
+
+.container-deatalhes .comofunciona {
+    display: flex;
+    gap: 200px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container-deatalhes .comofunciona p {
+    color: #007878;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* SECTION 3 */
+.container2-detalhes {
+    height: 800px;
+    background-color: #008080;
+    border-start-start-radius: 88% 15%;
+    border-top-right-radius: 88% 15%;
+    margin-top: -50px;
+}
+
+.container2-detalhes .seguranca {
+    display: flex;
+    justify-content: space-around;
+    gap: 2px;
+}
+
+.container2-detalhes .titulo-detalhes {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    color: white;
+    height: 30px;
+    margin-top: 60px;
+    margin-left: 70px;
+    text-align: center;
+    padding-top: 100px; /*verrrr depois, gambiarra do Marcos*/
+
+}
+
+.container2-detalhes .texto-detalhes {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: white;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    
+}
+
+.container2-detalhes .seguranca .texto-detalhes p {
+    width: 100%;
+    border: solid;
+    text-align: justify;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #94ffeb;
+    color: #008080;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+}
+
+.container2-detalhes .seguranca .imagens {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-bottom: 90px;
+    justify-content: center;
+}
+
+.container2-detalhes .seguranca .imagens img {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.img1 {
+    top: 230px;
+    right: 40px;
+    z-index: 3;
+    
+}
+
+.img2 {
+    top: 40px;
+    left: 100px;
+    z-index: 2;
+}
+
+.img3 {
+    top: 0px;
+    left: 10px;
+    z-index: 1;
+}
+
+/* SECTION 4 */
+.container3-detalhes {
+    height: 700px;
+    margin-top: 80px;
+}
+
+.container4-detalhes {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.container3-detalhes .titulo-detalhes {
+    justify-items: center;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #007878;
+}
+
+.container3-detalhes .texto-detalhes {
+    justify-items: center;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #007878;
+}
+
+.container3-detalhes .container4-detalhes .formulario-detalhes {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    gap: 20px;
+}
+
+.container3-detalhes .container4-detalhes .mensagem-detalhes {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 60px;
+    gap: 15px;
+}
+
+.container3-detalhes .container4-detalhes label {
+    color: #007878;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.container3-detalhes .container4-detalhes .formulario-detalhes input {
+    width: 500px;
+    height: 40px;
+    background-color: #8bc2c2;
+    border-radius: 7px;
+    border: none;
+}
+
+::placeholder {
+    color: black;
+    text-align: center;
+}
+
+.container3-detalhes .container4-detalhes .mensagem-detalhes textarea {
+    width: 500px;
+    height: 200px;
+    background-color: #8bc2c2;
+    border-radius: 7px;
+}
+
+.container3-detalhes .container4-detalhes .mensagem-detalhes button {
+    cursor: pointer;
+    width: 500px;
+    height: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 7px;
+    background-color: #008080;
+    color: white;
+    border-color: #008080;
+}
+
+/* FOOTER */
+/*.rodape {
+    margin: 0;
+    background-color: #008080;
+    height: 600px;
+}
+
+.rodape .geral {
+    display: flex;
+    justify-content: space-around;
+}
+
+.rodape .geral .trioimg img {
+    width: 50px;
+    height: 50px;
+}
+
+.rodape .geral .trioimg {
+    width: 260px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.rodape .geral .imagensgeral {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.rodape .geral .imagensgeral .bookare img {
+    width: 350px;
+    height: 350px;
+}
+
+.rodape .geral .contato a,
+.rodape .geral .info a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 20px;
+}
+
+.rodape .geral .info {
+    line-height: 60px;
+    margin-top: 75px;
+}
+
+.rodape .geral .contato {
+    line-height: 60px;
+    margin-top: 75px;
+}
+
+.rodape .geral .contato h1,
+.rodape .geral .info h1 {
+    font-weight: bold;
+    font-size: 50px;
+    color: white;
+}
+
+.rodape .h2 {
+    justify-content: center;
+    display: flex;
+    margin-top: 60px;
+}
+*/

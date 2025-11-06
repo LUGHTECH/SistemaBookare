@@ -14,9 +14,11 @@ botao.addEventListener('click', () => {
     // Abre o formulário
     form.style.maxHeight = form.scrollHeight + 'px';
     form.style.opacity = 1;
+    botao.innerHTML = "Cancelar";
   } else {
     // Fecha o formulário
     form.style.maxHeight = '0px';
     form.style.opacity = 0;
+    botao.innerHTML = "Entrar em contato";
   }
 });

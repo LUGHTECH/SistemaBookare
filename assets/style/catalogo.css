@@ -43,7 +43,7 @@ input[type="checkbox"] {
     align-items: center;
     gap: 5px;
     color: gray;
-    
+
 }
 
 
@@ -53,7 +53,7 @@ input[type="checkbox"] {
     gap: 10px;
     width: 40%;
     padding: 10px 0px;
-    
+
 }
 
 .filtrosAtivos p {
@@ -103,7 +103,7 @@ input[type="checkbox"] {
     display: flex;
     flex-direction: column;
     width: 60%;
-    
+
 }
 
 .form-filter fieldset {
@@ -116,8 +116,6 @@ input[type="checkbox"] {
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     overflow-y: auto;
-   
-
 }
 
 
@@ -159,14 +157,10 @@ input[type="checkbox"] {
     overflow-y: auto;
 }
 
-
-
-
 .catalog {
     width: 70%;
 
 }
-
 
 .userCatalogo {
     height: auto;
@@ -177,7 +171,7 @@ input[type="checkbox"] {
     align-items: center;
     flex-direction: column;
     padding: 0 5px;
-    gap: 10px;
+    gap: 20px;
 }
 
 .text-pesquisa {
@@ -192,7 +186,7 @@ input[type="checkbox"] {
 
 }
 
-.text-pesquisa h2{
+.text-pesquisa h2 {
     width: 75%;
     color: gray;
 }
@@ -200,20 +194,22 @@ input[type="checkbox"] {
 .text-pesquisa p {
     text-align: start;
     width: 25%;
-     color: gray;
+    color: gray;
 }
 
 .userCatalogo .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 15px 15px;
+
 }
 
 .usuariosCard {
-    padding: 10px;
+    padding: 15px 10px;
     display: flex;
     gap: 1rem;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     flex: 1 1 180px;
     /* flex-grow 1, flex-shrink 1, base 180px */
     max-width: 600px;
@@ -221,13 +217,16 @@ input[type="checkbox"] {
     justify-content: space-between;
     background-color: #ffffff;
     border-radius: 5px;
+    border-top: 5px solid #04afa7;
 
 }
+
+
 
 .cardLivroCapa {
     width: 200px;
     height: 200px;
-    border: solid;
+    border: 1px solid;
 }
 
 .cardLivroCapa img {
@@ -249,6 +248,8 @@ input[type="checkbox"] {
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #008080;
 
 }
 
@@ -268,16 +269,42 @@ input[type="checkbox"] {
     display: flex;
     gap: 5px;
     width: 100%;
+    border-radius: 5px;
+    height: 90px;
+    color: rgb(255, 255, 255);
+    background:
+        linear-gradient(rgba(49, 161, 126, 0.6), rgba(0, 0, 0, 0.6)),
+        url('../img/fundoLivros.jpg') center/cover no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+
 .cardUser {
-    border: solid;
-    width: 20%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    width: 50%;
 }
 
 .cardInfos {
-    width: 80%;
+    width: 50%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 
+.cardInfos p,
+h3 {
+    font-family: "Roboto";
+}
+
+.cardUser img {
+    border-radius: 0 0 20px 20px;
+    height: 120px;
+    box-shadow: none;
+    margin-top: -3px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .cardContato {
@@ -285,23 +312,47 @@ input[type="checkbox"] {
     flex-direction: column;
     justify-content: center;
     gap: 5px;
-    
+
 }
 
 
-.buttonFoto{
+.buttonFoto {
     display: flex;
     justify-content: center;
 }
 
 
-.buttonFoto button{
+.buttonFoto button {
     padding: 8px 20px;
-    color: #008080;
+    color: #ffffff;
     border-radius: 5px;
-    border: 2px solid #04afa7;
-    background-color: transparent;
+    border: none;
+    cursor: pointer;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     letter-spacing: 1px;
+    background: linear-gradient(135deg, #04a7ab, #00bfa5);
+    transition: 0.2s;
+
+
+}
+
+.buttonFoto button:hover {
+    background: linear-gradient(135deg, #04a7ab, #00bfa5);
+    transform: scale(1.07);
+}
+
+.paginacao {
+    margin-bottom: 20px;
+
+}
+
+
+.paginacao a {
+    border: solid;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    background-color: #04afa7;
+    color: white;
 }
