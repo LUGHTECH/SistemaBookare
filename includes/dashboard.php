@@ -1,5 +1,4 @@
 <!-- abre a sessão -->
- <!DOCTYPE html>
 <?php
 session_start();
 $username = $_SESSION['nome_usuario'] ?? null;
@@ -30,14 +29,15 @@ require_once __DIR__ . "/connect.php";
 
             <section class="abas">
                 <div class="container2">
-                    <div class="abas-menu">
+                    <div class="abas-menu" >
                         <!-- "ativo" é a principal padrao, e toda aba-link é uma opção, para adicionar mais paginas é so adicionar 
                  mais botao quele ele busca pela data-aba, so quero deixar meu depoimento que foi dor de cabeça 
                  tentar a arrumar o listar pra depois decobrir que o problema era o connnect.php, slk -->
 
-                        <button class="aba-link ativo" data-aba="info">Info</button>
-                        <button class="aba-link" data-aba="addLivro">Adicionar livros</button>
-                        <button class="aba-link" data-aba="listarLivro">Meus Livros</button>
+                        <button class="aba-link ativo" data-aba="info">Minhas Informações <img src="../assets/img/infoUser.png" alt=""></button>
+                        <button class="aba-link" data-aba="addLivro">Adicionar livros <img src="../assets/img/addLivros.png" alt=""></button>
+                        <button class="aba-link" data-aba="listarLivro">Meus Livros <img src="../assets/img/meusLivros.png" alt=""></button>
+                        <button class="aba-link" data-aba="planos">Planos <img src="../assets/img/credit-card.png" alt=""></button>
                     </div>
 
                     <div class="tabGroup" id="conteudo-aba">
@@ -69,7 +69,7 @@ require_once __DIR__ . "/connect.php";
         </div>
     </div>
 
-   
+    <?php include(__DIR__ . "/footer.php"); ?> <!--footer-->
 
     <!-- Script -->
     <script src="../assets/js/jquery-3.7.1.min.js"></script>
@@ -80,9 +80,6 @@ require_once __DIR__ . "/connect.php";
     <script src="../assets/js/refresh.js"></script>
     <script src="../assets/js/modalLivro.js"></script>
     <script src="../assets/js/fotoCadastro.js"></script>
-
-
-
 
 </body>
 

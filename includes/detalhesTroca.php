@@ -1,5 +1,6 @@
 <?php
 include(__DIR__ . "/topo.php");
+@session_start();
 $mensagemSucesso = $_GET['mensagem_enviada'] ?? null; // pega o redirect que vem do enviarMensagem.php
 
 
@@ -104,35 +105,41 @@ try {
                 <p class="subInfo"><strong>Dono:</strong> <?= htmlspecialchars($dados['nome_usuario']) ?></p>
                 <p class="subInfo"><strong>Cidade:</strong> <?= htmlspecialchars($dados['cidade']) ?> - <?= htmlspecialchars($dados['uf']) ?></p>
                 <div class="contato-area">
-                    <?php if ($dados['view_email'] == 1 || $dados['view_contato'] == 1): ?> <!--ABRE SE O USUÁRIO QUISER MOSTRAR ALGUMA FORMA DE CONTATO-->
-                         <p class="warning-user">Entre em contato com este usuário utilizando:</p>
-                        <?php if ($dados['view_email'] == 1): ?> <!--ver a tabela view email: mostra se for 1, esconde com 0 -->
-                            <p class="view"><strong>Email:</strong> <?= htmlspecialchars($dados['email_usuario']) ?></p>
-                        <?php endif; ?>
-                        <?php if ($dados['view_contato'] == 1): ?>
-                            <p class="view"><strong>Telefone:</strong> (<?= htmlspecialchars($dados['ddd']) ?>) <?= htmlspecialchars($dados['celular']) ?></p>
-                        <?php endif; ?>
+                    <?php if (isset($_SESSION["id_usuario"])): ?>
+                        <?php if ($dados['view_email'] == 1 || $dados['view_contato'] == 1): ?> <!--ABRE SE O USUÁRIO QUISER MOSTRAR ALGUMA FORMA DE CONTATO-->
+                            <p class="warning-user">Entre em contato com este usuário utilizando:</p>
+                            <?php if ($dados['view_email'] == 1): ?> <!--ver a tabela view email: mostra se for 1, esconde com 0 -->
+                                <p class="view"><strong>Email:</strong> <?= htmlspecialchars($dados['email_usuario']) ?></p>
+                            <?php endif; ?>
+                            <?php if ($dados['view_contato'] == 1): ?>
+                                <p class="view"><strong>Telefone:</strong> (<?= htmlspecialchars($dados['ddd']) ?>) <?= htmlspecialchars($dados['celular']) ?></p>
+                            <?php endif; ?>
 
-                    <?php else: ?> <!--CASO NENHUMA FORMA DE CONTATO SEJA MOSTRADA-->
-                        <p class="warning-user">O usuário optou por não compartilhar informações de contato.</p>
-                        <button id="abrirForm">Entrar em contato</button>
-                        <form id="formContato" action="enviarMensagem.php" method="POST">
-                            <input type="hidden" name="id_dono" value="<?= $dados['id_usuario'] ?>">
-                            <input type="hidden" name="id_livro" value="<?= $dados['id_livro'] ?>">
-                            <label>Seu nome:</label>
-                            <input type="text" name="nome" required>
+                        <?php else: ?> <!--CASO NENHUMA FORMA DE CONTATO SEJA MOSTRADA-->
+                            <p class="warning-user">O usuário optou por não compartilhar informações de contato.</p>
+                            <button id="abrirForm">Entrar em contato</button>
+                            <form id="formContato" action="enviarMensagem.php" method="POST">
+                                <input type="hidden" name="id_dono" value="<?= $dados['id_usuario'] ?>">
+                                <input type="hidden" name="id_livro" value="<?= $dados['id_livro'] ?>">
+                                <label>Seu nome:</label>
+                                <input type="text" name="nome" required>
 
-                            <label>Seu e-mail:</label>
-                            <input type="email" name="email" required>
+                                <label>Seu e-mail:</label>
+                                <input type="email" name="email" required>
 
-                            <label>Mensagem:</label>
-                            <textarea name="mensagem" value="Ola" rows="4" cols="50" required>
+                                <label>Mensagem:</label>
+                                <textarea name="mensagem" value="" rows="4" cols="50" required>
                                 Olá, estou interessado no seu livro!
                             </textarea>
-                            <div class="email-submit">
-                                <button type="submit">Enviar</button>
-                            </div>
-                        </form>
+                                <div class="email-submit">
+                                    <button type="submit">Enviar</button>
+                                </div>
+                            </form>
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <p class="warning-user">Você precisa estar logado para
+                            ver as informações de contato deste usuário!
+                        </p>
                     <?php endif; ?>
                 </div>
             </div>
@@ -140,8 +147,6 @@ try {
     </div>
 
     <a href="catalogo.php" class="back">← Voltar</a>
-
-
 
     <script src="../assets/js/readMore.js"></script>
     <script src="../assets/js/formContato.js"></script>

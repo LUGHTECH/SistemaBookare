@@ -8,7 +8,7 @@ $username = $_SESSION['username'] ?? null; ?>
     <div class="container">
         <nav>
             <div class="logo">
-                <a href="../index.php"><img src="/SistemaBookare/assets/img/BookareLogo.png" alt=""></a>
+                <a href="/SistemaBookare/index.php"><img src="/SistemaBookare/assets/img/BookareLogo.png" alt=""></a>
             </div>
             <div class="menu">
                 <ul>
@@ -33,8 +33,8 @@ $username = $_SESSION['username'] ?? null; ?>
                         echo '<div class="drop">Olá, ' . htmlspecialchars($username) . '
                                         <div class="forms">
                                         <p>Opcões</p>
-                                        <a href="/SistemaBookare/includes/dashboard.php">Sua Dashboard</a>
-                                        <a href="SistemaBookare/includes/dashboard.php">Alterar Cadastro</a>
+                                        <a href="/SistemaBookare/includes/dashboard.php">Dashboard</a>
+                                        <a href="/SistemaBookare/includes/catalogo.php">Catálogo</a>
                                          <form method="post" action="/SistemaBookare/includes/logout.php" style="display:inline">
                                              <input type="hidden" name="csrf_token" value="' . htmlspecialchars($_SESSION['csrf_token'] ?? '') . '">
                                              <button type="submit">Sair</button>

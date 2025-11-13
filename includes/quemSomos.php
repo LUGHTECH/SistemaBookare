@@ -81,7 +81,7 @@
         </div>
     </section3>
 
-    <section4>
+    <section4 id="redes">
         <div class="container3-detalhes">
             <div class="titulo-detalhes">
                 <h1>CONTATO</h1>
@@ -107,37 +107,6 @@
         </div>
     </section4>
 
-         <footer>
-        <div class="container">
-            <div class="icons">
-                <div class="logoFooter">
-                    <img src="/SistemaBookare/assets/img/BookareLogo.png" alt="">
-                </div>
-                <div class="redes">
-                    <a href=""><img src="/SistemaBookare/assets/img/instagram.png" alt=""></a>
-                    <a href=""><img src="/SistemaBookare/assets/img/whatsapp.png" alt=""></a>
-                    <a href=""><img src="/SistemaBookare/assets/img/github.png" alt=""></a>
-                </div>
-            </div>
-            <div class="listas">
-                <ul class="contato">
-                    <h3>Contato</h3>
-                    <li><a href="">Entre em contato</a></li>
-                    <li><a href="">Redes socias</a></li>
-                    <li><a href="">Descubra a Lughtech</a></li>
-                </ul>
-                <ul class="informacoes">
-                    <h3>Informações</h3>
-                    <li><a href="">Como trocar livros</a></li>
-                    <li><a href="">Quem somos</a></li>
-                    <li><a href="">Segurança</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="moreInfo">
-            <p>Mande sugestões para nosso e-mail: lugh tech.contato@gmail.com</p>
-            <p>2025, Lughtech Inc. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+    <?php include(__DIR__ . "/footer.php"); ?> <!--footer-->
 </body>
 </html>

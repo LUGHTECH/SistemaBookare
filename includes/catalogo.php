@@ -85,9 +85,20 @@
          </aside> <!--fim do filtro-->
 
          <section class="catalog">
+             <div class="banner-catalogo">
+                 <div class="imgBanner-c">
+                     <img src="../assets/img/catalogo-banner.jpg" alt="">
+                 </div>
+                 <div class="text-banner">
+                     <p>Livros Diversificados!</p>
+                     <p id="explicacao">Descubra uma grande variedade de livros prontos para serem trocados com outros leitores! Basta selecionar um dos cards ou pesquisar o livro de sua preferência. 
+                        Assim, você pode verificar o usuário que possui o livro desejado e observar as formas de contato preferidas pelo dono, dando início à troca.
+                     </p>
+                 </div>
+             </div>
              <div class="userCatalogo">
                  <div class="text-pesquisa">
-                     <h2>Você pesquisou por: "<?= htmlspecialchars($pesquisa) ?>"</h2>
+                     <h2><?= htmlspecialchars($pesquisa) ?></h2>
                      <p><?php if ($total > 0): ?>
                              Apresentando <?= $inicio ?>–<?= $fim ?> de <?= $total ?> resultado<?= $total > 1 ? 's' : '' ?>
                          <?php else: ?>
@@ -125,7 +136,7 @@
                                      <div class="cardLivroCapa">
                                          <img src="./dashboard/tabViews/<?= $usuario['foto_livro'] ?>" alt="">
                                      </div>
-                                     <p><?= htmlspecialchars($usuario['nome_livro']) ?></p>
+                                     <p class="title-book"><?= htmlspecialchars($usuario['nome_livro']) ?></p>
                                  </div>
                              </div>
                          <?php endforeach; ?>
@@ -141,7 +152,19 @@
          <a href="pesquisa.php?search=<?php echo urlencode($pesquisa); ?>&pagina=<?php echo $pagina + 1; ?>">Próximo</a>
      </div>
 
+     <?php include(__DIR__ . "/footer.php"); ?> <!--footer-->
+
      <script src="../assets/js/filtroCatalogo.js"></script>
+     <script>
+         const titulos = document.querySelectorAll(".title-book");
+         const limite = 28; // quantidade de caracteres
+
+         titulos.forEach(p => {
+             if (p.textContent.length > limite) {
+                 p.textContent = p.textContent.slice(0, limite) + "...";
+             }
+         });
+     </script>
  </body>
 
  </html>
