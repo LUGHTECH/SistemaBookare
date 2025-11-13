@@ -1,4 +1,5 @@
 <!-- abre a sessão -->
+ <!DOCTYPE html>
 <?php
 session_start();
 $username = $_SESSION['nome_usuario'] ?? null;
@@ -78,7 +79,7 @@ require_once __DIR__ . "/connect.php";
     <script src="../assets/js/modalForm.js"></script>
     <script src="../assets/js/refresh.js"></script>
     <script src="../assets/js/modalLivro.js"></script>
-    
+    <script src="../assets/js/fotoCadastro.js"></script>
 
 
 

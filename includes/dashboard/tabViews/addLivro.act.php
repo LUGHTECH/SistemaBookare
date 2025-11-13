@@ -204,26 +204,40 @@ try {
     
     // Processar fotos
     $ordem = 1;
-    
-    // Processar fotos individuais
-    foreach ($_FILES as $key => $file) {
-        if (strpos($key, 'fotos') === 0 && is_array($file['name'])) {
-            // Fotos enviadas como array (fotos[0], fotos[1], etc.)
-            for ($i = 0; $i < count($file['name']); $i++) {
-                if ($file['error'][$i] === UPLOAD_ERR_OK) {
-                    $foto = [
-                        'name' => $file['name'][$i],
-                        'type' => $file['type'][$i],
-                        'tmp_name' => $file['tmp_name'][$i],
-                        'error' => $file['error'][$i],
-                        'size' => $file['size'][$i]
-                    ];
+
+    // Processar fotos múltiplas
+    if (isset($_FILES['fotos']) && !empty($_FILES['fotos']['name'][0])) {
+        $fotos = $_FILES['fotos'];
+        
+        // Iterar através de cada foto enviada
+        for ($i = 0; $i < count($fotos['name']); $i++) {
+            // Verificar se o arquivo foi enviado sem erro
+            if ($fotos['error'][$i] === UPLOAD_ERR_OK) {
+                // Criar array com dados do arquivo individual
+                $foto = [
+                    'name' => $fotos['name'][$i],
+                    'type' => $fotos['type'][$i],
+                    'tmp_name' => $fotos['tmp_name'][$i],
+                    'error' => $fotos['error'][$i],
+                    'size' => $fotos['size'][$i]
+                ];
+                
+                try {
                     $fotoInfo = processarImagem($foto, $idLivro, 'foto');
                     $stmtImagem = $pdo->prepare("
                         INSERT INTO tb_livro_imagem (id_livro, tipo_imagem, caminho_imagem, ordem_imagem)
                         VALUES (?, 'foto', ?, ?)
                     ");
-                    $stmtImagem->execute([$idLivro, $fotoInfo['caminho'], $ordem++]);
+                    $stmtImagem->execute([$idLivro, $fotoInfo['caminho'], $ordem]);
+                    $ordem++;
+                    
+                    // Limitar a 5 fotos
+                    if ($ordem > 5) {
+                        break;
+                    }
+                } catch (Exception $e) {
+                    // Log do erro mas continua processando outras fotos
+                    error_log("Erro ao processar foto $i: " . $e->getMessage());
                 }
             }
         }
@@ -251,4 +265,20 @@ try {
         'message' => $e->getMessage()
     ]);
 }
+
+// DEBUG - Verificar se as fotos estão sendo processadas
+$fotosCount = 0;
+if (isset($_FILES['fotos']) && !empty($_FILES['fotos']['name'][0])) {
+    $fotosCount = count($_FILES['fotos']['name']);
+}
+
+echo json_encode([
+    'success' => true, 
+    'message' => 'Livro cadastrado com sucesso! ID: ' . $idLivro, 
+    'id_livro' => $idLivro,
+    'debug' => [
+        'fotos_enviadas' => $fotosCount,
+        'fotos_salvas' => ($ordem - 1)
+    ]
+]);
 ?>

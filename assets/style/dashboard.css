@@ -1035,6 +1035,67 @@ button[type="submit"]:hover {
     color: white;
 }
 
+/* Estilos para o sistema de fotos */
+.fotos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+    min-height: 120px;
+    padding: 10px;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
 
+.foto-item {
+    transition: transform 0.2s ease;
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 3px;
+    background: white;
+    vertical-align: top;
+}
 
+.foto-item:hover {
+    transform: scale(1.05);
+}
 
+.foto-item img {
+    border-radius: 4px;
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+}
+
+.fotos-container:empty::before {
+    content: "Nenhuma foto selecionada";
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Estilo para a capa */
+.capa-preview {
+    min-height: 100px;
+    border: 2px dashed #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.capa-preview img {
+    max-width: 200px;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+.hidden {
+    display: none;
+}
