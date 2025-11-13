@@ -162,6 +162,10 @@
     border-start-start-radius: 88% 15%;
     border-top-right-radius: 88% 15%;
     margin-top: -50px;
+    background: url(../img/bannerLogin.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container2-detalhes .seguranca {
@@ -180,8 +184,10 @@
     margin-left: 70px;
     text-align: center;
     padding-top: 100px; /*verrrr depois, gambiarra do Marcos*/
+    
 
 }
+
 
 .container2-detalhes .texto-detalhes {
     font-family: Arial, Helvetica, sans-serif;
@@ -195,8 +201,8 @@
 }
 
 .container2-detalhes .seguranca .texto-detalhes p {
-    width: 100%;
-    border: solid;
+    width: 90%;
+    border-top: 10px #8bc2c2 solid;
     text-align: justify;
     padding: 20px;
     border-radius: 5px;

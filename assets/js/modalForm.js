@@ -12,26 +12,31 @@ function abrirFormModal(dados = null) {
     document.getElementById("cep").value = dados.cep || "";
     document.getElementById("id_ddd").value = dados.ddd || "";
     document.getElementById("celular").value = dados.celular || "";
-    
-    dadosAtuais = dados; 
+
+    dadosAtuais = dados;
   }
 
 
   const modal = document.getElementById("formModalContainer");
   modal.style.opacity = "1";
   modal.style.visibility = "visible";
+
+  const overlay = document.getElementById('fundoModal');
+  overlay.classList.add('show');
 }
 
 function fecharModal() {
-  
+
   document.querySelectorAll(".modal, .modal2").forEach(modal => {
     modal.style.opacity = "0";
     modal.style.visibility = "hidden";
   });
+
+   document.getElementById('fundoModal').classList.remove('show');
 }
 
 function enviarFormulario(event) {
-  event.preventDefault(); 
+  event.preventDefault();
 
 
   const form = document.getElementById("formModal");

@@ -106,6 +106,8 @@
     justify-content: center;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 .abas-menu{
     display: flex;
     align-items: center;
@@ -125,6 +127,11 @@
     font-weight: 700;
     cursor: pointer;
     background-color: rgb(220, 220, 220);
+    font-family: "Roboto";
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
 }
 
 .container2{
@@ -823,13 +830,34 @@ button[type="submit"]:hover {
     position: absolute;
     opacity: 0;
     visibility: hidden;
-    top: 55%;
+    top: 50%;
     left: 50%;
     right: 50%;
     transform: translate(-50%, -50%);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: 0.2s;
 
+}
+
+.fundoModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* escurece o fundo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+.fundoModal.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 .content-livros{
@@ -990,8 +1018,8 @@ button[type="submit"]:hover {
 
 .conservFotos{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    height: 150px;
-    min-width: 250px;
+    height: 200px;
+    min-width: 200px;
     color: #04afa7;
 }
 
@@ -1034,6 +1062,7 @@ button[type="submit"]:hover {
     background-color: #005B73;
     color: white;
 }
+
 
 /* Estilos para o sistema de fotos */
 .fotos-container {
@@ -1099,3 +1128,7 @@ button[type="submit"]:hover {
 .hidden {
     display: none;
 }
+
+
+
+

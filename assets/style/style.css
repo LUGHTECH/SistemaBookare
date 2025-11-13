@@ -1,36 +1,35 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Lora", serif;
 }
 
-body{
+body {
     background-image: url(../img/FundoBody.png);
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column ;
+    flex-direction: column;
 
 }
 
 /*CABEÇALHO*/
 
 :root {
-  --header-altura: 100px;
+    --header-altura: 100px;
 }
 
-header{
+header {
     height: var(--header-altura);
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 5;
-    
+    z-index: 30;
+
 }
 
-header .container{
+header .container {
     background-image: url(../img/fundoHeader.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -40,7 +39,7 @@ header .container{
 
 }
 
-.top{
+.top {
     background-color: white;
     height: 50px;
     border-radius: 5px;
@@ -55,7 +54,7 @@ header .container{
 
 
 
-#search2{
+#search2 {
     width: 90%;
     height: 30px;
     border-radius: 0;
@@ -67,19 +66,19 @@ header .container{
     padding-right: 30px;
 }
 
-#pesq{
+#pesq {
     border-radius: 5px;
     border: solid white;
-    
+
 }
 
-header .container nav{
+header .container nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.logo{
+.logo {
     height: 65px;
     width: 30%;
     display: flex;
@@ -88,15 +87,15 @@ header .container nav{
     padding-left: 2%;
 }
 
-.logo a{
+.logo a {
     height: 100%;
 }
 
-.logo a img{
+.logo a img {
     height: 100%;
 }
 
-.menu{
+.menu {
     display: flex;
     width: 50%;
     height: 60px;
@@ -105,23 +104,27 @@ header .container nav{
     margin-right: 10px;
 }
 
-.menu ul{
+.menu ul {
     display: flex;
     justify-content: space-around;
     width: 100%;
     list-style: none;
 }
 
-.menu ul li a{
+.menu ul li a {
     text-decoration: none;
     font-size: 1.1rem;
     color: white;
     text-transform: uppercase;
     font-weight: 500;
-    
+
 }
 
-.login{
+.menu ul li a:hover {
+    color: #08fff3;
+}
+
+.login {
     width: 40%;
     display: flex;
     justify-content: center;
@@ -129,7 +132,7 @@ header .container nav{
     padding: 3px 3px 3px 3px;
 }
 
-.entrar{
+.entrar {
     border-right: 4px solid white;
     width: 40%;
     height: 65px;
@@ -144,40 +147,40 @@ header .container nav{
 
 }
 
-.entrar a{
+.entrar a {
     color: white;
     text-decoration: none;
 }
 
-.perfil{
+.perfil {
     width: 30%;
     display: flex;
     align-items: center;
     padding-left: 2%;
     justify-content: start;
-   
+
 }
 
-.perfil img{
+.perfil img {
     height: 60px;
     width: 60px;
     border: solid 3px #ffffff;
     border-radius: 50%;
     padding: 4px;
-    
+
 }
 
-.drop{
+.drop {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 5px 0;    
+    padding: 5px 0;
     cursor: pointer;
     align-items: center;
     justify-content: center;
 }
 
-.forms{
+.forms {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -190,46 +193,52 @@ header .container nav{
     margin-top: 5px;
     opacity: 0;
     visibility: hidden;
-    background: #005B73;
-    background: radial-gradient(circle, rgba(0, 91, 115, 1) 35%, rgba(0, 70, 105, 1) 85%);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background: 
+        url(../img/FundoBody.png);
+    background-size: cover;
+    background-position: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     border-radius: 5px;
-  
+
 }
 
-.forms form{
+.forms form {
     width: 100%;
     margin-top: 20px;
-    
+
 }
 
-.forms a{
-    border-bottom: 1px outset #ffffff;
+.forms a {
+    border: 1px outset #00796B;
     font-size: 1rem;
     text-align: center;
-    margin: 5px;
-    padding: 2px;
-    color: #ffffff;
+    margin: 10px;
+    padding: 5px;
+    color: gray;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 5px;
 }
 
-.forms p{
+.forms p {
     text-align: center;
     margin-bottom: 5px;
     font-size: 1.3rem;
-    color: #ffffff;
+    color: #008080;
+    text-transform: uppercase;
+    
 }
 
-.forms form button{
+.forms form button {
     width: 100%;
     margin-top: 10px;
     padding: 5px;
     border-radius: 5px;
     border: none;
-    background-color: #ffffff;
-    color: #00796B;
+    background-color: #04afa7;
+    color: #ffffff;
 }
 
-.drop:hover .forms{
+.drop:hover .forms {
     opacity: 1;
     visibility: visible;
     transition: 0.2s;
@@ -242,20 +251,20 @@ header .container nav{
 
 /*MAIN*/
 
-main{
+main {
     width: 100%;
     height: auto;
 
 }
 
-.mainBanner-index{
+.mainBanner-index {
     margin-top: var(--header-altura);
 }
 
-.mainBanner-index .container{
+.mainBanner-index .container {
     /*background-color: rgb(16, 50, 80);*/
     background-image: linear-gradient(to bottom, rgba(5, 36, 36, 0.6), rgba(255, 255, 255, 0.2)), url('../img/mainBanner.jpg');
-    background-position:center;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 84vh;
@@ -267,52 +276,52 @@ main{
     flex-direction: column;
     gap: 1rem;
     padding: 3%;
-   
+
 }
 
-.chamada{
+.chamada {
     text-align: center;
     font-size: 1.6rem;
     width: 50%;
     height: 25%;
 }
 
-.animation{
+.animation {
     display: flex;
     align-items: center;
     height: 26%;
     padding-bottom: 1%;
-   
+
 }
 
 
 
-.chamada h1{
+.chamada h1 {
     color: white;
     font-weight: 900;
 }
 
 
-.btnCadastrar{
+.btnCadastrar {
     width: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 54%;
-    
+
 }
 
-.clicado{
+.clicado {
     background-color: #012525;
 }
 
-form{
-    width: 100% ;
+form {
+    width: 100%;
     display: flex;
     gap: 10px;
 }
 
-.btnCadastrar form input[type = "submit"]{
+.btnCadastrar form input[type="submit"] {
     border-radius: 5px;
     border: none;
     width: 15%;
@@ -322,57 +331,57 @@ form{
 
 }
 
-.btnCadastrar form input[type= "search"]{
+.btnCadastrar form input[type="search"] {
     padding: 2% 25%;
     border-radius: 20px;
     border: 2px solid #005B73;
-    background-color:#ffffff;
+    background-color: #ffffff;
     text-align: center;
     font-size: 1.2rem;
     width: 86%;
     outline: none;
-    
+
 }
 
-.btnCadastrar form input[type= "search"]:focus{
+.btnCadastrar form input[type="search"]:focus {
     border-color: #00796B;
     transition: 0.4s;
     cursor: pointer;
 }
 
-.btnCadastrar button:hover{
+.btnCadastrar button:hover {
     transition: 0.3s;
-    
+
 }
 
 
-.btnCadastrar button a{
+.btnCadastrar button a {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1rem;
     color: #ffffff;
     font-weight: 600;
-    
+
 }
 
 /*FIM DO MAIN*/
 
 /* GENEROS*/
 
-.catalogo{
+.catalogo {
     width: 100%;
     height: auto;
     padding: 3%;
     margin-top: 4%;
 
-    
+
 }
 
-.catalogo .container{
+.catalogo .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; 
+    flex-direction: column;
     margin: 0;
     width: 100%;
     height: auto;
@@ -380,36 +389,36 @@ form{
     gap: 1rem;
 }
 
-.semIdeias h2{
+.semIdeias h2 {
     font-size: 2.3rem;
     color: #008080;
     text-align: center;
 }
 
-.semIdeias p{
+.semIdeias p {
     color: #008080;
     font-size: 1.2rem;
     text-align: center;
 }
 
-.generos{
+.generos {
     display: flex;
     justify-content: space-evenly;
     padding: 2% 5%;
     width: 100%;
 }
 
-.generos button{
+.generos button {
     padding: 15px 25px;
     color: #008080;
-    background-color:white;
+    background-color: white;
     border: 1px outset #008080;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.2rem;
 }
 
-.generos button:hover{
+.generos button:hover {
     background-color: #008080;
     color: white;
     transition: 0.3s;
@@ -419,7 +428,7 @@ form{
 
 /*CATOLOGO*/
 
-.livros{
+.livros {
     display: flex;
     width: 70%;
     padding-top: 1%;
@@ -429,51 +438,52 @@ form{
     margin-top: 2%;
 }
 
-.livros .info{
+.livros .info {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 1 1 180px;       /* flex-grow 1, flex-shrink 1, base 180px */
-    max-width: 200px; 
+    flex: 1 1 180px;
+    /* flex-grow 1, flex-shrink 1, base 180px */
+    max-width: 200px;
 }
 
 
-.livros .info div{
+.livros .info div {
     width: 128px;
-    height: 184px;  
+    height: 184px;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
-.info div img{
+.info div img {
     width: 100%;
     height: 100%;
 }
 
-.info h4{
+.info h4 {
     text-align: center;
     width: 100%;
     height: 50px;
     font-size: 1rem;
-    
+
 }
 
-.info p{
+.info p {
     font-size: 0.8rem;
     margin-top: 5px;
 }
 
-.verMais{
+.verMais {
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 2%;
 }
 
-.verMais button{
+.verMais button {
     padding: 15px 40px;
     border: none;
     color: white;
@@ -489,7 +499,7 @@ form{
 
 /*QUALIDADES*/
 
-.sessaoDois{
+.sessaoDois {
     margin: auto;
     width: 100%;
     height: auto;
@@ -498,7 +508,7 @@ form{
     padding: 0 3%;
 }
 
-.sessaoDois .container{
+.sessaoDois .container {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -507,7 +517,7 @@ form{
     border-radius: 5px;
 }
 
-.qualidades{
+.qualidades {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -516,16 +526,16 @@ form{
     text-align: center;
 }
 
-.qualidades p{
+.qualidades p {
     color: #008080;
     font-size: 1.4rem;
-    
+
 }
 
 
 /*Avaliação dos Usuários*/
 
-.sessaoQuatro{
+.sessaoQuatro {
     height: auto;
     margin: 3% 0 10% 0;
     position: relative;
@@ -538,18 +548,18 @@ form{
     align-items: center;
 }
 
-.sessaoQuatro .avaliacao{
+.sessaoQuatro .avaliacao {
     padding: 40px 60px;
-    
+
 }
 
-.tittle{
+.tittle {
     text-align: center;
     font-size: 1.6rem;
-  
+
 }
 
-.tittle h2{
+.tittle h2 {
     border-bottom: 1px solid #008080;
     color: #00796B;
     width: fit-content;
@@ -557,32 +567,32 @@ form{
 
 
 
-.fotoNome{
+.fotoNome {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0.5%;
     gap: 5px;
-   
+
 }
 
-.fotoNome img{
+.fotoNome img {
     height: 150px;
     width: 150px;
     border-radius: 50%;
 }
 
-.fotoNome h3{
+.fotoNome h3 {
     color: #008080;
 
 }
 
-.fotoNome p{
+.fotoNome p {
     font-style: italic;
     color: #012525;
 }
 
-.textAvaliacao{
+.textAvaliacao {
     text-align: center;
     font-size: 1.2rem;
     color: #005B73;
@@ -591,7 +601,7 @@ form{
 
 /*Footer*/
 
-footer{
+footer {
     width: 100%;
     height: auto;
     background-image: url(../img/fundoHeader.png);
@@ -600,94 +610,104 @@ footer{
     align-items: center;
 }
 
-footer .container{
+footer .container {
     display: flex;
     padding: 3% 0 1% 0;
 
 }
 
-.icons{
+.icons {
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.logoFooter{
-    width: 50%  ;
+.logoFooter {
+    width: 35%;
+
+    padding: 5px;
 }
 
-.logoFooter img{
+.logoFooter img {
     width: 100%;
 }
 
-.redes{
-    width: 50%;
+.redes {
+    width: 30%;
     display: flex;
     gap: 2rem;
     padding: 1% 4%;
+    border: 1px solid white;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: #04afa7;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.redes img{
+.redes img {
     height: 40px;
     width: 40px;
 }
 
-.listas{
+.listas {
     width: 50%;
     display: flex;
     justify-content: space-around;
     padding: 0 5%;
 }
 
-.contato h3, .informacoes h3{
-    font-size: 1.8rem;
+.contato h3,
+.informacoes h3 {
+    font-size: 1.5rem;
     margin-bottom: 8px;
     color: white;
     text-transform: uppercase;
-    text-shadow: 
-    -1px -1px 0 #00796B,  
-     1px -1px 0 #00796B,
-    -1px  1px 0 #00796B,
-     1px  1px 0 #00796B;
+    text-shadow:
+        -1px -1px 0 #00796B,
+        1px -1px 0 #00796B,
+        -1px 1px 0 #00796B,
+        1px 1px 0 #00796B;
 }
 
-.contato, .informacoes{
+.contato,
+.informacoes {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
 }
 
-.contato li a, .informacoes li a{
+.contato li a,
+.informacoes li a {
     text-decoration: none;
     font-size: 1.3rem;
     color: white;
-    text-shadow: 
-    -1px -1px 0 #00796B,  
-     1px -1px 0 #00796B,
-    -1px  1px 0 #00796B,
-     1px  1px 0 #00796B;
+    text-shadow:
+        -1px -1px 0 #00796B,
+        1px -1px 0 #00796B,
+        -1px 1px 0 #00796B,
+        1px 1px 0 #00796B;
 }
 
-.moreInfo{
+.moreInfo {
     text-align: center;
     padding: 2% 0;
     width: 50%;
     border-top: 1px white solid;
 }
 
-.moreInfo p{
+.moreInfo p {
     margin: 4px;
     color: rgb(255, 255, 255);
-     text-shadow: 
-    -1px -1px 0 #00796B,  
-     1px -1px 0 #00796B,
-    -1px  1px 0 #00796B,
-     1px  1px 0 #00796B;
+    text-shadow:
+        -1px -1px 0 #00796B,
+        1px -1px 0 #00796B,
+        -1px 1px 0 #00796B,
+        1px 1px 0 #00796B;
 }
 
-
-
-
-
+.contato li a:hover,
+.informacoes a:hover {
+    color: #08fff3;
+}
