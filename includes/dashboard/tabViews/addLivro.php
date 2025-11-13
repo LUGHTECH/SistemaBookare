@@ -1,3 +1,4 @@
+
 <form action="dashboard/tabViews/addLivro.act.php" method="post" id="formLivro" enctype="multipart/form-data">
     <!-- Campo hidden para o ID do usuário -->
     <input type="hidden" name="id_usuario" value="<?php echo $idUsuario; ?>">
