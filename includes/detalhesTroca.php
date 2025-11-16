@@ -56,6 +56,11 @@ try {
     $stmt->execute([$id_usuario, $id_livro]);
     $dados = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    $sqlFotos = "SELECT caminho_imagem from tb_livro_imagem where id_livro = ?";
+    $stmt2 = $pdo->prepare($sqlFotos);
+    $stmt2->execute([$id_livro]);
+    $fotosLivro = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+
     if (!$dados) {
         die("Livro não encontrado.");
     }
@@ -81,6 +86,7 @@ try {
             <div class="img-ilustrativa">
                 <img src="./dashboard/tabViews/<?= htmlspecialchars($dados['foto_livro']) ?>" alt="Capa do Livro">
                 <p>Imagem Ilustrativa</p>
+
             </div>
             <div class="infoD-livros">
                 <h1 class="h1"><?= htmlspecialchars($dados['nome_livro']) ?></h1>
@@ -96,10 +102,20 @@ try {
                     </p>
                     <button class="toggle" data-state="more"> Leia mais </button>
                 </div>
+                <div class="livro-state">
+                    <?php foreach ($fotosLivro as $index => $img): ?>
+                        <?php if ($index === 0) continue; ?> <!-- pula a primeira imagem -->
+                        <div class="imgs-flow">
+                            <img src="./dashboard/tabViews/<?= htmlspecialchars($img['caminho_imagem']) ?>" alt="Imagem do livro">
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
 
-        <div class="usuario">
+
+        <div class="contUser">
+        <div class="usuario" id="usuario">
             <img src="./dashboard/tabViews/<?= htmlspecialchars($dados['foto_usuario']) ?>" alt="Foto do usuário">
             <div class="infoD-usuario">
                 <p class="subInfo"><strong>Dono:</strong> <?= htmlspecialchars($dados['nome_usuario']) ?></p>
@@ -143,6 +159,7 @@ try {
                     <?php endif; ?>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 

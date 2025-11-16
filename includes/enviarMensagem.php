@@ -42,7 +42,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 // --- buscar dados do dono no banco (usa seu $con2 do connect.php) ---
 $dono = null;
-$sql = "SELECT id_usuario, nome_usuario, email_usuario FROM tb_usuario WHERE id_usuario = ?";
+$sql = "SELECT id_usuario, nome_usuario, email_usuario FROM tb_usuario WHERE id_usuario = ?"; //busca de usuarios
 if ($stmt = mysqli_prepare($con2, $sql)) {
     mysqli_stmt_bind_param($stmt, "i", $id_dono);
     mysqli_stmt_execute($stmt);
@@ -52,6 +52,20 @@ if ($stmt = mysqli_prepare($con2, $sql)) {
 }
 if (!$dono) {
     die('Dono do livro não encontrado.');
+}
+
+$livro = null;
+$sql2 = "SELECT nome_livro FROM tb_livro WHERE id_livro = ?"; //busca de livros, usado no titulo do e-mail
+if ($stmt2 = mysqli_prepare($con2, $sql2)) {
+    mysqli_stmt_bind_param($stmt2, "i", $id_livro);
+    mysqli_stmt_execute($stmt2);
+    $res2 = mysqli_stmt_get_result($stmt2);
+    $livro = mysqli_fetch_assoc($res2);
+    mysqli_stmt_close($stmt2);
+}
+
+if (!$livro) {
+    die('Livro não encontrado.');
 }
 
 // --- configurar PHPMailer ---
@@ -84,7 +98,7 @@ try {
     // Conteúdo
     $mail->isHTML(true);
     $mail->CharSet = 'UTF-8';
-    $mail->Subject = 'Alguém demonstrou interesse no seu livro - Bookare';
+    $mail->Subject = "Alguém demonstrou interesse no seu livro: \"{$livro['nome_livro']}\" - Bookare";
     $mailBody = "
         <p>Olá <strong>" . htmlspecialchars($dono['nome_usuario']) . "</strong>,</p>
         <p>Você recebeu uma mensagem de <strong>" . htmlspecialchars($nome) . "</strong> através do Bookare:</p>
@@ -107,8 +121,8 @@ try {
     // mostrar erro informativo em desenvolvimento
     // em produção registre o erro em arquivo e mostre mensagem amigável
     error_log('PHPMailer error: ' . $mail->ErrorInfo);
-    echo "Erro ao enviar a mensagem: " . htmlspecialchars($mail->ErrorInfo);
+    //echo "Erro ao enviar a mensagem: " . htmlspecialchars($mail->ErrorInfo);
     // ou redirecione com erro:
-    // header("Location: " . ($_SERVER['HTTP_REFERER'] ?? 'index.php') . "?mensagem_enviada=0");
+     header("Location: " . ($_SERVER['HTTP_REFERER'] ?? 'index.php') . "?mensagem_enviada=0");
     // exit;
 }
