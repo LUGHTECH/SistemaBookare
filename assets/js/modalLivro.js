@@ -19,13 +19,11 @@ function abrirModalLivro(livro) {
     const capa = document.getElementById("capaLivro");
     capa.src = fotos_livro[0] ? `/SistemaBookare/includes/dashboard/tabViews/${fotos_livro[0]}` : "../assets/img/defaultBook.png";
 
-    // pegar a segunda imagem, se existir
     const img1 = document.getElementById("img1");
     img1.src = fotos_livro[1]
         ? `/SistemaBookare/includes/dashboard/tabViews/${fotos_livro[1]}`
         : "../assets/img/defaultBook.png";
 
-    // pegar a segunda imagem, se existir
     const img2 = document.getElementById("img2");
     img2.src = fotos_livro[2]
         ? `/SistemaBookare/includes/dashboard/tabViews/${fotos_livro[2]}`

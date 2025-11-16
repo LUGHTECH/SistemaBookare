@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const containerFiltros = document.getElementById("filtrosAtivos");
 
     function atualizarFiltros() {
-        containerFiltros.innerHTML = ""; // limpa antes de redesenhar
+        containerFiltros.innerHTML = ""; 
 
         // pega todos os checkboxes marcados
         const marcados = form.querySelectorAll("input[type='checkbox']:checked");
