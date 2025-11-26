@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/11/2025 às 20:06
+-- Tempo de geração: 18/11/2025 às 21:40
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -118,8 +118,9 @@ INSERT INTO `tb_contato` (`id_contato`, `id_usuario`, `ddd`, `celular`, `fixo`) 
 (14, 17, '11', '99999997', ''),
 (15, 18, '11', '969298875', ''),
 (16, 19, '92', '85888569', ''),
-(17, 20, '', '', ''),
-(18, 21, '', '', '');
+(17, 20, '11', '', ''),
+(18, 21, '', '', ''),
+(19, 22, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -205,8 +206,9 @@ INSERT INTO `tb_endereco` (`id_endereco`, `id_usuario`, `logradouro`, `numero`, 
 (14, 17, 'Rua Bentinho', '99', 'Fundos', 'Escondido', 'Suzano', 25, '08382100'),
 (15, 18, 'Rua de Suzano', '225', 'fundo de Suzano', 'Suzano', 'Suzano', 25, '08282100'),
 (16, 19, 'Rua G De Lima', '36', 'fundo de Suzano', 'Recanto Verde do Sol', 'amazonas', 4, '08382100'),
-(17, 20, '', '', '', '', '', NULL, ''),
-(18, 21, '', '', '', '', '', NULL, '');
+(17, 20, 'Rua Gonçalves De Lima', '22', 'Fundos', 'Recanto Verde do Sol', 'São Paulo', 25, '08382100'),
+(18, 21, '', '', '', '', '', NULL, ''),
+(19, 22, '', '', '', '', '', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -380,7 +382,8 @@ INSERT INTO `tb_livro` (`id_livro`, `id_usuario`, `isbn`, `nome_livro`, `id_livr
 (63, 20, '', 'Território Lovecraft', 60, 1, 5, 5, 1, 2020, 'Uma jornada fantástica e assustadora, adaptada para virar série na HBO com produção do diretor de Corra!, Jordan Peele, e J.J. Abrams Nos Estados Unidos segregados da década de 1950, Atticus é um rapaz negro, veterano da Guerra da Coreia, fã de H. P. Lovecraft e outros escritores de pulp fiction. Ao descobrir que o pai desapareceu, ele volta à cidade natal para, com o tio e a amiga, partir em uma missão de resgate. Na viagem até a mansão do herdeiro da propriedade que mantinha um dos ancestrais de Atticus escravizado, o grupo enfrentará sociedades secretas, rituais sanguinolentos e o preconceito de todos os dias. Ao chegar, Atticus encontra seu pai acorrentado, mantido prisioneiro por uma confraria secreta, que orquestra um ritual cujo personagem principal é o próprio Atticus. A única esperança de salvação do jovem, no entanto, pode ser a semente de sua destruição — e de toda a sua família. E esta é apenas a primeira parada de uma jornada impressionante. Estruturado ao mesmo tempo como uma coletânea de contos e um romance, Território Lovecraft apresenta, além de personagens memoráveis, elementos sobrenaturais, como casas assombradas e portais para outras realidades, objetos enfeitiçados e livros mágicos. Um retrato caleidoscópico do racismo — o fantasma que até hoje assombra o mundo —, a obra de Matt Ruff une ficção histórica e pulp noir ao horror e à fantasia de Lovecraft para explorar os terrores da época de segregação racial nos Estados Unidos.', '2025-11-13 14:19:32', 'Novo'),
 (64, 20, '', 'O Espreitador e Outras Histórias', 66, 6, 34, 22, 1, 2024, 'Daniel Hartmann foi um dos principais escritores do sobrenatural no Brasil e no resto do mundo. Com mais de dez livros publicados, incluindo os premiados O Espreitador e A Mulher Afogada, e milhões de exemplares vendidos, Hartmann redefiniu a forma como a literatura de terror é vista pelo público e pela crítica. Hartmann também foi um renomado pesquisador do oculto. Reconhecido mundialmente por suas análises de fenômenos inexplicáveis com fundo religioso, ministrou diversas palestras internacionais sobre o tema, nas quais também debateu grandes questões filosóficas, incluindo a que mais assombra a humanidade: para onde vamos após a morte? Apesar do próprio Hartmann ter expressado o desejo de que suas histórias deixassem de ser vendidas, acreditamos que todos merecem conhecer a sua obra, e temos o prazer em apresentar esta publicação. Leia sem medo. Afinal, por mais assustadores que seja, não pe como se essas histórias pudessem machucá-lo de verdade. *Daniel Hartmann é um personagem fictício do universo Ordem Paranormal.\r\n\r\nCellbit é criador de conteúdo desde 2012. Presente nas plataformas YouTube e Twitch, conquistou mais de seis milhões de inscritos e o prêmio de Melhor Conteúdo de Games do Brasil no iBest! 2023. É criador do universo de Ordem Paranormal, atuando como roteirista e mestre no RPG de mesa, e diretor criativo do jogo Enigma do Medo, ambientado no mesmo universo.\r\n\r\nFelipe Castilho escreve livros, séries, HQs e games. Entre suas várias publicações, destacam-se a duologia Ordem Vermelha, e os finalistas do Prêmio Jabuti: Serpentário e Savana de Pedra. Além disso, participou da antologia especial Coringa: O Mundo, da DC Comics, escrevendo histórias do maior vilão do Batman em terras brasileiras.\r\n\r\nKaren Soarele é a romancista dos principais universos de fantasia do Brasil: Tormenta, Ordem Paranormal e o Nerdcast RPG. Possui nove livros publicados, com destaque para A Deusa no Labirinto (agora em sua 2ª edição), As Máscaras do Metamorfo e O Enigma do Sol Oculto. Foi finalista dos prêmios AGES, Le Blanc, Minuano e Jabuti e, por sua contribuição cultural ao país, recebeu o Troféu Cecília Meireles.\r\n\r\nLeonel Caldela é um dos criadores de Tormenta, o maior universo de fantasia do Brasil. Para esse cenário escreveu: A Trilogia da Tormenta (composta por O Inimigo do Mundo, O Crânio e o Corvo e O Terceiro Deus) e A Flecha de Fogo. Também é autor dos livros O Caçador de Apóstolos e Deus Máquina. Em parceria com o Jovem Nerd, escreveu a série A Lenda de Ruff Ghanor e Ozob ― Protocolo Molotov. Fanático por RPG há décadas, é mestre dos podcasts NerdcastRPG, que deram origem a seus romances A Roda de Deus e O Criador da Morte, e da campanha online Fim dos Tempos.', '2025-11-13 16:38:03', 'Novo'),
 (65, 20, '', 'Sherlock Holmes - O cão dos Baskerville', 72, 1, 1, 4, 1, 2021, 'Uma terrível maldição pesa sobre os Baskerville na velha mansão de seus ancestrais, no meio de um pântano selvagem no interior da Inglaterra: quando um cão enorme e demoníaco, uma fera gigantesca e faiscante aparece, é morte certa para um membro da família. As circunstâncias dramáticas da morte repentina de Sir Charles Baskerville e os uivos aterrorizantes que vêm do pântano parecem confirmar essa maldição. Seria essa morte causada por um ser sobrenatural? Ou seria ela um macabro homicídio?\r\n\r\nHenry Baskerville, o herdeiro de Sir Charles, volta do Canadá para tomar posse de seu título e de seus domínios. Ainda em Londres, recebe um bilhete anônimo: “Se você dá valor à sua vida ou à sua sanidade mental, deve se manter longe do pântano.” Apesar da ameaça e sem noção do terror que os espera, Sir Henry decide ir para a Mansão Baskerville, acompanhado por Watson, amigo e assistente de Sherlock Holmes encarregado pelo detetive de proteger o rapaz. Enquanto isso, Sherlock se empenha em resolver o enigma sem o conhecimento dos outros…', '2025-11-13 17:24:33', 'Novo'),
-(68, 21, '', 'Sherlock Holmes - O cão dos Baskerville', 90, 1, 1, 3, 1, 2019, 'Holmes investiga a morte do milionário Sir Charles Baskerville que foi encontrado em um pântano próximo a sua casa. Uma lenda local dizia que ele foi assassinado por um cão que assombrava a região. Será isso mesmo?', '2025-11-13 18:06:35', 'Danos Leves');
+(68, 21, '', 'Sherlock Holmes - O cão dos Baskerville', 90, 1, 1, 3, 1, 2019, 'Holmes investiga a morte do milionário Sir Charles Baskerville que foi encontrado em um pântano próximo a sua casa. Uma lenda local dizia que ele foi assassinado por um cão que assombrava a região. Será isso mesmo?', '2025-11-13 18:06:35', 'Danos Leves'),
+(69, 15, '', 'As Crônicas de Nárnia - Coleção de Luxo: O Leão, a Feiticeira e o Guarda-roupa', 96, 2, 27, 28, 1, 2023, 'Grande sucesso de C. S. Lewis, esta é a edição de luxo definitiva de um dos maiores clássicos da literatura infantojuvenil. Reinos mágicos, criaturas inesquecíveis e batalhas épicas entre o bem o mal: essas histórias são narradas em As Crônicas de Nárnia ― uma série de sete livros que acompanha crianças curiosas e suas aventuras entre o nosso mundo e outros universos mágicos. O Leão, a Feiticeira e o Guarda-roupa conta a história dos irmãos Pedro, Susana, Edmundo e Lúcia Pevensie. Em meio a brincadeiras na casa de um velho professor, eles descobrem um misterioso guarda-roupa que os leva a Nárnia, um reino mágico que sofre de um inverno sem fim desde que Jadis, a temida Feiticeira Branca, tomou o poder. Mas uma antiga profecia ― que envolve justamente quatro crianças, além de um fantástico leão chamado Aslan ― afirma que há esperança para o reino, contanto que se tenha coragem. Escrito pelo gênio C.S. Lewis, O Leão, a Feiticeira e o Guarda-roupa foi o primeiro livro lançado de As Crônicas de Nárnia, em 1950. Esta obra encanta crianças e adultos há mais de 70 anos, o que faz dela um dos maiores clássicos do gênero infantojuvenil e fantástico. Há muito aguardada pelos fãs, esta é a versão definitiva para os amantes de Sr. Tumnus e dos seus amigos da floresta. Com nova tradução de Ronald Kyrmse, o livro possui capa dura com acabamento soft touch e pintura trilateral, além de ter ilustrações coloridas de Pauline Baynes, a artista favorita de C.S. Lewis e de seu melhor amigo, J.R.R. Tolkien, autor de O Hobbit e O Senhor dos Anéis.', '2025-11-16 18:53:27', 'Novo');
 
 -- --------------------------------------------------------
 
@@ -489,7 +492,13 @@ INSERT INTO `tb_livro_imagem` (`id_livro_imagem`, `id_livro`, `tipo_imagem`, `ca
 (92, 68, 'foto', 'uploads/livros/68/foto_1763057195_69161e2b22306.jpg', 2, '2025-11-13 18:06:35'),
 (93, 68, 'foto', 'uploads/livros/68/foto_1763057195_69161e2b225e3.jpg', 3, '2025-11-13 18:06:35'),
 (94, 68, 'foto', 'uploads/livros/68/foto_1763057195_69161e2b22c45.jpg', 4, '2025-11-13 18:06:35'),
-(95, 68, 'foto', 'uploads/livros/68/foto_1763057195_69161e2b22eb5.jpg', 5, '2025-11-13 18:06:35');
+(95, 68, 'foto', 'uploads/livros/68/foto_1763057195_69161e2b22eb5.jpg', 5, '2025-11-13 18:06:35'),
+(96, 69, 'capa', 'uploads/livros/69/capa_1763319207_691a1da781b3d.jpg', 0, '2025-11-16 18:53:29'),
+(97, 69, 'foto', 'uploads/livros/69/foto_1763319209_691a1da956e7b.jpg', 1, '2025-11-16 18:53:29'),
+(98, 69, 'foto', 'uploads/livros/69/foto_1763319209_691a1da9573b1.jpg', 2, '2025-11-16 18:53:29'),
+(99, 69, 'foto', 'uploads/livros/69/foto_1763319209_691a1da9576ea.jpeg', 3, '2025-11-16 18:53:29'),
+(100, 69, 'foto', 'uploads/livros/69/foto_1763319209_691a1da9579a3.jpeg', 4, '2025-11-16 18:53:29'),
+(101, 69, 'foto', 'uploads/livros/69/foto_1763319209_691a1da957c7e.jpg', 5, '2025-11-16 18:53:29');
 
 -- --------------------------------------------------------
 
@@ -520,28 +529,30 @@ CREATE TABLE `tb_usuario` (
   `foto_usuario` varchar(150) NOT NULL,
   `criado_em` timestamp NOT NULL DEFAULT current_timestamp(),
   `view_email` tinyint(1) DEFAULT 0,
-  `view_contato` tinyint(1) DEFAULT 0
+  `view_contato` tinyint(1) DEFAULT 0,
+  `role` enum('user','admin') NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Despejando dados para a tabela `tb_usuario`
 --
 
-INSERT INTO `tb_usuario` (`id_usuario`, `nome_usuario`, `email_usuario`, `senha_usuario`, `status_usuario`, `foto_usuario`, `criado_em`, `view_email`, `view_contato`) VALUES
-(3, 'jordan', 'jo@gmail.com', '$2y$10$u/NaTL/xQLEik83S4cpEG.AR289Aef2Vx3.Ls2l5k04.I1hWs7Q5W', 0, '', '2025-10-13 13:46:49', 0, 0),
-(9, 'pedro', 'per@gmail.com', '$2y$10$Nwf2YiyXH4QJTXovunn7C.mSRFmcjqWkVf7KiZze4fYArPFfd6sVO', 0, 'uploads/usuarios/9/1496c4afdb5d923168794a7c201ec20b.jpg', '2025-10-13 18:24:24', 0, 0),
-(10, 'Cleiton', 'cleiton@gmail.com', '$2y$10$eCQ8WSzie399Cyc/ChRk3eqXQzXQfx2DaCIpvJy/Uf9KtPePpD2UK', 0, 'uploads/usuarios/10/c219237665969ca9519dada4c907708c.jpg', '2025-10-15 21:14:16', 0, 0),
-(11, 'Jorgina', 'jor@gmail.com', '$2y$10$fBdhGv7wbd04LxEeKByuyOQOtITXWs6Q.lFAJu7pc.FQiBQDmsq4a', 0, 'uploads/usuarios/11/9a291a52d3427d4064b2456b3545eb0c.jpg', '2025-10-26 23:02:08', 0, 0),
-(12, 'Negot', 'negot@gmail.com', '$2y$10$jrGSmDTMvtWiBztdyqoOMeaRgxD7kPNbIAv7c/OBCV7hv/lnol806', 0, 'uploads/usuarios/12/db57067df81d50fbe1646a4f22796f7c.jpg', '2025-10-26 23:23:06', 0, 0),
-(13, 'wenzio', 'wentape@gmail.com', '$2y$10$clgXlKvznwZI3B5aP8SiYuExltFrPzGixLhu/j8.reDv9paMU5u8W', 0, 'uploads/usuarios/13/87d025611609e80c35412e6d79e78bce.jpg', '2025-10-27 21:18:11', 0, 0),
-(14, 'Rhyan', 'r@gmail.com', '$2y$10$YZ2k8BS7ZgNJOBRiK73hOuknZxx5pcxdU/lUl.SS5a0i9iPZ3V1Ma', 0, 'uploads/usuarios/14/df56f09a787d2b0a89659b62165a64f8.jpg', '2025-10-27 21:35:03', 0, 0),
-(15, 'Clebinho', 'cleber4557@gmail.com', '$2y$10$cSbGV7oH7z9wi8nBZWMXr.Kky.IzPK6jflYVcAJSnNp5rce0X0p.i', 0, 'uploads/usuarios/15/4ca3e89b4cd6753ab26ce7c01aabe598.jpg', '2025-11-03 16:19:43', 1, 1),
-(16, 'Pedro Henrique', 'pedro@gmail.com', '$2y$10$0pgp2klWBKqTouEupBCuLOgA/Q8xHz5oYD6Fp4lipw.NcsfEiHBFe', 0, 'uploads/usuarios/16/a34b40b198268ff056ebdb1c4e517c83.jpg', '2025-11-06 18:27:26', 0, 0),
-(17, 'Milena Ormund', 'milena@gmail.com', '$2y$10$PTHxZxO/82pxkUKcUV1hhufizhbCnY7kHrMFYfBv2kJpFR1cb9zYG', 0, 'uploads/usuarios/17/1bfc8864cccfc2dcf032a24347f456d0.jpg', '2025-11-06 18:52:46', 0, 0),
-(18, 'Marcos Vinícius', 'marcos@gmail.com', '$2y$10$Cuk1Vpx05qh4ilMJa.JWBu7shtyHWumRYls.b3wOdM5.v05fo.AmO', 0, 'uploads/usuarios/18/2f87a68c045d92cf7b239439098acd83.jpg', '2025-11-06 19:16:10', 0, 0),
-(19, 'Robinson', 'ro@gmail.com', '$2y$10$j93LpsPtQeJShDrwpEVqGOb0Bas0nyt6P.ndbb7x.OtzfbooE3HJa', 0, 'uploads/usuarios/19/e78da5878d4290dbd7389ebe48f670b8.jpg', '2025-11-06 20:32:24', 0, 0),
-(20, 'Padro', 'pa@gmail.com', '$2y$10$OE1ZOC4J8dTLwV3/LLw30ekPnP/L.u2MbzmJpAd9pCceTOcV3oVHi', 0, 'uploads/usuarios/20/5e81712c6521542132220ccc667ba3f5.jpg', '2025-11-13 14:05:01', 0, 0),
-(21, 'teste', 'c@gmail.com', '$2y$10$qthjjxYL9hCrPvYv7WGUOesELpszymlEfdin.OxEmX69OYjDACsCy', 0, '', '2025-11-13 17:54:31', 0, 0);
+INSERT INTO `tb_usuario` (`id_usuario`, `nome_usuario`, `email_usuario`, `senha_usuario`, `status_usuario`, `foto_usuario`, `criado_em`, `view_email`, `view_contato`, `role`) VALUES
+(3, 'jordan', 'jo@gmail.com', '$2y$10$u/NaTL/xQLEik83S4cpEG.AR289Aef2Vx3.Ls2l5k04.I1hWs7Q5W', 0, '', '2025-10-13 13:46:49', 0, 0, 'user'),
+(9, 'pedro', 'per@gmail.com', '$2y$10$Nwf2YiyXH4QJTXovunn7C.mSRFmcjqWkVf7KiZze4fYArPFfd6sVO', 0, 'uploads/usuarios/9/1496c4afdb5d923168794a7c201ec20b.jpg', '2025-10-13 18:24:24', 0, 0, 'user'),
+(10, 'Cleiton', 'cleiton@gmail.com', '$2y$10$eCQ8WSzie399Cyc/ChRk3eqXQzXQfx2DaCIpvJy/Uf9KtPePpD2UK', 0, 'uploads/usuarios/10/c219237665969ca9519dada4c907708c.jpg', '2025-10-15 21:14:16', 1, 0, 'user'),
+(11, 'Jorgina', 'jor@gmail.com', '$2y$10$fBdhGv7wbd04LxEeKByuyOQOtITXWs6Q.lFAJu7pc.FQiBQDmsq4a', 0, 'uploads/usuarios/11/9a291a52d3427d4064b2456b3545eb0c.jpg', '2025-10-26 23:02:08', 0, 0, 'user'),
+(12, 'Negot', 'negot@gmail.com', '$2y$10$jrGSmDTMvtWiBztdyqoOMeaRgxD7kPNbIAv7c/OBCV7hv/lnol806', 0, 'uploads/usuarios/12/db57067df81d50fbe1646a4f22796f7c.jpg', '2025-10-26 23:23:06', 0, 0, 'user'),
+(13, 'wenzio', 'wentape@gmail.com', '$2y$10$clgXlKvznwZI3B5aP8SiYuExltFrPzGixLhu/j8.reDv9paMU5u8W', 0, 'uploads/usuarios/13/87d025611609e80c35412e6d79e78bce.jpg', '2025-10-27 21:18:11', 0, 0, 'user'),
+(14, 'Rhyan', 'r@gmail.com', '$2y$10$YZ2k8BS7ZgNJOBRiK73hOuknZxx5pcxdU/lUl.SS5a0i9iPZ3V1Ma', 0, 'uploads/usuarios/14/df56f09a787d2b0a89659b62165a64f8.jpg', '2025-10-27 21:35:03', 0, 0, 'user'),
+(15, 'Clebinho', 'cleber4557@gmail.com', '$2y$10$cSbGV7oH7z9wi8nBZWMXr.Kky.IzPK6jflYVcAJSnNp5rce0X0p.i', 0, 'uploads/usuarios/15/4ca3e89b4cd6753ab26ce7c01aabe598.jpg', '2025-11-03 16:19:43', 0, 0, 'user'),
+(16, 'Pedro Henrique', 'pedro@gmail.com', '$2y$10$0pgp2klWBKqTouEupBCuLOgA/Q8xHz5oYD6Fp4lipw.NcsfEiHBFe', 0, 'uploads/usuarios/16/a34b40b198268ff056ebdb1c4e517c83.jpg', '2025-11-06 18:27:26', 0, 0, 'user'),
+(17, 'Milena Ormund', 'milena@gmail.com', '$2y$10$PTHxZxO/82pxkUKcUV1hhufizhbCnY7kHrMFYfBv2kJpFR1cb9zYG', 0, 'uploads/usuarios/17/1bfc8864cccfc2dcf032a24347f456d0.jpg', '2025-11-06 18:52:46', 0, 0, 'user'),
+(18, 'Marcos Vinícius', 'marcos@gmail.com', '$2y$10$Cuk1Vpx05qh4ilMJa.JWBu7shtyHWumRYls.b3wOdM5.v05fo.AmO', 0, 'uploads/usuarios/18/2f87a68c045d92cf7b239439098acd83.jpg', '2025-11-06 19:16:10', 0, 0, 'user'),
+(19, 'Robinson', 'ro@gmail.com', '$2y$10$j93LpsPtQeJShDrwpEVqGOb0Bas0nyt6P.ndbb7x.OtzfbooE3HJa', 0, 'uploads/usuarios/19/e78da5878d4290dbd7389ebe48f670b8.jpg', '2025-11-06 20:32:24', 0, 0, 'user'),
+(20, 'Padro', 'pa@gmail.com', '$2y$10$OE1ZOC4J8dTLwV3/LLw30ekPnP/L.u2MbzmJpAd9pCceTOcV3oVHi', 0, 'uploads/usuarios/20/5e81712c6521542132220ccc667ba3f5.jpg', '2025-11-13 14:05:01', 0, 0, 'user'),
+(21, 'teste', 'c@gmail.com', '$2y$10$qthjjxYL9hCrPvYv7WGUOesELpszymlEfdin.OxEmX69OYjDACsCy', 0, '', '2025-11-13 17:54:31', 0, 0, 'user'),
+(22, 'cleberAdm', 'cleberBookare@gmail.com', '$2y$10$WWzbaUIaaCuACnLFeNGxOOTOXm4BbaWEX7pEt34TwEyU9k0S4eaii', 0, '', '2025-11-18 15:20:09', 0, 0, 'admin');
 
 --
 -- Índices para tabelas despejadas
@@ -661,7 +672,7 @@ ALTER TABLE `tb_avaliacao`
 -- AUTO_INCREMENT de tabela `tb_contato`
 --
 ALTER TABLE `tb_contato`
-  MODIFY `id_contato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_contato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de tabela `tb_editora`
@@ -673,7 +684,7 @@ ALTER TABLE `tb_editora`
 -- AUTO_INCREMENT de tabela `tb_endereco`
 --
 ALTER TABLE `tb_endereco`
-  MODIFY `id_endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de tabela `tb_estado`
@@ -697,13 +708,13 @@ ALTER TABLE `tb_idioma`
 -- AUTO_INCREMENT de tabela `tb_livro`
 --
 ALTER TABLE `tb_livro`
-  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT de tabela `tb_livro_imagem`
 --
 ALTER TABLE `tb_livro_imagem`
-  MODIFY `id_livro_imagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+  MODIFY `id_livro_imagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT de tabela `tb_troca`
@@ -715,7 +726,7 @@ ALTER TABLE `tb_troca`
 -- AUTO_INCREMENT de tabela `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Restrições para tabelas despejadas

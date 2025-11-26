@@ -14,6 +14,7 @@ unset($_SESSION['old_input'], $_SESSION['errors'], $_SESSION['success']);
 
 <?php include("../includes/headerMain.php");?>
 <link rel="stylesheet" href="../assets/style/loginUser.css">
+<link rel="stylesheet" href="../assets/style/responsividade/loginUserResponsivo.css">
 <body>
     <main>
 

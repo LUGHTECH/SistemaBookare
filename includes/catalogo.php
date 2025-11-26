@@ -87,12 +87,12 @@
          <section class="catalog">
              <div class="banner-catalogo">
                  <div class="imgBanner-c">
-                     <img src="../assets/img/catalogo-banner.jpg" alt="">
+                     
                  </div>
                  <div class="text-banner">
                      <p>Livros Diversificados!</p>
-                     <p id="explicacao">Descubra uma grande variedade de livros prontos para serem trocados com outros leitores! Basta selecionar um dos cards ou pesquisar o livro de sua preferência. 
-                        Assim, você pode verificar o usuário que possui o livro desejado e observar as formas de contato preferidas pelo dono, dando início à troca.
+                     <p id="explicacao">Descubra uma grande variedade de livros prontos para serem trocados com outros leitores! Basta selecionar um dos cards ou pesquisar o livro de sua preferência.
+                         Assim, você pode verificar o usuário que possui o livro desejado e observar as formas de contato preferidas pelo dono, dando início à troca.
                      </p>
                  </div>
              </div>
@@ -114,13 +114,18 @@
 
                                  <div class="container-img">
                                      <div class="nome-img">
-                                         <div class="cardUser" style="width: 100px; height:100px">
-                                             <img style="width: 100%;" src="./dashboard/tabViews/<?= $usuario['foto_usuario'] ?>" alt="">
-                                         </div>
-                                         <div class="cardInfos">
-                                             <h3><?= htmlspecialchars($usuario['nome_usuario']) ?></h3>
-                                             <p><?= htmlspecialchars($usuario['nome_estado']) ?>, <?= htmlspecialchars($usuario['uf']) ?></p>
-                                         </div>
+                                         <form action="pesquisa.php" method="get">
+                                             <input type="hidden" name="usuario" value="<?= $usuario['id_usuario'] ?>">
+                                             <button class="verUsuario" type="submit">
+                                                 <div class="cardUser" style="width: 100px; height:100px">
+                                                     <img style="width: 100%;" src="./dashboard/tabViews/<?= $usuario['foto_usuario'] ?>" alt="">
+                                                 </div>
+                                                 <div class="cardInfos">
+                                                     <h3><?= htmlspecialchars($usuario['nome_usuario']) ?></h3>
+                                                     <p><?= htmlspecialchars($usuario['nome_estado']) ?>, <?= htmlspecialchars($usuario['uf']) ?></p>
+                                                 </div>
+                                             </button>
+                                         </form>
                                      </div>
                                      <div class="cardContato">
 

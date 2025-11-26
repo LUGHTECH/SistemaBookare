@@ -57,6 +57,10 @@ function abrirModalLivro(livro) {
 
     const overlay = document.getElementById('fundoModal');
     overlay.classList.add('show');
+
+    document.getElementById("alt").onclick = function (){
+        window.location.href = `/SistemaBookare/includes/editarLivro.php?id_livro=${livro.id_livro}`;
+    }
 }
 
 function fecharModal() {

@@ -17,7 +17,7 @@ $username = $_SESSION['username'] ?? null; ?>
                     <li><a href="/SistemaBookare/includes/quemSomos.php#seguranca">Segurança</a></li>
                 </ul>
             </div>
-            <div class="btnCadastrar top">
+            <div class="btnCadastrar top" id="header-top">
                 <form action="/SistemaBookare/includes/pesquisa.php" method="get">
                     <input class="search" type="search" id="search2" name="search">
                     <input type="image" src="/SistemaBookare/assets/img/lupa.png" value="" id="pesq">
@@ -28,7 +28,7 @@ $username = $_SESSION['username'] ?? null; ?>
                     <?php
 
                     if (!isset($_SESSION['id_usuario'])) {
-                        echo "<a href='/SistemaBookare/includes/createUser.php'>Entrar</a>";
+                        echo "<a class='entrar-login' href='/SistemaBookare/includes/createUser.php'>Entrar</a>";
                     } else {
                         echo '<div class="drop">Olá, ' . htmlspecialchars($username) . '
                                         <div class="forms">
@@ -48,7 +48,7 @@ $username = $_SESSION['username'] ?? null; ?>
                     <?php
 
                     if (!isset($_SESSION['id_usuario'])) {
-                        echo "<a href='includes/createUser.php'><img src='/SistemaBookare/assets/img/loginIcon.png'></a>";
+                        echo "<a class='default-login' href='includes/createUser.php'><img src='/SistemaBookare/assets/img/loginIcon.png'></a>";
                     } else {
                         $fotoUser = $_SESSION['fotoUser'] ?? '';
 

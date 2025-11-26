@@ -98,11 +98,11 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     color: white;
-    border: solid;
     padding: 15px;
     background-color: #94ffeb;
     border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    -webkit-box-shadow: 50px -50px 0px 5px #FFFFFF; 
+    box-shadow: 50px -50px 0px 5px #FFFFFF;
     color: #008080;
     margin-top: 120px;
 }
@@ -113,9 +113,9 @@
 
 .quemsomos-detalhes .imgsec1 img {
     height: 200px;
-    width: 250px;
+    width: 400x;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 50%;
+   
     
    
 }
@@ -202,13 +202,13 @@
 
 .container2-detalhes .seguranca .texto-detalhes p {
     width: 90%;
-    border-top: 10px #8bc2c2 solid;
     text-align: justify;
     padding: 20px;
     border-radius: 5px;
     background-color: #94ffeb;
     color: #008080;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 40px -26px 0px 13px #FFFFFF; 
+box-shadow: 0px 10px 13px -7px #000000, 40px -26px 0px 13px #FFFFFF;
     
 }
 
@@ -247,14 +247,19 @@
 }
 
 /* SECTION 4 */
+
+#redes{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 .container3-detalhes {
-    height: 700px;
+    height: 100%;
     margin-top: 80px;
 }
 
 .container4-detalhes {
     display: flex;
-    justify-content: space-between;
     gap: 50px;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -287,7 +292,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    padding: 60px;
+    padding: 30px;
     gap: 15px;
 }
 

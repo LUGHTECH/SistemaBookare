@@ -21,8 +21,7 @@ $username = $_SESSION['username'] ?? null;
                     <h3 class="Ti" style="width: 30%;">Autor</h3>
                     <h3 class="Ti" style="width: 15%;">Gênero</h3>
                     <h3 class="Ti" style="width: 15%;">Ano Publi</h3>
-                    <h3 class="Ti" style="width: 5%;">Capa</h3>
-                    <h3 class="Ti" style="width: 10%;">Ação</h3>
+                    <h3 class="Ti" style="width: 15%;">Ação</h3>
                 </div>
                 <div class="seusLivros">
 
@@ -36,6 +35,7 @@ $username = $_SESSION['username'] ?? null;
                                                     g.genero AS nome_genero,
                                                     e.editora AS nome_editora,
                                                     i.codigo_idioma AS idioma,
+                                                    l.id_livro,
                                                     l.ano_pub_livro,
                                                     l.sinopse_livro,
                                                     l.estado_conservacao_livro AS condicao_livro,

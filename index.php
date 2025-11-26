@@ -20,7 +20,6 @@
                     <input type="search" id="search" name="search" placeholder="Memorias do Subsolo">
                     <input type="submit" value="Pesquisar">
                 </form>
-
             </div>
             <div class="animation" id="animation1">
                 <dotlottie-wc src="https://lottie.host/84fa2b1d-18e9-4ef9-955c-485017984853/lEFbCQWgdN.lottie" autoplay loop style="width: 100%; height: 300px;"></dotlottie-wc>
@@ -52,7 +51,7 @@
 
             <!-- Botão Ver Mais -->
             <div class="verMais">
-                <button  onclick="window.location.href='includes/pesquisa.php'">Ver Mais</button>
+                <button onclick="window.location.href='includes/pesquisa.php'">Ver Mais</button>
             </div>
         </div>
     </section>
@@ -61,15 +60,15 @@
         <div class="container">
             <div class="qualidades">
                 <img src="./assets/img/bookIcon.png" alt="">
-                <p>Troque o seu livro de forma rápida e segura</p>
+                <p>Troque o seu livro de forma<br>rápida e segura</p>
             </div>
             <div class="qualidades">
-                <img src="./assets/img/bookIcon.png" alt="">
-                <p>Avalie outros usuários e otimize buscas</p>
+                <img src="./assets/img/teamIcon.png" alt="">
+                <p>Filtre outros usuários e<br>otimize buscas</p>
             </div>
             <div class="qualidades">
-                <img src="./assets/img/bookIcon.png" alt="">
-                <p>Cadastre-se para obter recompensas</p>
+                <img src="./assets/img/bookShelvesIcon.png" alt="">
+                <p>Cadastre-se e descubra uma<br>variedade de livros</p>
             </div>
         </div>
     </section>
@@ -104,34 +103,34 @@
                         <div class="autor" data-bg="./assets/img/autor1.jpg">
                             <h3>Stephen King</h3>
                             <p>Horror, Suspense, Fantasia</p>
-                            <a href=""><button>Descubra</button></a>
+                            <a href="/SistemaBookare/includes/pesquisa.php?search=&autor[0]=20&pagina=1"><button>Descubra</button></a>
                         </div>
                         <div class="autor persW" data-bg="./assets/img/autor2.jpg">
                             <h3>Agatha Christie</h3>
                             <p>Horror, Suspense, Fantasia</p>
-                            <a href=""><button>Descubra</button></a>
+                            <a href="/SistemaBookare/includes/pesquisa.php?search=&autor[0]=2&pagina=1"><button>Descubra</button></a>
                         </div>
                         <div class="autor" data-bg="./assets/img/autor3.jpg">
                             <h3>Machado de Assis</h3>
-                            <p>Horror, Suspense, Fantasia</p>
-                            <a href=""><button>Descubra</button></a>
+                            <p>Fantasia</p>
+                            <a href="/SistemaBookare/includes/pesquisa.php?search=&autor[0]=29&autor[]=31&pagina=1"><button>Descubra</button></a>
                         </div>
                         <div class="autor persW" data-bg="./assets/img/autor4.jpg">
                             <h3>Franz Kafka</h3>
                             <p>Horror, Suspense, Fantasia</p>
-                            <a href=""><button>Descubra</button></a>
+                            <a href="/SistemaBookare/includes/pesquisa.php?search=&autor[0]=2&pagina=10"><button>Descubra</button></a>
                         </div>
                     </div>
                     <div class="autores segundo"> <!--o slide é divido por divs-->
                         <div class="autor" data-bg="./assets/img/autor5.jpg">
                             <h3>George R. R. Martin</h3>
                             <p>Fantasia, Ficção histórica, Drama</p>
-                            <a href=""><button>Descubra</button></a>
+                            <a href="/SistemaBookare/includes/pesquisa.php?search=&autor[0]=28&pagina=1"><button>Descubra</button></a>
                         </div>
                         <div class="autor persW" data-bg="./assets/img/autor6.jpg">
                             <h3>Clarice Lispector</h3>
                             <p>Romance, Conto, Introspecção psicológica</p>
-                            <a href=""><button>Descubra</button></a>
+                            <a href="/SistemaBookare/includes/pesquisa.php?search=&autor[0]=32&pagina=1"><button>Descubra</button></a>
                         </div>
                         <div class="autor" data-bg="./assets/img/autor7.jpg">
                             <h3>J. R. R. Tolkien</h3>
@@ -141,19 +140,19 @@
                         <div class="autor persW" data-bg="./assets/img/autor8.jpg">
                             <h3>Edgar Allan Poe</h3>
                             <p>Terror, Mistério, Gótico</p>
-                            <a href=""><button>Descubra</button></a>
+                            <a href="/SistemaBookare/includes/pesquisa.php?search=&autor[0]=3&pagina=1"><button>Descubra</button></a>
                         </div>
                     </div>
                     <div class="autores terceiro"> <!--o slide é divido por divs-->
                         <div class="autor" data-bg="./assets/img/autor9.jpg">
                             <h3>Rick Riordan</h3>
                             <p>Fantasia, Mitologia, Aventura</p>
-                            <a href=""><button>Descubra</button></a>
+                            <a href="/SistemaBookare/includes/pesquisa.php?search=&autor[0]=8&pagina=1"><button>Descubra</button></a>
                         </div>
                         <div class="autor persW" data-bg="./assets/img/autor10.jpg">
                             <h3>John Green</h3>
                             <p>Romance, Drama, Jovem adulto</p>
-                            <a href=""><button>Descubra</button></a>
+                            <a href="/SistemaBookare/includes/pesquisa.php?search=&autor[0]=23&pagina=1"><button>Descubra</button></a>
                         </div>
                         <div class="autor" data-bg="./assets/img/autor11.jpg">
                             <h3>George Orwell</h3>
@@ -184,10 +183,9 @@
                     <p>Usuário</p>
                 </div>
                 <div class="textAvaliacao">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
-                        an unknown printer took a galley of type
-                        and scrambled it to make a type specimen book. It has survived not only five
+                    <p>Achei a proposta genial! A troca de livros ficou descomplicada e divertida. Consigo conversar com outros leitores, combinar
+                        as trocas e descobrir obras que nunca teria conhecido. A experiência
+                        tem sido excelente e pretendo continuar usando sempre.
                     </p>
                 </div>
             </div>
@@ -199,10 +197,8 @@
                     <p>Usuário</p>
                 </div>
                 <div class="textAvaliacao">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
-                        an unknown printer took a galley of type
-                        and scrambled it to make a type specimen book. It has survived not only five
+                    <p>Adorei a plataforma! Finalmente um lugar onde posso trocar meus livros de forma fácil e segura. O site é intuitivo, os filtros ajudam muito
+                        a encontrar o que procuro e a comunidade é bem engajada. Já realizei várias trocas e todas foram tranquilas — recomendo demais!
                     </p>
                 </div>
             </div>
@@ -214,51 +210,19 @@
                     <p>Usuário</p>
                 </div>
                 <div class="textAvaliacao">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
-                        an unknown printer took a galley of type
-                        and scrambled it to make a type specimen book. It has survived not only five
+                    <p>A plataforma de troca de livros é incrível e super prática! Desde que comecei a usar,
+                        encontrei diversos leitores com os mesmos interesses que eu e consegui renovar minha
+                        estante com títulos que queria há tempos. O sistema é simples, rápido e eficiente,
+                        tornando cada troca uma experiência agradável e segura.
                     </p>
                 </div>
             </div>
         </div>
         <div class="swiper-button-next" style="color: #00796b;"></div>
         <div class="swiper-button-prev" style="color: #00796b;"></div>
-
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="icons">
-                <div class="logoFooter">
-                    <img src="./assets/img/BookareLogo.png" alt="">
-                </div>
-                <div class="redes">
-                    <a href=""><img src="./assets/img/instagram.png" alt=""></a>
-                    <a href=""><img src="./assets/img/whatsapp.png" alt=""></a>
-                    <a href=""><img src="./assets/img/github.png" alt=""></a>
-                </div>
-            </div>
-            <div class="listas">
-                <ul class="contato">
-                    <h3>Contato</h3>
-                    <li><a href="">Entre em contato</a></li>
-                    <li><a href="">Redes socias</a></li>
-                    <li><a href="">Descubra a Lughtech</a></li>
-                </ul>
-                <ul class="informacoes">
-                    <h3>Informações</h3>
-                    <li><a href="">Como trocar livros</a></li>
-                    <li><a href="">Quem somos</a></li>
-                    <li><a href="">Segurança</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="moreInfo">
-            <p>Mande sugestões para nosso e-mail: lugh tech.contato@gmail.com</p>
-            <p>2025, Lughtech Inc. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+    <?php include("includes/footer.php"); ?> <!--footer-->
 
     <?php
     require('./includes/connect.php');

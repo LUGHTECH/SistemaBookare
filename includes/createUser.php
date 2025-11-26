@@ -18,8 +18,10 @@ unset($_SESSION['old_input'], $_SESSION['errors'], $_SESSION['success']);
 
 <?php include("../includes/headerMain.php");?>
 <link rel="stylesheet" href="../assets/style/createUser.css">
+<link rel="stylesheet" href="../assets/style/responsividade/responCreateUser.css">
+
 <body>
-    <main>
+    <main class="main-create">
 
         <section class="banner">
             <div class="poeira">

@@ -56,7 +56,7 @@
 
 /* Cards de autor */
 .autor {
-    flex: 1 1 47%; /* Base width de 45%, cresce se houver espaço */
+    flex: 1 1 47%; /* Base width de 47%, cresce se houver espaço */
     max-width: 47%;
     min-width: 250px; /* Responsivo */
     height: 400px;

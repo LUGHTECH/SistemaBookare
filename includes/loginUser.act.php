@@ -72,7 +72,7 @@ try {
 
 // busca pelo e-mail ou nome de usuário (corrigido)
 $stmt = $pdo->prepare(
-    'SELECT id_usuario, nome_usuario, foto_usuario, senha_usuario FROM tb_usuario 
+    'SELECT id_usuario, nome_usuario, foto_usuario, senha_usuario, role FROM tb_usuario 
      WHERE email_usuario = :identifier OR nome_usuario = :identifier2 
      LIMIT 1'
 );
@@ -96,8 +96,9 @@ session_regenerate_id(true);
 $_SESSION['id_usuario'] = $userRow['id_usuario'];
 $_SESSION['username'] = $userRow['nome_usuario'];
 $_SESSION['fotoUser'] = $userRow['foto_usuario'];
+$_SESSION['role'] = $userRow['role'];
 
 // Redireciona para área restrita (crie dashboard.php ou altere conforme necessário)
-header('Location: dashboard.php');
+header('Location: pesquisa.php'); // vai direto para o catalogo
 exit;
 ?>

@@ -72,7 +72,7 @@
         </div>
         <div class="textInfo">
             <div class="infoP">
-                <div class="cont" style="width: 45%;">
+                <div class="cont" id="resp-info">
                     <h2>Informações Pessoais</h2>
                     <div>
                         <p>Nome de usuário:</p>
@@ -84,7 +84,7 @@
                     </div>
                 </div>
 
-                <div class="cont" style="width: 45%;">
+                <div class="cont" id="resp-info">
                     <h2>Contato</h2>
                     <div>
                         <p>Celular:</p>
@@ -154,6 +154,23 @@
                     <fieldset class="endereco">
                         <legend>Endereço 🏠</legend>
                         <div class="form-group">
+                            <label for="cep">Cep</label>
+                            <input type="number" name="cep" id="cep" value="<?= $infos['cep'] ?>">
+                        </div>
+                         <div class="form-group">
+                            <label for="id_estado">Estado</label>
+                            <select name="id_estado" id="id_estado" onfocus='this.size=10;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                                <option value="">Selecione...</option>
+                                <?php foreach ($estados as $uf): ?>
+                                    <option
+                                        value="<?= (int)$uf['id_estado'] ?>"
+                                        <?= (isset($infos['id_estado']) && (int)$infos['id_estado'] === (int)$uf['id_estado']) ? 'selected' : '' ?>>
+                                        <?= htmlspecialchars($uf['uf'], ENT_QUOTES, 'UTF-8') ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="logradrouro">Logradouro</label>
                             <input type="text" name="logradouro" id="logradouro" value="<?= $infos['logradouro'] ?>">
                         </div>
@@ -173,23 +190,8 @@
                             <label for="cidade">Cidade</label>
                             <input type="text" name="cidade" id="cidade" value="<?= $infos['cidade'] ?>">
                         </div>
-                        <div class="form-group">
-                            <label for="id_estado">Estado</label>
-                            <select name="id_estado" id="id_estado" onfocus='this.size=10;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
-                                <option value="">Selecione...</option>
-                                <?php foreach ($estados as $uf): ?>
-                                    <option
-                                        value="<?= (int)$uf['id_estado'] ?>"
-                                        <?= (isset($infos['id_estado']) && (int)$infos['id_estado'] === (int)$uf['id_estado']) ? 'selected' : '' ?>>
-                                        <?= htmlspecialchars($uf['uf'], ENT_QUOTES, 'UTF-8') ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="cep">Cep</label>
-                            <input type="number" name="cep" id="cep" value="<?= $infos['cep'] ?>">
-                        </div>
+                       
+
                     </fieldset>
                     <fieldset>
                         <legend>Contato 📞</legend>

@@ -1,0 +1,431 @@
+/* ---------------------------
+   MEDIA QUERIES (RESPONSIVIDADE)
+   --------------------------- */
+
+/* Notebook (ex.: larguras entre ~1024px e 1366px)
+   Ajustes sutis para telas de notebook: reduzir gaps, ajustar tamanhos de imagem e fieldset.
+*/
+
+@media(max-width:1536px){
+    .modal3{
+        width: 70%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .imgUser {
+        width: 100%;
+        /* dá mais espaço para o form */
+    }
+
+    .textInfo {
+        width: 100%;
+    }
+
+    #resp-info {
+        width: 100%;
+    }
+
+    .imgUser form {
+        gap: 3rem;
+        /* reduz o espaço vertical */
+    }
+
+    .imgUser form fieldset {
+        width: 45%;
+        /* deixa mais proporcional */
+    }
+
+    .fotoUser {
+        width: 220px;
+        height: 220px;
+    }
+
+    .actionInfo {
+        border-top: 20px;
+
+    }
+
+    .modal2 {
+        width: 80%;
+        max-height: 85vh;
+        /* NÃO deixa passar da tela */
+        overflow-y: auto;
+        /* Cria scroll interno */
+
+    }
+
+    .fechar {
+        padding: 3px;
+    }
+
+    .modal2::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .modal2::-webkit-scrollbar-track {
+        background: #ffffff;
+        /* fundo */
+    }
+
+    .modal2::-webkit-scrollbar-thumb {
+        background: #008080;
+        /* barra */
+        border-radius: 10px;
+    }
+
+    .modal2::-webkit-scrollbar-thumb:hover {
+        background: #009999;
+    }
+
+    /* Firefox */
+    .modal2 {
+        scrollbar-width: thin;
+        scrollbar-color: #008080 #ffffff;
+    }
+
+   .abas-menu .aba-link{
+        font-size: 0.8rem;
+    }
+
+
+    /*LISTAR LIVROS ABA */
+    .conteudo p{
+        font-size: 1rem;
+    }
+
+    .categories h3{
+        font-size: 1rem;
+    }
+
+  .seusLivros .conteudo .bookImg{
+        height: 60px;
+        width: 60px;
+    }
+
+    .botao img{
+        height: 24px;
+        width: 24px;
+    }
+
+    .modal3{
+        width: 90%;
+    }
+
+
+
+
+
+}
+
+@media (max-width: 1366px) and (min-width: 1025px) {
+    .infoUser {
+        padding: 1.5%;
+        gap: 12px;
+    }
+
+    .imgUser {
+        width: 45%;
+        padding: 1.5%;
+        gap: 0.8rem;
+    }
+
+    .imgUser form {
+        gap: 4rem;
+    }
+
+    .imgUser form button {
+        width: 60%;
+        padding: 9px;
+    }
+
+    .imgUser form fieldset {
+        width: 35%;
+    }
+
+    .fotoUser {
+        width: 220px;
+        height: 220px;
+    }
+
+    .textInfo {
+        gap: 2.1rem;
+        padding: 0.8%;
+    }
+
+    .infoP {
+        gap: 0.9rem;
+        height: auto;
+        /* permite crescer se o conteúdo pedir */
+    }
+
+
+    .fotoUser {
+        height: 200px;
+        width: 200px;
+    }
+
+    .imgUser {
+        justify-content: center;
+    }
+
+    .disclaimer p {
+        background-color: white;
+        text-align: start
+    }
+
+    .container2 {
+        width: 90%;
+    }
+
+    .fundoModal {
+        padding: 50px;
+    }
+
+    .modal2 {
+        width: 80%;
+        max-height: 85vh;
+        /* NÃO deixa passar da tela */
+        overflow-y: auto;
+        /* Cria scroll interno */
+
+    }
+
+    .fechar {
+        padding: 3px;
+    }
+
+    .modal2::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .modal2::-webkit-scrollbar-track {
+        background: #ffffff;
+        /* fundo */
+    }
+
+    .modal2::-webkit-scrollbar-thumb {
+        background: #008080;
+        /* barra */
+        border-radius: 10px;
+    }
+
+    .modal2::-webkit-scrollbar-thumb:hover {
+        background: #009999;
+    }
+
+    /* Firefox */
+    .modal2 {
+        scrollbar-width: thin;
+        scrollbar-color: #008080 #ffffff;
+    }
+}
+
+/* Laptop / pequeno desktop / grandes tablets em modo paisagem
+   (ponto de corte comum: 1024px e abaixo)
+   Aqui começamos a empilhar colunas — layout passa a duas linhas.
+*/
+@media (max-width: 1024px) {
+    .infoUser {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    /* Deixa a imagem menor e com mais espaço para o conteúdo textual */
+    .imgUser {
+        width: 42%;
+        padding: 1.2%;
+        box-sizing: border-box;
+    }
+
+    .textInfo {
+        width: 56%;
+        padding: 1%;
+    }
+
+    .fotoUser {
+        width: 200px;
+        height: 200px;
+    }
+
+    .imgUser form fieldset {
+        width: 45%;
+    }
+
+    .imgUser form button {
+        width: 70%;
+    }
+
+    .infoP {
+        height: auto;
+        gap: 0.8rem;
+    }
+
+    .infoP .cont div {
+        grid-template-columns: 1fr 1fr;
+        /* continua 2 colunas quando couber */
+    }
+
+
+
+    /* disclaimer: evita overflow na lateral */
+    .disclaimer p {
+        width: 260px;
+    }
+}
+
+/* Tablet portrait / small screens / celular
+   Ponto de corte para celular: 600px ou menos
+   Aqui empilhamos verticalmente: imagem em cima, conteúdo embaixo.
+*/
+@media (max-width: 600px) {
+    .infoUser {
+        flex-direction: column;
+        padding: 1%;
+        gap: 10px;
+    }
+
+    .imgUser {
+        width: 100%;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        padding: 1%;
+        border-radius: 0 30px 0 30px;
+        /* mantém visual arredondado, mais suave */
+    }
+
+    .textInfo {
+        width: 100%;
+        padding: 1%;
+        gap: 1.5rem;
+    }
+
+    .fotoUser {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 12px;
+    }
+
+    .imgUser form {
+        gap: 2.5rem;
+        width: 100%;
+    }
+
+    .imgUser form button {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .imgUser form fieldset {
+        width: 80%;
+        padding: 6px 8px;
+    }
+
+    .infoP {
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+    }
+
+    .infoP .cont {
+        padding: 10px;
+    }
+
+    /* cada linha de "div" vira 1 coluna para ficar legível no celular */
+    .infoP .cont div {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .alterar {
+        justify-content: center;
+    }
+
+    .alterar button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .mostrarContato {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .mostrarContato div {
+        gap: 6px;
+    }
+
+    .actionInfo {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    /* disclaimer: posicionamento adaptado para não sair da tela */
+    .disclaimer p {
+        position: relative;
+        width: 100%;
+        left: 0;
+        opacity: 1;
+        visibility: visible;
+        margin-top: 6px;
+        box-sizing: border-box;
+    }
+
+    .disclaimer img:hover+p {
+        /* não usar hover para mobile — mantém estável */
+        left: 0;
+        transition: none;
+    }
+
+    .infoP p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Extra small screens (opcional, para muito pequenos) */
+@media (max-width: 380px) {
+    .fotoUser {
+        width: 140px;
+        height: 140px;
+    }
+
+    .imgUser form fieldset {
+        width: 90%;
+    }
+
+    .imgUser form button {
+        font-size: 0.95rem;
+        padding: 9px;
+    }
+
+    .infoP .cont h2 {
+        font-size: 1rem;
+    }
+
+    .infoP .cont div p {
+        font-size: 0.92rem;
+        padding: 6px 5px;
+    }
+}
+
+/* Pequenos ajustes de acessibilidade/visibilidade
+   Mantém contraste, aumenta área clicável em telas sensíveis ao toque.
+*/
+@media (hover: none) and (pointer: coarse) {
+
+    .imgUser form button,
+    .alterar button {
+        padding: 12px;
+    }
+
+    .infoP .cont div p {
+        padding: 8px 6px;
+    }
+}
+
+
+/* --- AJUSTE PARA NOTEBOOK (entre 1200px e 1500px) --- */

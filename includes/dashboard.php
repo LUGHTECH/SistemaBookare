@@ -6,6 +6,8 @@ $username = $_SESSION['nome_usuario'] ?? null;
 ?>
 
 
+
+
 <head>
     <title>Bookare-Dashboard</title>
 </head>
@@ -19,7 +21,7 @@ require_once __DIR__ . "/connect.php";
 ?>
 
 <body>
-    <main style="margin-top: 120px; margin-bottom: 120px" >
+    <main style="margin-top: 120px; margin-bottom: 120px">
         <!-- abre o if -->
         <?php if ($username): ?>
 
@@ -29,11 +31,13 @@ require_once __DIR__ . "/connect.php";
 
             <section class="abas">
                 <div class="container2">
-                    <div class="abas-menu" >
+                    <div class="abas-menu">
                         <!-- "ativo" é a principal padrao, e toda aba-link é uma opção, para adicionar mais paginas é so adicionar 
                  mais botao quele ele busca pela data-aba, so quero deixar meu depoimento que foi dor de cabeça 
                  tentar a arrumar o listar pra depois decobrir que o problema era o connnect.php, slk -->
-
+                        <?php if (isset($_SESSION['id_usuario']) && ($_SESSION['role'] ?? '') === 'admin'): ?>
+                            <button class="aba-link" data-aba="relatorios">Relatórios - Administração<img src="../assets/img/credit-card.png" alt=""></button>
+                        <?php endif; ?>
                         <button class="aba-link ativo" data-aba="info">Minhas Informações <img src="../assets/img/infoUser.png" alt=""></button>
                         <button class="aba-link" data-aba="addLivro">Adicionar livros <img src="../assets/img/addLivros.png" alt=""></button>
                         <button class="aba-link" data-aba="listarLivro">Meus Livros <img src="../assets/img/meusLivros.png" alt=""></button>
@@ -80,7 +84,9 @@ require_once __DIR__ . "/connect.php";
     <script src="../assets/js/refresh.js"></script>
     <script src="../assets/js/modalLivro.js"></script>
     <script src="../assets/js/fotoCadastro.js"></script>
-
+    <script src="../assets/js/carregarRelatorio.js"></script>
+    <script src="../assets/js/consultaCep.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 
 </html>

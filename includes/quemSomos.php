@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quem Somos</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-     <?php include(__DIR__ . "/topo.php"); ?>
+    <?php include(__DIR__ . "/topo.php"); ?>
     <!--<header>
         <div class="nav-detalhes">
             <div class="imglogo">
@@ -26,17 +28,17 @@
             </div>
         </div>
     </header> -->
-    
+
     <section1 style="width: 100%;">
         <div class="quemsomos-detalhes" style="width: 100%;">
             <div class="titulo-detalhes">
                 <h1>QUEM SOMOS</h1>
             </div>
             <div class="texto-detalhes">
-                <p>A bookare é uma plataforma gratuita <br>sem fins lucrativos que tem como <br> objetivo democratizar a leitura, atuando <br>apenas como uma ponte, deixando que <br>as pessoas construam essa iniciativa.</p>
+                <p>A bookare é uma plataforma gratuita <br>para leitores assíduos e tem como <br> objetivo democratizar a leitura, atuando <br>apenas como uma ponte, deixando que <br>as pessoas construam essa iniciativa.</p>
             </div>
             <div class="imgsec1">
-                <img src="/SistemaBookare/assets/img/logo.png" alt="">
+                <img src="/SistemaBookare/assets/img/iconBookare.png" alt="">
             </div>
         </div>
     </section1>
@@ -49,9 +51,9 @@
             <div class="comofunciona">
                 <div class="biblioteca">
                     <img src="/SistemaBookare/assets/img/livraria-comofunciona.png" alt="">
-                    <p>O Bookare é um site feito para <br>facilitar a troca de livros usados — <br> sabe aquele livro que está pegando <br> poeira na estante?</p>
+                    <p>O Bookare é um site feito para <br>facilitar a troca de livros usados<br> sabe aquele livro que está pegando <br> poeira na estante?</p>
                 </div>
-                 <div class="livro-detalhes">
+                <div class="livro-detalhes">
                     <img src="/SistemaBookare/assets/img/livro-aberto-comofunciona.png" alt="">
                     <p>E claro, se você encontrar <br> um livro que te interesse, <br> também pode pedir a troca. <br> Simples assim!</p>
                 </div>
@@ -65,9 +67,9 @@
 
     <section3 style="width: 100%;" id="seguranca">
         <div class="container2-detalhes">
-              <div class="titulo-detalhes">
-                    <p>SEGURANÇA</p>
-                </div>
+            <div class="titulo-detalhes">
+                <p>SEGURANÇA</p>
+            </div>
             <div class="seguranca">
                 <div class="imagens">
                     <img src="/SistemaBookare/assets/img/cadeado-seguranca.png" class="img1" alt="">
@@ -89,8 +91,8 @@
             <div class="texto-detalhes">
                 <h2>Mande sua sugestão, diga-nos no que podemos melhorar!</h2>
             </div>
-        <div class="container4-detalhes">
-            <div class="formulario-detalhes">
+            <div class="container4-detalhes">
+                <div class="formulario-detalhes">
                     <label for="Nome">Nome:</label>
                     <input placeholder="Digite seu Nome:" type="text" name="nome" id="">
                     <label for="E-mail">E-mail:</label>
@@ -99,9 +101,9 @@
                     <input placeholder="Digite o Assunto:" type="text" name="Assunto" id="">
                 </div>
                 <div class="mensagem-detalhes">
-                        <label for="Mensagem:">Mensagem:</label>
-                        <textarea  type="text" name="Mensagem" id="" > </textarea> <br>
-                        <button type="submit">Enviar</button>
+                    <label for="Mensagem:">Mensagem:</label>
+                    <textarea type="text" name="Mensagem" id=""> </textarea> <br>
+                    <button type="submit">Enviar</button>
                 </div>
             </div>
         </div>
@@ -109,4 +111,5 @@
 
     <?php include(__DIR__ . "/footer.php"); ?> <!--footer-->
 </body>
+
 </html>

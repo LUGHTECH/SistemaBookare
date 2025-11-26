@@ -1,0 +1,82 @@
+@media(max-width: 1400px) {
+    .form-filter fieldset legend {
+        font-size: 0.9rem;
+    }
+
+    .form-filter fieldset {
+        font-size: 0.8rem !important;
+    }
+
+    .text-banner {
+        font-size: 1.2rem !important;
+    }
+
+    #explicacao {
+        font-size: 1rem;
+    }
+
+    .text-pesquisa h2 {
+        width: 55%;
+    }
+
+    .text-pesquisa p {
+        width: 40%;
+    }
+
+    .usuariosCard {
+        padding: 10px 5px;
+        min-width: 300px;
+        max-width: 550px;
+    }
+
+    .cardLivroCapa {
+        width: 150px;
+        height: 150px;
+
+
+    }
+
+    .nome-img {
+        border: 70px !important;
+    }
+
+    .cardUser {
+        width: 80px !important;
+    }
+
+    .cardInfos {
+        font-size: 0.8rem;
+        height: 100%;
+
+    }
+
+    .container-img {
+        width: 70%;
+    }
+
+    .imgBanner-c {
+        background: url('/SistemaBookare/assets/img/bannerCatalogoRed.jpg') no-repeat center/cover;
+        height: 150px;
+    }
+
+    .cardUser img {
+        border-radius: 40%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /*DETALHE TROCA, TO COM PREGUIÇA DE CRIAR UM ARQUIVO NOVO*/
+
+    .usuario{
+        background-size: 350%;
+        background-repeat: repeat;
+    }
+
+    #formContato textarea{
+        text-align: start !important;
+        
+    }
+
+}

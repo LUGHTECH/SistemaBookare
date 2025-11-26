@@ -18,6 +18,7 @@ try {
    $anos = isset($_GET['ano_publicacao']) ? (array)$_GET['ano_publicacao'] : [];
    $estados = isset($_GET['estado']) ? (array)$_GET['estado'] : [];
    $conservacao = isset($_GET['conservacao']) ? (array)$_GET['conservacao'] : [];
+   $idUsuario = isset($_GET['usuario']) ? (int)$_GET['usuario'] : null;
 
    // --- SQL base ---   //Usado para fazer a contagem das paginações
    $sqlBase = "FROM tb_livro AS l
@@ -55,14 +56,21 @@ try {
       $sqlBase .= " AND l.estado_conservacao_livro IN ($placeholders)";
       $params = array_merge($params, $conservacao);
    }
+   
+   if ($idUsuario !== null && $idUsuario > 0) {
+    $sqlBase .= " AND l.id_usuario = ?";
+    $params[] = $idUsuario;
+    $pesquisa = ''; 
+    $params[0] = "%{$pesquisa}%"; //Atualiza o primeiro parâmetro de LIKE
+}
 
-   // --- Contagem total ---
+   //Contagem total ---
    $sqlCount = "SELECT COUNT(DISTINCT l.id_livro) AS total " . $sqlBase;
    $stmtCount = $pdo->prepare($sqlCount);
    $stmtCount->execute($params);
    $totalLivros = $stmtCount->fetchColumn();
 
-   // --- Consulta principal com paginação ---
+   //Consulta principal com paginação
    $sql = "SELECT 
               u.nome_usuario,
               u.email_usuario,
@@ -84,7 +92,7 @@ try {
    $stmt->execute($params);
    $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-   // --- Contagens para filtros ---
+   //Contagens para filtros
    $anosList = $pdo->query("SELECT l.ano_pub_livro AS livro_ano, COUNT(*) AS total
                              FROM tb_livro AS l
                              GROUP BY l.ano_pub_livro
@@ -109,11 +117,11 @@ try {
                              GROUP BY l.estado_conservacao_livro
                              ORDER BY l.estado_conservacao_livro DESC")->fetchAll(PDO::FETCH_ASSOC);
 
-   // --- Intervalo da página ---
+   //Intervalo da página
    $inicio = ($totalLivros > 0) ? $offset + 1 : 0;
    $fim = min($offset + $limite, $totalLivros);
 
-   // --- Sessões ---
+   //Sessões
    @session_start();
    $_SESSION['usuarios'] = $usuarios;
    $_SESSION['pesquisa'] = $pesquisa;
@@ -126,7 +134,7 @@ try {
    $_SESSION['inicio'] = $inicio;
    $_SESSION['fim'] = $fim;
 
-   // --- Redirecionamento mantendo filtros ---
+   //Redirecionamento mantendo filtros ---
    $query = http_build_query([
       'search' => $pesquisa,
       'conservacao' => $conservacao,

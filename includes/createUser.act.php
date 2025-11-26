@@ -84,16 +84,19 @@ if ($existing) {
 // inserir novo usuário
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
+$role = 'user'; // controle de usuarios e admins
+
 try {
     $pdo->beginTransaction(); // inicia transação
 
     // 1️⃣ insere o usuário
-    $insert = $pdo->prepare('INSERT INTO tb_usuario (nome_usuario, email_usuario, senha_usuario)
-                              VALUES (:username, :email, :password)');
+    $insert = $pdo->prepare('INSERT INTO tb_usuario (nome_usuario, email_usuario, senha_usuario, role)
+                              VALUES (:username, :email, :password, :role)');
     $insert->execute([
         ':username' => $username,
         ':email' => $email,
-        ':password' => $hash
+        ':password' => $hash,
+        ':role' => $role
     ]);
 
     // pega o ID do usuário criado

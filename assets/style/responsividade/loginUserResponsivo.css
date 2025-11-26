@@ -1,0 +1,17 @@
+
+@media (max-width: 1300px) {
+.window{
+    width: 60%;
+    
+}
+
+.banner{
+    width: 40%;
+}
+
+.textBanner h1{
+    font: 2.1rem;
+}
+
+
+}

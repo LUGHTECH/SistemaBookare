@@ -1,0 +1,204 @@
+@media (max-width: 1536px) {
+
+    .drop {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .perfil img {
+        height: 50px;
+        width: 50px;
+        padding: 0;
+    }
+
+
+    .chamada h1 {
+        font-size: 2.6rem;
+    }
+
+    .btnCadastrar {
+        width: 48%;
+    }
+
+    .livros {
+        width: 85%;
+    }
+
+    .nav-manual,
+    .nav-auto {
+        margin-top: 60%;
+    }
+}
+
+@media (max-width: 1300px) {
+    /* notebooks comuns */
+
+    .logo {
+        width: 16%;
+        height: 60px;
+    }
+
+    .menu {
+        width: 38%;
+        margin: 0;
+
+    }
+
+    .menu ul li a {
+        font-size: 0.9rem;
+    }
+
+    #header-top {
+        width: 30%;
+    }
+
+    .drop {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+
+    .login {
+        width: 16%;
+    }
+
+    .entrar {
+        width: 60%;
+    }
+
+    .entrar-login {
+        font-size: 1.1rem;
+    }
+
+    .perfil {
+        width: 50%;
+    }
+
+    .perfil img {
+        height: 50px;
+        padding: 0;
+    }
+
+    .chamada {
+        width: 70%;
+        margin-top: 20px;
+    }
+
+    .chamada h1 {
+        font-size: 2.5rem;
+    }
+
+    .btnCadastrar {
+        width: 60%;
+    }
+
+    /*CATALOGO*/
+
+    .catalogo {
+        padding: 2%;
+    }
+
+    .livros {
+        width: 90%;
+    }
+
+    .livros .info {
+        max-width: 190px;
+    }
+
+    .livros .info div {
+        width: 120px;
+        height: 160px;
+    }
+
+    /*slideAutores*/
+
+    .autor {
+        flex: 1 1 40%;
+        max-width: 45%;
+    }
+
+    .persW {
+        flex-direction: 1 1 40%;
+        max-width: 45%;
+    }
+
+    .nav-manual,
+    .nav-auto {
+        margin-top: 78%;
+    }
+
+    /*quem somos (página detalhe)*/
+
+    .quemsomos-detalhes .titulo-detalhes {
+        font-size: 1.6rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .quemsomos-detalhes .texto-detalhes {
+        font-size: 1.2rem;
+    }
+
+    .quemsomos-detalhes .imgsec1 img {
+        height: 120px;
+        width: 300px;
+    }
+
+    .comofunciona img {
+        height: 150px;
+    }
+
+    .container-deatalhes .comofunciona p {
+        font-size: 1rem;
+    }
+
+    .container2-detalhes .seguranca .imagens img {
+        height: 150px;
+        width: 150px;
+    }
+
+    .img1 {
+        top: 230px;
+        right: 40px;
+        z-index: 3;
+
+    }
+
+    .img2 {
+        top: 40px;
+        left: 100px;
+        z-index: 2;
+    }
+
+    .img3 {
+        top: 0px;
+        left: 10px;
+        z-index: 1;
+    }
+
+
+    .container2-detalhes .texto-detalhes {
+        font-size: 1.2rem;
+    }
+
+    .container3-detalhes .titulo-detalhes{
+        font-size: 1.6rem;
+    }
+
+    /*FOOTER*/
+
+    .redes {
+        width: 40%;
+    }
+
+    .contato h3,
+    .informacoes h3 {
+        font-size: 1.3rem;
+    }
+
+    .contato li a,
+    .informacoes li a {
+        font-size: 1.1rem;
+    }
+}
