@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/SistemaBookare/assets/style/editarLivro.css">
     <title>Editar Livro</title>
 </head>
 
@@ -14,8 +15,9 @@
     require('connect.php');
     @session_start();
 
-    @$mensagem = $_SESSION['mensagem'];
-    @$id_livro = (int) $_GET['id_livro'];
+    $mensagem = $_SESSION['mensagem'] ?? "";
+    $id_livro = (int) $_GET['cod'];
+    $id_usuario = $_SESSION['id_usuario'];
 
     $sql = "SELECT 
                 l.id_livro,
@@ -34,18 +36,22 @@
             LEFT JOIN tb_editora e        ON l.id_editora = e.id_editora
             LEFT JOIN tb_idioma i         ON l.id_idioma = i.id_idioma
             LEFT JOIN tb_livro_imagem img ON l.id_livro = img.id_livro
-            WHERE l.id_livro = $id_livro
+            WHERE l.id_livro = $id_livro AND l.id_usuario = $id_usuario
             GROUP BY l.id_livro";
 
     $resultado = mysqli_query($con2, $sql);
     $livros = mysqli_fetch_assoc($resultado);
 
-    $fotos_livro = explode(',', $livros['capa']); 
+    if(!$livros){
+        die("Livro não encontrado!");
+    }
+
+    $fotos_livro = explode(',', $livros['capa']);
     ?>
 
     <form action="editarLivro.act.php" method="post" id="formLivro" enctype="multipart/form-data">
 
-        <input type="hidden" name="id_usuario" value="<?php echo $idUsuario; ?>">
+        <input type="hidden" name="id_livro" value="<?php echo $id_livro; ?>">
 
         <div class="container-cadastro-livro">
 
@@ -56,23 +62,6 @@
             <div class="lado-esquerdo">
 
                 <h3 class="section-title">📷 Imagens do Livro</h3>
-
-                <!-- CAPA -->
-                <div class="mb-4">
-                    <h4 style="text-align:center; margin:5px;">Capa do Livro</h4>
-
-                    <div class="capa-preview editar-img" id="capaPreview">
-                        <img id="previewCapa" src="/SistemaBookare/includes/dashboard/tabViews/<?= $fotos_livro[0] ?>" alt="">
-                    </div>
-
-                    <input type="file" id="inputCapa" name="capa" accept="image/*" class="hidden">
-
-                    <div class="cont-button">
-                        <button type="button" class="btn btn-primary" onclick="document.getElementById('inputCapa').click()">
-                            📸 Selecionar Capa
-                        </button>
-                    </div>
-                </div>
 
                 <!-- FOTOS -->
                 <div style="margin-top:20px;">
@@ -105,50 +94,11 @@
                 <h3 class="section-title">📖 Informações do Livro</h3>
 
                 <div class="infos-isbn">
-                    <div class="busca-isbn">
-                        <input type="text" id="inputISBN" placeholder="Digite o ISBN do livro (10 ou 13 dígitos)" style="flex:1;">
-                    </div>
+                    <p>Os dados deste livro foram obtidos por meio do ISBN e conferidos com fontes oficiais.
+                        Por isso, somente o Estado de Conservação e as Fotos do livro podem ser alterados.</p>
                 </div>
 
                 <div class="container-inputs">
-
-                    <div class="form-group">
-                        <label>Nome do Livro *</label>
-                        <input type="text" id="nomeLivro" name="nome_livro" value="<?= $livros['nome_livro'] ?>" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Ano de Publicação</label>
-                        <input type="number" id="anoPublicacao" name="ano_publicacao" min="1000" max="<?= date('Y') ?>"
-                               value="<?= $livros['ano_pub_livro'] ?>">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Autor *</label>
-                        <input type="text" id="autor" name="livro_autor" value="<?= $livros['nome_autor'] ?>" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Gênero *</label>
-                        <input type="text" id="genero" name="livro_genero" value="<?= $livros['nome_genero'] ?>" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Editora</label>
-                        <input type="text" id="editora" name="livro_edicao" value="<?= $livros['nome_editora'] ?>">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Idioma *</label>
-                        <select id="idioma" name="livro_idioma" required>
-                            <option value="">Selecione o idioma</option>
-                            <option value="pt" <?= $livros['idioma'] == 'pt' ? 'selected' : '' ?>>Português</option>
-                            <option value="en" <?= $livros['idioma'] == 'en' ? 'selected' : '' ?>>Inglês</option>
-                            <option value="es" <?= $livros['idioma'] == 'es' ? 'selected' : '' ?>>Espanhol</option>
-                            <option value="fr" <?= $livros['idioma'] == 'fr' ? 'selected' : '' ?>>Francês</option>
-                            <option value="de" <?= $livros['idioma'] == 'de' ? 'selected' : '' ?>>Alemão</option>
-                        </select>
-                    </div>
 
                     <div class="form-group">
                         <label>Estado de Conservação *</label>
@@ -164,6 +114,45 @@
                         </select>
                     </div>
 
+                    <div class="form-group">
+                        <label>Nome do Livro *</label>
+                        <input type="text" id="nomeLivro" name="nome_livro" value="<?= $livros['nome_livro'] ?>" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ano de Publicação</label>
+                        <input type="number" id="anoPublicacao" name="ano_publicacao" min="1000" max="<?= date('Y') ?>"
+                            value="<?= $livros['ano_pub_livro'] ?>">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Autor *</label>
+                        <input type="text" id="autor" name="livro_autor" value="<?= $livros['nome_autor'] ?>" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Gênero *</label>
+                        <input type="text" id="genero" name="livro_genero" value="<?= $livros['nome_genero'] ?>" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Editora</label>
+                        <input type="text" id="editora" name="livro_editora" value="<?= $livros['nome_editora'] ?>">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Idioma *</label>
+                        <select id="idioma" name="livro_idioma" required>
+                            <option value="">Selecione o idioma</option>
+                            <option value="pt" <?= $livros['idioma'] == 'pt' ? 'selected' : '' ?>>Português</option>
+                            <option value="en" <?= $livros['idioma'] == 'en' ? 'selected' : '' ?>>Inglês</option>
+                            <option value="es" <?= $livros['idioma'] == 'es' ? 'selected' : '' ?>>Espanhol</option>
+                            <option value="fr" <?= $livros['idioma'] == 'fr' ? 'selected' : '' ?>>Francês</option>
+                            <option value="de" <?= $livros['idioma'] == 'de' ? 'selected' : '' ?>>Alemão</option>
+                        </select>
+                    </div>
+
+
                 </div>
 
                 <div class="form-group" id="cont-sinopse">
@@ -175,11 +164,29 @@
                     Salvar Alterações
                 </button>
 
+                <div class="response">
+                    <?php @session_start();
+                    echo @$_SESSION['mensagem'];
+                    unset($_SESSION['mensagem']);
+                    ?>
+                </div>
+
             </div>
 
         </div>
 
     </form>
+
+    <script>
+        const campos = ['nomeLivro', 'anoPublicacao', 'autor', 'genero', 'editora', 'sinopse', 'idioma'];
+        campos.forEach(id => {
+            const campo = document.getElementById(id);
+            if (campo && campo.value.trim() !== '') {
+                campo.readOnly = true;
+                campo.style.backgroundColor = '#f3f3f3'; // deixa visualmente "travado"
+            }
+        })
+    </script>
 
 </body>
 

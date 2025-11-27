@@ -1,0 +1,33 @@
+.lado-esquerdo .fotos-container{
+       height: 100%;
+       width: 100% !important;
+       color: #f3f3f3;
+       border: solid;
+}
+
+.foto-preview{
+    height: 200px !important;
+    width: 150px !important;
+    border: solid;
+}
+
+.foto-preview img{
+    height: 100% !important;
+    width: 100% !important;
+    border: solid;
+}
+
+
+
+
+
+
+.editar-img{
+    border: solid;
+    height: 250px;
+    color: #f3f3f3;
+}
+
+.editar-img img{
+    height: 100%;
+}

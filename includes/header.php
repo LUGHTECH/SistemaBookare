@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/SistemaBookare/assets/style/catalogo.css">
     <link rel="stylesheet" href="/SistemaBookare/assets/style/dashboard.css">
     <link rel="stylesheet" href="/SistemaBookare/assets/style/quemSomos.css">
-    <link rel="stylesheet" href="/SistemaBookare/assets/style/editarLivro.css">
     <link rel="stylesheet" href="/SistemaBookare/assets/style/planos.css">
     <link rel="stylesheet" href="/SistemaBookare/assets/style/detalhesTroca.css">''
     <link rel="stylesheet" href="/SistemaBookare/assets/style/responsividade/dashboardResponsividade.css">

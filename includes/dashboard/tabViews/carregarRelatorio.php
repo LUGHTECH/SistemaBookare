@@ -27,7 +27,7 @@ $tipo = $_GET['tipo'] ?? '';
     <thead>
         <tr>
             <th>Usuário</th>
-            <th>Quantidade de Usuários</th>
+            <th>Quantidade de Livros</th>
             <th class="export"><p>Data de Cadastro do Último Livro</p> <img src="/SistemaBookare/assets/img/exportarIcon.png" alt="" title="Ver relatório completo e exportar"></th>
         </tr>
     </thead>

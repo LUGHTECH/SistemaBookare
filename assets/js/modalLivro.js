@@ -59,7 +59,7 @@ function abrirModalLivro(livro) {
     overlay.classList.add('show');
 
     document.getElementById("alt").onclick = function (){
-        window.location.href = `/SistemaBookare/includes/editarLivro.php?id_livro=${livro.id_livro}`;
+        window.location.href = `/SistemaBookare/includes/editarLivro.php?cod=${livro.id_livro}`;
     }
 }
 
