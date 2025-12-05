@@ -1,0 +1,5 @@
+ATENÇÃO 
+PARA ABRIR O SISTEMA É NECESSÁRIO FAZER O BACKUP DE DOIS BANCO DE DADOS
+
+teste_gênero, que se encontra na pasta bd
+bd_bookare, que se encontra na pasta mysql, dentro de assets

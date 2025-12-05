@@ -71,7 +71,7 @@ $username = $_SESSION['username'] ?? null;
                         echo "</div>";
                         echo "<div class='botao'>
                                 <a href='#' 
-                                    onclick='abrirModalLivro(" . json_encode($livros) . "); return false'>
+                                    onclick='abrirModalLivro(" . htmlspecialchars(json_encode($livros)) . "); return false'>
                                     <img src='../assets/img/livroIcon.png'>
                                 </a>
                                 </div>";
@@ -99,19 +99,19 @@ $username = $_SESSION['username'] ?? null;
                         <div class="idiomaLivro">
                             <div>
                                 <p>Ano de Publicação:</p>
-                                <p id="anoLivro"></p>
+                                <p class="stylo" id="anoLivro"></p>
                             </div>
                             <div>
                                 <p>Idioma:</p>
-                                <p id="idiomaLivro"></p>
+                                <p class="stylo" id="idiomaLivro"></p>
                             </div>
                             <div>
                                 <p>Gênero:</p>
-                                <p id="generoLivro"></p>
+                                <p class="stylo" id="generoLivro"></p>
                             </div>
                             <div>
                                 <p>Condição do Livro:</p>
-                                <p id="condicaoLivro"></p>
+                                <p class="stylo" id="condicaoLivro"></p>
                             </div>
                         </div>
                     </section>
