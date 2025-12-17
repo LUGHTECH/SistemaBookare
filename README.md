@@ -37,21 +37,25 @@ O usuário interessado preenche um formulário localizado na página de detalhes
 \\FERRAMENTAS E LINGUAGENS//
 
 // Backend
+
 MySQL  
 PHP  
 PHPMailer  
 
 // Frontend
+
 HTML  
 CSS  
 JavaScript  
 Chart.js  
 
 // APIs
+
 Google Books API  
 ViaCEP
 
 // Design e Prototipagem
+
 Figma  
 Canva  
 CANVA
