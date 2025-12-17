@@ -26,6 +26,7 @@ A plataforma tem foco na troca de livros e funciona como uma ponte entre dois us
 -Administrador: Existe uma guia especial localizada na dashboard, desenvolvida exclusivamente para contas de administrador. Essa guia apresenta informações gerais do sistema, como o total de livros cadastrados, total de usuários, usuários com mais livros cadastrados, livros por região, entre outros dados. Essas informações são exibidas em tabelas que se atualizam em tempo real. Além disso, é possível visualizar um gráfico geral com os dados do sistema, desenvolvido com Chart.js.
 
 \\TROCA DE LIVROS//
+
 Assim que a conta do usuário é cadastrada, ele tem a opção de tornar suas informações de contato visíveis ou não.
 
 Informações visíveis:
