@@ -2,65 +2,19 @@ Hospedado em BYEHOST15 (INCOMPLETO - 16/12/2025)
 
 https://sistemabookare.byethost15.com/index.php
 
-Bookare
+O Bookare é um sistema desenvolvido como parte do TCC para o curso de Desenvolvimento de Sistemas da Etec de Itaquera.
+Composto por 6 integrantes, o grupo criou a empresa fictícia Lughtech, que tem como propósito aproximar pessoas por meio da tecnologia.
 
-O Bookare é uma plataforma desenvolvida como parte do Trabalho de Conclusão de Curso (TCC) do curso de Desenvolvimento de Sistemas da Etec de Itaquera.
+A plataforma tem foco na troca de livros e funciona como uma ponte entre dois usuários. Nela, os usuários se encontram, solicitam livros que estão em posse de outros usuários e entram em contato para que a troca seja realizada de forma externa ao sistema.
 
-O projeto foi idealizado por um grupo de 6 integrantes, que criou a empresa fictícia Lughtech, com o objetivo de aproximar pessoas por meio da tecnologia.
+Nosso sistema conta com:
 
-A plataforma tem como foco a troca de livros entre usuários, funcionando como uma ponte de conexão. Os usuários podem encontrar livros disponíveis, solicitar a troca e entrar em contato com o dono do livro para que a negociação ocorra fora da plataforma.
+Catálogo de livros: Existe uma variedade de usuários com livros cadastrados. Ao realizar uma pesquisa, o livro desejado é exibido juntamente com as informações de seu respectivo dono.
 
-Funcionalidades
-Catálogo de Livros
+Filtragem de usuários e livros: Os livros e seus donos são filtrados com base em autor, localização, estado de conservação e ano de publicação.
 
-Exibição de livros cadastrados por diferentes usuários
+Sistema de login: O usuário pode cadastrar seu perfil com suas respectivas informações de contato na plataforma. Um livro só será publicado caso as informações de endereço estejam devidamente preenchidas.
 
-Visualização do livro juntamente com as informações do seu respectivo dono
+Cadastro de endereço: O sistema realiza integração com a API ViaCEP, que busca automaticamente o CEP do usuário.
 
-Filtros de Busca
-
-Autor
-
-Localização
-
-Estado de conservação
-
-Ano de publicação
-
-🔐 Sistema de Autenticação
-
-Cadastro e login de usuários
-
-Gerenciamento de perfil e informações de contato
-
-Publicação de livros permitida apenas após o preenchimento do endereço
-
-Cadastro de Endereço (API)
-
-Integração com a API ViaCEP
-
-Preenchimento automático do endereço a partir do CEP informado
-
-Dashboard do Usuário
-
-Dashboard interativa e organizada por guias
-
-Atualização de foto de perfil
-
-Edição de informações pessoais e de contato
-
-Cadastro, edição e remoção de livros
-
-Tecnologias Utilizadas
-
-HTML5
-
-CSS3
-
-JavaScript
-
-PHP
-
-MySQL
-
-API ViaCEP
+Dashboard interativa: Cada usuário tem acesso a uma dashboard onde pode gerenciar suas informações. É possível atualizar a foto de perfil, nome, informações de contato, além de cadastrar e editar livros. A dashboard é dividida em guias, onde essas funcionalidades são organizadas.
