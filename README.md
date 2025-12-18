@@ -9,21 +9,49 @@ Composto por 6 integrantes, o grupo criou a empresa fictícia Lughtech, que tem 
 
 A plataforma tem foco na troca de livros e funciona como uma ponte entre dois usuários. Nela, os usuários se encontram, solicitam livros que estão em posse de outros usuários e entram em contato para que a troca seja realizada de forma externa ao sistema.
 
-##NOSSO SISTEMA CONTA COM
+## NOSSO SISTEMA CONTA COM
 
-###Catálogo de livros: Existe uma variedade de usuários com livros cadastrados. Ao realizar uma pesquisa, o livro desejado é exibido juntamente com as informações de seu respectivo dono.
+### Catálogo de livros:
+
+Existe uma variedade de usuários com livros cadastrados. Ao realizar uma pesquisa, o livro desejado é exibido juntamente com as informações de seu respectivo dono.
 
 
 <img width="1919" height="872" alt="image" src="https://github.com/user-attachments/assets/55f90a8b-d42a-4704-a254-57dc60c17dca" />
 
 
-Catalogo de livros
+*Imagem do catálogo de livros*
 
--Filtragem de usuários e livros: Os livros e seus donos são filtrados com base em autor, localização, estado de conservação e ano de publicação.
+### Filtragem de usuários e livros:
 
--Sistema de login: O usuário pode cadastrar seu perfil com suas respectivas informações de contato na plataforma. Um livro só será publicado caso as informações de endereço estejam devidamente preenchidas.
+Os livros e seus donos são filtrados com base em autor, localização, estado de conservação e ano de publicação.
 
--Cadastro de endereço: O sistema realiza integração com a API ViaCEP, que busca automaticamente o CEP do usuário.
+
+<img width="1901" height="869" alt="image" src="https://github.com/user-attachments/assets/b8019ae8-2fda-4c52-8968-eabb26c85b5a" />
+
+
+*Exemplo da filtragem de livros aplicada no sistema*
+
+### Sistema de login:
+
+O usuário pode cadastrar seu perfil com suas respectivas informações de contato na plataforma. Um livro só será publicado caso as informações de endereço estejam devidamente preenchidas.
+
+
+<img width="1919" height="871" alt="image" src="https://github.com/user-attachments/assets/374acbf4-f662-4204-b65e-c6a85ee682e5" />
+
+
+*Tela de cadastro de usuário*
+
+### Cadastro de endereço:
+
+O sistema realiza integração com a API ViaCEP, que busca automaticamente o CEP do usuário.
+
+
+<img width="1919" height="878" alt="image" src="https://github.com/user-attachments/assets/44760c6d-a846-48f6-b912-35717452e141" />
+
+
+
+*Pop-up de atualização de informações*
+
 
 -Dashboard interativa: Cada usuário tem acesso a uma dashboard onde pode gerenciar suas informações. É possível atualizar a foto de perfil, nome, informações de contato, além de cadastrar e editar livros. A dashboard é dividida em guias, onde essas funcionalidades são organizadas.
 
