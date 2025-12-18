@@ -9,9 +9,15 @@ Composto por 6 integrantes, o grupo criou a empresa fictícia Lughtech, que tem 
 
 A plataforma tem foco na troca de livros e funciona como uma ponte entre dois usuários. Nela, os usuários se encontram, solicitam livros que estão em posse de outros usuários e entram em contato para que a troca seja realizada de forma externa ao sistema.
 
-\\NOSSO SISTEMA CONTA COM//
+###NOSSO SISTEMA CONTA COM
 
--Catálogo de livros: Existe uma variedade de usuários com livros cadastrados. Ao realizar uma pesquisa, o livro desejado é exibido juntamente com as informações de seu respectivo dono.
+##Catálogo de livros: Existe uma variedade de usuários com livros cadastrados. Ao realizar uma pesquisa, o livro desejado é exibido juntamente com as informações de seu respectivo dono.
+
+
+<img width="1919" height="872" alt="image" src="https://github.com/user-attachments/assets/55f90a8b-d42a-4704-a254-57dc60c17dca" />
+
+
+Catalogo de livros
 
 -Filtragem de usuários e livros: Os livros e seus donos são filtrados com base em autor, localização, estado de conservação e ano de publicação.
 
