@@ -153,7 +153,6 @@ ViaCEP
 
 Figma  
 Canva  
-CANVA
 
 
 
