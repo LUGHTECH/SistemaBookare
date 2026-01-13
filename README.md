@@ -13,7 +13,8 @@ A plataforma tem foco na troca de livros e funciona como uma ponte entre dois us
 
 
 
-![telabookareGif](https://github.com/user-attachments/assets/754e7e04-6a76-4358-a20f-d5225e0c5078)
+![opmGIF](https://github.com/user-attachments/assets/b3276e6d-5f56-4b1a-a0ab-eb657ba7fdb5)
+
 
 ## NOSSO SISTEMA CONTA COM
 
